@@ -1,6 +1,6 @@
 package com.ever.funquizz.model
 
-data class Reponse(
+data class Response(
     val idReponse:Int,
     val reponse:String,
     val isValid : Boolean,
