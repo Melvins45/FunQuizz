@@ -20,6 +20,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.ever.funquizz.ui.components.BottomRoundedButton
+import com.ever.funquizz.ui.components.LogoImage
 import com.ever.funquizz.ui.theme.FunQuizzTheme
 
 class MainActivity : ComponentActivity() {
@@ -54,13 +55,7 @@ fun Home(start: String, bestScore: String, parameters:String, modifier: Modifier
         horizontalAlignment = Alignment.CenterHorizontally
     ){
         Spacer(modifier = Modifier.height(28.dp))
-        Image(
-            painter = painterResource(id = R.drawable.funquizz_logo),
-            contentDescription = "Description de l'image",
-            modifier = Modifier
-                .height(109.dp)
-                .width(286.dp)
-        )
+        LogoImage()
         Spacer(modifier = Modifier.height(35.dp))
         BottomRoundedButton(
             text = "$start",
