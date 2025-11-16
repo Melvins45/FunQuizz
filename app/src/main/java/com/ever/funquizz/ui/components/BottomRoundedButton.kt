@@ -3,12 +3,16 @@ package com.ever.funquizz.ui.components
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.*
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.ever.funquizz.ui.theme.FunQuizzTheme
+
+
 
 @Composable
 fun BottomRoundedButton(
@@ -24,14 +28,21 @@ fun BottomRoundedButton(
         disabledContentColor = MaterialTheme.colorScheme.onPrimary.copy(alpha = 0.38f)
     )
 ) {
+
+    val lineHeight = MaterialTheme.typography.bodyLarge.lineHeight
+    val radiusDp = with(LocalDensity.current) { lineHeight.toDp() }
+    val heightDp = 55.dp
+
     Button(
         onClick = onClick,
-        modifier = modifier,
+        modifier = modifier
+            .height(heightDp)
+            .width(210.dp),
         enabled = enabled,
         colors = colors,
         shape = RoundedCornerShape(
-            bottomEnd = 20.dp,
-            bottomStart = 20.dp
+            bottomEnd = heightDp,
+            bottomStart = heightDp
         )
     ) {
         if (icon != null) {
