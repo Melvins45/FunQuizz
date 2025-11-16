@@ -1,3 +1,4096 @@
 <resources>
-    <string name="app_name">FunQuizz</string>
+    <string name="app_name">Fun Quizz</string>
+    <string name="ready">&gt; Prêt ?</string>
+    <string name="start">Commencer</string>
+    <string name="best_score">Meilleur Score</string>
+    <string name="parameters">Paramètres</string>
+    <string name="continuer">Continuer</string>
+    <string-array name="category">
+        <item>Pays</item>
+        <item>Musiques</item>
+        <item>Réligions</item>
+        <item>Animaux</item>
+        <item>Sciences</item>
+    </string-array>
+    <string-array name="sub_category_pays">
+        <item>Présidents</item>
+        <item>Drapeaux</item>
+        <item>Devises</item>
+    </string-array>
+    <string-array name="sub_category_musiques">
+        <item>Urbain</item>
+        <item>Gospel</item>
+        <item>Africain</item>
+    </string-array>
+    <string-array name="sub_category_religions">
+        <item>Christianisme</item>
+        <item>Islamisme</item>
+        <item>Aninisme</item>
+    </string-array>
+    <string-array name="sub_category_animaux">
+        <item>Mammifères</item>
+        <item>Animaux marins</item>
+        <item>Oiseaux</item>
+    </string-array>
+    <string-array name="sub_category_sciences">
+        <item>Anatomie</item>
+        <item>Univers</item>
+        <item>Découverte</item>
+    </string-array>
+    <string-array name="level">
+        <item>Facile</item>
+        <item>Moyen</item>
+        <item>Difficile</item>
+    </string-array>
+
+    <string name="presidents_facile_question_1">Qui est le président actuel du Cameroun ?</string>
+    <string name="presidents_facile_question_1_reponse_valid">1</string>
+    <string-array name="presidents_facile_question_1_reponses">
+        <item>Macky Sall</item>
+        <item>Paul Biya</item>
+        <item>Mohamed Bazoum</item>
+        <item>Faure Gnassingbé</item>
+    </string-array>
+
+    <string name="presidents_facile_question_2">Qui est le président actuel de la France ?</string>
+    <string name="presidents_facile_question_2_reponse_valid">0</string>
+    <string-array name="presidents_facile_question_2_reponses">
+        <item>Emmanuel Macron</item>
+        <item>Nicolas Sarkozy</item>
+        <item>François Hollande</item>
+        <item>JeanLuc Mélenchon</item>
+    </string-array>
+
+    <string name="presidents_facile_question_3">Quel pays a pour président Bola Ahmed Tinubu ?</string>
+    <string name="presidents_facile_question_3_reponse_valid">2</string>
+    <string-array name="presidents_facile_question_3_reponses">
+        <item>Ghana</item>
+        <item>Afrique du Sud</item>
+        <item>Nigeria</item>
+        <item>Kenya</item>
+    </string-array>
+
+    <string name="presidents_facile_question_4">Qui est le président actuel du Sénégal ?</string>
+    <string name="presidents_facile_question_4_reponse_valid">1</string>
+    <string-array name="presidents_facile_question_4_reponses">
+        <item>Abdoulaye Wade</item>
+        <item>Bassirou Diomaye Faye</item>
+        <item>Macky Sall</item>
+        <item>Ousmane Sonko</item>
+    </string-array>
+
+    <string name="presidents_facile_question_5">Qui dirige actuellement la Russie ?</string>
+    <string name="presidents_facile_question_5_reponse_valid">1</string>
+    <string-array name="presidents_facile_question_5_reponses">
+        <item>Dmitri Medvedev</item>
+        <item>Vladimir Poutine</item>
+        <item>Alexei Navalny</item>
+        <item>Sergueï Lavrov</item>
+    </string-array>
+
+    <string name="presidents_facile_question_6">Quel pays a pour président Paul Kagame ?</string>
+    <string name="presidents_facile_question_6_reponse_valid">3</string>
+    <string-array name="presidents_facile_question_6_reponses">
+        <item>Burundi</item>
+        <item>Ouganda</item>
+        <item>Tanzanie</item>
+        <item>Rwanda</item>
+    </string-array>
+
+    <string name="presidents_facile_question_7">Qui est le président actuel des États-Unis ?</string>
+    <string name="presidents_facile_question_7_reponse_valid">2</string>
+    <string-array name="presidents_facile_question_7_reponses">
+        <item>Donald Trump</item>
+        <item>Barack Obama</item>
+        <item>Joe Biden</item>
+        <item>Kamala Harris</item>
+    </string-array>
+
+    <string name="presidents_facile_question_8">Dans quel pays Alassane Ouattara est-il président ?</string>
+    <string name="presidents_facile_question_8_reponse_valid">1</string>
+    <string-array name="presidents_facile_question_8_reponses">
+        <item>Burkina Faso</item>
+        <item>Côte d’Ivoire</item>
+        <item>Togo</item>
+        <item>Mali</item>
+    </string-array>
+
+    <string name="presidents_facile_question_9">Qui est le président de l’Afrique du Sud ?</string>
+    <string name="presidents_facile_question_9_reponse_valid">0</string>
+    <string-array name="presidents_facile_question_9_reponses">
+        <item>Cyril Ramaphosa</item>
+        <item>Julius Malema</item>
+        <item>Jacob Zuma</item>
+        <item>Patrice Motsepe</item>
+    </string-array>
+
+    <string name="presidents_facile_question_10">Qui est le président actuel de la Colombie  ?</string>
+    <string name="presidents_facile_question_10_reponse_valid">2</string>
+    <string-array name="presidents_facile_question_10_reponses">
+        <item>Juan Manuel Santos</item>
+        <item>Álvaro Uribe</item>
+        <item>Gustavo Petro</item>
+        <item>Iván Duque</item>
+    </string-array>
+
+    <string name="presidents_moyen_question_1">Qui est le roi actuel du Bhoutan ?</string>
+    <string name="presidents_moyen_question_1_reponse_valid">0</string>
+    <string-array name="presidents_moyen_question_1_reponses">
+        <item>Jigme Khesar Namgyel Wangchuck</item>
+        <item>Jigme Singye Wangchuck</item>
+        <item>Tshering Tobgay</item>
+        <item>Lotay Tshering</item>
+    </string-array>
+
+    <string name="presidents_moyen_question_2">Qui est le président actuel des Comores ?</string>
+    <string name="presidents_moyen_question_2_reponse_valid">0</string>
+    <string-array name="presidents_moyen_question_2_reponses">
+        <item>Azali Assoumani</item>
+        <item>Ahmed Abdallah</item>
+        <item>Mohamed Bacar</item>
+        <item>Ikililou Dhoinine</item>
+    </string-array>
+
+    <string name="presidents_moyen_question_3">Qui est le président du Suriname ?</string>
+    <string name="presidents_moyen_question_3_reponse_valid">2</string>
+    <string-array name="presidents_moyen_question_3_reponses">
+        <item>Ronald Venetiaan</item>
+        <item>Dési Bouterse</item>
+        <item>Chan Santokhi</item>
+        <item>Jules Wijdenbosch</item>
+    </string-array>
+
+    <string name="presidents_moyen_question_4">Qui est le roi du Lesotho ?</string>
+    <string name="presidents_moyen_question_4_reponse_valid">0</string>
+    <string-array name="presidents_moyen_question_4_reponses">
+        <item>Letsie III</item>
+        <item>Moshoeshoe II</item>
+        <item>Thomas Thabane</item>
+        <item>Moeketsi Majoro</item>
+    </string-array>
+
+    <string name="presidents_moyen_question_5">Qui est le président de Djibouti ?</string>
+    <string name="presidents_moyen_question_5_reponse_valid">0</string>
+    <string-array name="presidents_moyen_question_5_reponses">
+        <item>Ismaïl Omar Guelleh</item>
+        <item>Hassan Gouled Aptidon</item>
+        <item>Mohamed Abdullahi</item>
+        <item>Abiy Ahmed</item>
+    </string-array>
+
+    <string name="presidents_moyen_question_6">Qui est le Premier ministre du Vanuatu ?</string>
+    <string name="presidents_moyen_question_6_reponse_valid">0</string>
+    <string-array name="presidents_moyen_question_6_reponses">
+        <item>Ishmael Kalsakau</item>
+        <item>Bob Loughman</item>
+        <item>Charlot Salwai</item>
+        <item>Edward Natapei</item>
+    </string-array>
+
+    <string name="presidents_moyen_question_7">Qui est le président de l’Érythrée ?</string>
+    <string name="presidents_moyen_question_7_reponse_valid">0</string>
+    <string-array name="presidents_moyen_question_7_reponses">
+        <item>Isaias Afwerki</item>
+        <item>Abiy Ahmed</item>
+        <item>Hailemariam Desalegn</item>
+        <item>Meles Zenawi</item>
+    </string-array>
+
+    <string name="presidents_moyen_question_8">Qui est le président de São Tomé-et-Príncipe ?</string>
+    <string name="presidents_moyen_question_8_reponse_valid">0</string>
+    <string-array name="presidents_moyen_question_8_reponses">
+        <item>Carlos Vila Nova</item>
+        <item>Evaristo Carvalho</item>
+        <item>Manuel Pinto da Costa</item>
+        <item>Patrice Trovoada</item>
+    </string-array>
+
+    <string name="presidents_moyen_question_9">Qui est le président de Kiribati ?</string>
+    <string name="presidents_moyen_question_9_reponse_valid">0</string>
+    <string-array name="presidents_moyen_question_9_reponses">
+        <item>Taneti Maamau</item>
+        <item>Anote Tong</item>
+        <item>Teburoro Tito</item>
+        <item>Sir Iosia</item>
+    </string-array>
+
+    <string name="presidents_moyen_question_10">Qui est le Premier ministre de Tuvalu ?</string>
+    <string name="presidents_moyen_question_10_reponse_valid">0</string>
+    <string-array name="presidents_moyen_question_10_reponses">
+        <item>Kausea Natano</item>
+        <item>Enele Sopoaga</item>
+        <item>Apisai Ielemia</item>
+        <item>Bikenibeu Paeniu</item>
+    </string-array>
+
+    <string name="presidents_difficile_question_1">Qui est l\'actuel président de l\'Érythrée ?</string>
+    <string name="presidents_difficile_question_1_reponse_valid">0</string>
+    <string-array name="presidents_difficile_question_1_reponses">
+        <item>Isaias Afwerki</item>
+        <item>Abiy Ahmed</item>
+        <item>Salva Kiir</item>
+        <item>Omar ElBéchir</item>
+    </string-array>
+
+    <string name="presidents_difficile_question_2">Qui est le Sultan de Brunei ?</string>
+    <string name="presidents_difficile_question_2_reponse_valid">0</string>
+    <string-array name="presidents_difficile_question_2_reponses">
+        <item>Hassanal Bolkiah</item>
+        <item>Muhammad V</item>
+        <item>Joko Widodo</item>
+        <item>Norodom Sihamoni</item>
+    </string-array>
+
+    <string name="presidents_difficile_question_3">Quel est le président actuel du Timor oriental (Timor-Leste) ?</string>
+    <string name="presidents_difficile_question_3_reponse_valid">0</string>
+    <string-array name="presidents_difficile_question_3_reponses">
+        <item>José RamosHorta</item>
+        <item>Xanana Gusmão</item>
+        <item>Taur Matan Ruak</item>
+        <item>António Guterres</item>
+    </string-array>
+
+    <string name="presidents_difficile_question_4">Qui dirige Eswatini ?</string>
+    <string name="presidents_difficile_question_4_reponse_valid">0</string>
+    <string-array name="presidents_difficile_question_4_reponses">
+        <item>Mswati III</item>
+        <item>Paul Kagame</item>
+        <item>Cyril Ramaphosa</item>
+        <item>Filipe Nyusi</item>
+    </string-array>
+
+    <string name="presidents_difficile_question_5">Quel est le président actuel du Suriname ?</string>
+    <string name="presidents_difficile_question_5_reponse_valid">0</string>
+    <string-array name="presidents_difficile_question_5_reponses">
+        <item>Chandrikapersad Santokhi</item>
+        <item>Desi Bouterse</item>
+        <item>Evo Morales</item>
+        <item>Lenín Moreno</item>
+    </string-array>
+
+    <string name="presidents_difficile_question_6">Qui est le président actuel de la Micronésie ?</string>
+    <string name="presidents_difficile_question_6_reponse_valid">0</string>
+    <string-array name="presidents_difficile_question_6_reponses">
+        <item>Wesley Simina</item>
+        <item>David Panuelo</item>
+        <item>Tommy Remengesau</item>
+        <item>Henry Puna</item>
+    </string-array>
+
+    <string name="presidents_difficile_question_7">Qui est le Premier ministre du Vanuatu (2025) ?</string>
+    <string name="presidents_difficile_question_7_reponse_valid">0</string>
+    <string-array name="presidents_difficile_question_7_reponses">
+        <item>Charlot Salwai</item>
+        <item>Bob Loughman</item>
+        <item>Ishmael Kalsakau</item>
+        <item>Moana Carcasses</item>
+    </string-array>
+
+    <string name="presidents_difficile_question_8">Qui est le président de Djibouti ?</string>
+    <string name="presidents_difficile_question_8_reponse_valid">0</string>
+    <string-array name="presidents_difficile_question_8_reponses">
+        <item>Ismaïl Omar Guelleh</item>
+        <item>Mohamed Farmaajo</item>
+        <item>Abdirahman Abdallahi</item>
+        <item>Idriss Déby</item>
+    </string-array>
+
+    <string name="presidents_difficile_question_9">Qui est l’actuel président du Cap-Vert ?</string>
+    <string name="presidents_difficile_question_9_reponse_valid">0</string>
+    <string-array name="presidents_difficile_question_9_reponses">
+        <item>José Maria Neves</item>
+        <item>Jorge Carlos Fonseca</item>
+        <item>Carlos Veiga</item>
+        <item>Pedro Pires</item>
+    </string-array>
+
+    <string name="presidents_difficile_question_10">Qui est le président du Malawi ?</string>
+    <string name="presidents_difficile_question_10_reponse_valid">0</string>
+    <string-array name="presidents_difficile_question_10_reponses">
+        <item>Lazarus Chakwera</item>
+        <item>Peter Mutharika</item>
+        <item>Hakainde Hichilema</item>
+        <item>Emmerson Mnangagwa</item>
+    </string-array>
+
+    <string name="drapeaux_facile_question_1">Quel pays a un drapeau composé de trois bandes horizontales : noir, rouge et or ?</string>
+    <string name="drapeaux_facile_question_1_reponse_valid">1</string>
+    <string-array name="drapeaux_facile_question_1_reponses">
+        <item>Belgique</item>
+        <item>Allemagne</item>
+        <item>Espagne</item>
+        <item>Italie</item>
+    </string-array>
+
+    <string name="drapeaux_facile_question_2">Quel pays a un drapeau rouge avec une feuille d’érable blanche au centre ?</string>
+    <string name="drapeaux_facile_question_2_reponse_valid">1</string>
+    <string-array name="drapeaux_facile_question_2_reponses">
+        <item>ÉtatsUnis</item>
+        <item>Canada</item>
+        <item>RoyaumeUni</item>
+        <item>Australie</item>
+    </string-array>
+
+    <string name="drapeaux_facile_question_3">Quel pays a un drapeau bleu, blanc et rouge avec des bandes verticales ?</string>
+    <string name="drapeaux_facile_question_3_reponse_valid">2</string>
+    <string-array name="drapeaux_facile_question_3_reponses">
+        <item>PaysBas</item>
+        <item>Russie</item>
+        <item>France</item>
+        <item>Croatie</item>
+    </string-array>
+
+    <string name="drapeaux_facile_question_4">Quel pays a un drapeau avec un cercle rouge au centre sur fond blanc ?</string>
+    <string name="drapeaux_facile_question_4_reponse_valid">1</string>
+    <string-array name="drapeaux_facile_question_4_reponses">
+        <item>Chine</item>
+        <item>Japon</item>
+        <item>Corée du Sud</item>
+        <item>Indonésie</item>
+    </string-array>
+
+    <string name="drapeaux_facile_question_5">Quel pays a un drapeau avec des étoiles blanches sur fond bleu et des bandes rouges et blanches ?</string>
+    <string name="drapeaux_facile_question_5_reponse_valid">2</string>
+    <string-array name="drapeaux_facile_question_5_reponses">
+        <item>Australie</item>
+        <item>Brésil</item>
+        <item>ÉtatsUnis</item>
+        <item>NouvelleZélande</item>
+    </string-array>
+
+    <string name="drapeaux_facile_question_6">Quel drapeau est vert, blanc, rouge avec un aigle au centre ?</string>
+    <string name="drapeaux_facile_question_6_reponse_valid">1</string>
+    <string-array name="drapeaux_facile_question_6_reponses">
+        <item>Italie</item>
+        <item>Mexique</item>
+        <item>Hongrie</item>
+        <item>Portugal</item>
+    </string-array>
+
+    <string name="drapeaux_facile_question_7">Quel pays a un drapeau rouge avec cinq étoiles jaunes dans le coin supérieur gauche ?</string>
+    <string name="drapeaux_facile_question_7_reponse_valid">2</string>
+    <string-array name="drapeaux_facile_question_7_reponses">
+        <item>Corée du Nord</item>
+        <item>Japon</item>
+        <item>Chine</item>
+        <item>Vietnam</item>
+    </string-array>
+
+    <string name="drapeaux_facile_question_8">Quel pays a un drapeau vert avec un croissant et une étoile blanche ?</string>
+    <string name="drapeaux_facile_question_8_reponse_valid">0</string>
+    <string-array name="drapeaux_facile_question_8_reponses">
+        <item>Pakistan</item>
+        <item>Arabie Saoudite</item>
+        <item>Turquie</item>
+        <item>Iran</item>
+    </string-array>
+
+    <string name="drapeaux_facile_question_9">Quel pays a un drapeau rouge avec un cercle bleu entouré d’un yin-yang blanc au centre ?</string>
+    <string name="drapeaux_facile_question_9_reponse_valid">3</string>
+    <string-array name="drapeaux_facile_question_9_reponses">
+        <item>Japon</item>
+        <item>Thaïlande</item>
+        <item>Corée du Nord</item>
+        <item>Corée du Sud</item>
+    </string-array>
+
+    <string name="drapeaux_facile_question_10">Quel drapeau est rouge et blanc avec une croix blanche ?</string>
+    <string name="drapeaux_facile_question_10_reponse_valid">0</string>
+    <string-array name="drapeaux_facile_question_10_reponses">
+        <item>Suisse</item>
+        <item>Danemark</item>
+        <item>Norvège</item>
+        <item>Angleterre</item>
+    </string-array>
+
+    <string name="drapeaux_moyen_question_1">Quel pays a un drapeau avec deux triangles rouges séparés par une bande bleue ?</string>
+    <string name="drapeaux_moyen_question_1_reponse_valid">0</string>
+    <string-array name="drapeaux_moyen_question_1_reponses">
+        <item>Népal</item>
+        <item>Tuvalu</item>
+        <item>Nauru</item>
+        <item>Tonga</item>
+    </string-array>
+
+    <string name="drapeaux_moyen_question_2">Quel micro-État a un drapeau rouge avec une croix blanche ?</string>
+    <string name="drapeaux_moyen_question_2_reponse_valid">3</string>
+    <string-array name="drapeaux_moyen_question_2_reponses">
+        <item>Liechtenstein</item>
+        <item>SaintMarin</item>
+        <item>Malte</item>
+        <item>Tonga</item>
+    </string-array>
+
+    <string name="drapeaux_moyen_question_3">Quel pays insulaire a un drapeau bleu clair avec neuf étoiles jaunes ?</string>
+    <string name="drapeaux_moyen_question_3_reponse_valid">0</string>
+    <string-array name="drapeaux_moyen_question_3_reponses">
+        <item>Tuvalu</item>
+        <item>Palaos</item>
+        <item>Fidji</item>
+        <item>Samoa</item>
+    </string-array>
+
+    <string name="drapeaux_moyen_question_4">Quel pays a un drapeau avec une ligne blanche ondulée séparant le vert et le bleu ?</string>
+    <string name="drapeaux_moyen_question_4_reponse_valid">3</string>
+    <string-array name="drapeaux_moyen_question_4_reponses">
+        <item>Nauru</item>
+        <item>Vanuatu</item>
+        <item>Kiribati</item>
+        <item>Lesotho</item>
+    </string-array>
+
+    <string name="drapeaux_moyen_question_5">Quel pays a un drapeau rouge et vert avec une étoile jaune ?</string>
+    <string name="drapeaux_moyen_question_5_reponse_valid">0</string>
+    <string-array name="drapeaux_moyen_question_5_reponses">
+        <item>GuinéeBissau</item>
+        <item>Mozambique</item>
+        <item>CapVert</item>
+        <item>Suriname</item>
+    </string-array>
+
+    <string name="drapeaux_moyen_question_6">Quel petit pays a un drapeau bleu avec un cercle jaune au centre ?</string>
+    <string name="drapeaux_moyen_question_6_reponse_valid">0</string>
+    <string-array name="drapeaux_moyen_question_6_reponses">
+        <item>Palaos</item>
+        <item>Nauru</item>
+        <item>SaintChristophe</item>
+        <item>Seychelles</item>
+    </string-array>
+
+    <string name="drapeaux_moyen_question_7">Quel pays a un drapeau bleu avec une croix jaune ?</string>
+    <string name="drapeaux_moyen_question_7_reponse_valid">1</string>
+    <string-array name="drapeaux_moyen_question_7_reponses">
+        <item>Suède</item>
+        <item>Aruba</item>
+        <item>SaintMarin</item>
+        <item>Micronésie</item>
+    </string-array>
+
+    <string name="drapeaux_moyen_question_8">Quel pays a un drapeau rouge avec un petit drapeau britannique dans le coin ?</string>
+    <string name="drapeaux_moyen_question_8_reponse_valid">0</string>
+    <string-array name="drapeaux_moyen_question_8_reponses">
+        <item>Fidji</item>
+        <item>Îles Marshall</item>
+        <item>Belize</item>
+        <item>Montserrat</item>
+    </string-array>
+
+    <string name="drapeaux_moyen_question_9">Quel pays a un drapeau avec une plume stylisée ?</string>
+    <string name="drapeaux_moyen_question_9_reponse_valid">2</string>
+    <string-array name="drapeaux_moyen_question_9_reponses">
+        <item>Samoa</item>
+        <item>Vanuatu</item>
+        <item>PapouasieNouvelleGuinée</item>
+        <item>Micronésie</item>
+    </string-array>
+
+    <string name="drapeaux_moyen_question_10">Quel pays a un drapeau composé de cercles interconnectés jaunes sur fond bleu ?</string>
+    <string name="drapeaux_moyen_question_10_reponse_valid">0</string>
+    <string-array name="drapeaux_moyen_question_10_reponses">
+        <item>Micronésie</item>
+        <item>Palaos</item>
+        <item>Union des Comores</item>
+        <item>Nauru</item>
+    </string-array>
+
+    <string name="drapeaux_difficile_question_1">Quel pays a un drapeau rouge et bleu avec un temple blanc (stupa) ?</string>
+    <string name="drapeaux_difficile_question_1_reponse_valid">1</string>
+    <string-array name="drapeaux_difficile_question_1_reponses">
+        <item>Laos</item>
+        <item>Cambodge</item>
+        <item>Bhoutan</item>
+        <item>Népal</item>
+    </string-array>
+
+    <string name="drapeaux_difficile_question_2">Quel pays africain a un drapeau vert avec une étoile jaune au centre ?</string>
+    <string name="drapeaux_difficile_question_2_reponse_valid">2</string>
+    <string-array name="drapeaux_difficile_question_2_reponses">
+        <item>Burkina Faso</item>
+        <item>Cameroun</item>
+        <item>Éthiopie</item>
+        <item>Togo</item>
+    </string-array>
+
+    <string name="drapeaux_difficile_question_3">Quel pays a un drapeau jaune, bleu et rouge avec un blason au centre ?</string>
+    <string name="drapeaux_difficile_question_3_reponse_valid">0</string>
+    <string-array name="drapeaux_difficile_question_3_reponses">
+        <item>Équateur</item>
+        <item>Colombie</item>
+        <item>Venezuela</item>
+        <item>Bolivie</item>
+    </string-array>
+
+    <string name="drapeaux_difficile_question_4">Quel pays a un drapeau orange et vert séparé par une bande blanche verticale ?</string>
+    <string name="drapeaux_difficile_question_4_reponse_valid">1</string>
+    <string-array name="drapeaux_difficile_question_4_reponses">
+        <item>Inde</item>
+        <item>Côte d\'Ivoire</item>
+        <item>Niger</item>
+        <item>Irlande</item>
+    </string-array>
+
+    <string name="drapeaux_difficile_question_5">Quel pays a un drapeau vert, blanc, rouge, avec un oiseau au centre ?</string>
+    <string name="drapeaux_difficile_question_5_reponse_valid">3</string>
+    <string-array name="drapeaux_difficile_question_5_reponses">
+        <item>Ouzbékistan</item>
+        <item>Malawi</item>
+        <item>Zimbabwe</item>
+        <item>Kiribati</item>
+    </string-array>
+
+    <string name="drapeaux_difficile_question_6">Quel pays a un drapeau bleu clair avec le soleil de mai ?</string>
+    <string name="drapeaux_difficile_question_6_reponse_valid">1</string>
+    <string-array name="drapeaux_difficile_question_6_reponses">
+        <item>Argentine</item>
+        <item>Uruguay</item>
+        <item>Paraguay</item>
+        <item>Chili</item>
+    </string-array>
+
+    <string name="drapeaux_difficile_question_7">Quel pays a un drapeau rouge avec une faucille et un marteau jaunes ?</string>
+    <string name="drapeaux_difficile_question_7_reponse_valid">2</string>
+    <string-array name="drapeaux_difficile_question_7_reponses">
+        <item>Chine</item>
+        <item>URSS (ancien)</item>
+        <item>Vietnam</item>
+        <item>Laos</item>
+    </string-array>
+
+    <string name="drapeaux_difficile_question_8">Quel petit pays a un drapeau bleu avec un cercle jaune au centre ?</string>
+    <string name="drapeaux_difficile_question_8_reponse_valid">0</string>
+    <string-array name="drapeaux_difficile_question_8_reponses">
+        <item>Palaos</item>
+        <item>Nauru</item>
+        <item>SaintChristophe</item>
+        <item>Seychelles</item>
+    </string-array>
+
+    <string name="drapeaux_difficile_question_9">Quel pays a un drapeau composé de cercles interconnectés jaunes sur fond bleu ?</string>
+    <string name="drapeaux_difficile_question_9_reponse_valid">0</string>
+    <string-array name="drapeaux_difficile_question_9_reponses">
+        <item>Micronésie</item>
+        <item>Palaos</item>
+        <item>Union des Comores</item>
+    </string-array>
+
+    <string name="drapeaux_difficile_question_10">Quel pays a un drapeau avec une ligne blanche ondulée séparant le vert et le bleu ?</string>
+    <string name="drapeaux_difficile_question_10_reponse_valid">3</string>
+    <string-array name="drapeaux_difficile_question_10_reponses">
+        <item>Nauru</item>
+        <item>Vanuatu</item>
+        <item>Kiribati</item>
+        <item>Lesotho</item>
+    </string-array>
+
+    <string name="devises_facile_question_1">Quel est le slogan de la France ?</string>
+    <string name="devises_facile_question_1_reponse_valid">1</string>
+    <string-array name="devises_facile_question_1_reponses">
+        <item>Unité, Travail, Progrès</item>
+        <item>Liberté, Égalité, Fraternité</item>
+        <item>Paix, Justice, Liberté</item>
+        <item>Dieu et mon droit</item>
+    </string-array>
+
+    <string name="devises_facile_question_2">Quel est le slogan des États-Unis ?</string>
+    <string name="devises_facile_question_2_reponse_valid">0</string>
+    <string-array name="devises_facile_question_2_reponses">
+        <item>In God We Trust</item>
+        <item>Liberté, Égalité, Fraternité</item>
+        <item>Dieu et mon droit</item>
+        <item>Unité dans la diversité</item>
+    </string-array>
+
+    <string name="devises_facile_question_3">Quel est le slogan du Royaume-Uni ?</string>
+    <string name="devises_facile_question_3_reponse_valid">0</string>
+    <string-array name="devises_facile_question_3_reponses">
+        <item>Dieu et mon droit</item>
+        <item>En Dieu nous croyons</item>
+        <item>Unité, Travail, Progrès</item>
+        <item>Gloire à la couronne</item>
+    </string-array>
+
+    <string name="devises_facile_question_4">Quel est le slogan de l’Inde ?</string>
+    <string name="devises_facile_question_4_reponse_valid">0</string>
+    <string-array name="devises_facile_question_4_reponses">
+        <item>Unité dans la diversité</item>
+        <item>Force dans la paix</item>
+        <item>Travail et Justice</item>
+        <item>Une seule Inde</item>
+    </string-array>
+
+    <string name="devises_facile_question_5">Quel est le slogan du Nigeria ?</string>
+    <string name="devises_facile_question_5_reponse_valid">2</string>
+    <string-array name="devises_facile_question_5_reponses">
+        <item>Paix et Prospérité</item>
+        <item>Unité, Travail, Progrès</item>
+        <item>Unité et foi, paix et progrès</item>
+        <item>Patrie ou la mort</item>
+    </string-array>
+
+    <string name="devises_facile_question_6">Quel est le slogan de l’Allemagne ?</string>
+    <string name="devises_facile_question_6_reponse_valid">1</string>
+    <string-array name="devises_facile_question_6_reponses">
+        <item>Liberté, Égalité, Fraternité</item>
+        <item>Unité et justice et liberté</item>
+        <item>Travail, Famille, Patrie</item>
+        <item>Gloire et Honneur</item>
+    </string-array>
+
+    <string name="devises_facile_question_7">Quel est le slogan de l’Italie ?</string>
+    <string name="devises_facile_question_7_reponse_valid">2</string>
+    <string-array name="devises_facile_question_7_reponses">
+        <item>Force et Honneur</item>
+        <item>Paix et Démocratie</item>
+        <item>Liberté et Travail</item>
+        <item>Unité et Courage</item>
+    </string-array>
+
+    <string name="devises_facile_question_8">Quel est le slogan du Brésil ?</string>
+    <string name="devises_facile_question_8_reponse_valid">2</string>
+    <string-array name="devises_facile_question_8_reponses">
+        <item>Paix, Justice, Travail</item>
+        <item>Liberté ou Mort</item>
+        <item>Ordre et Progrès</item>
+        <item>Foi et Famille</item>
+    </string-array>
+
+    <string name="devises_facile_question_9">Quel est le slogan de l’Afrique du Sud ?</string>
+    <string name="devises_facile_question_9_reponse_valid">0</string>
+    <string-array name="devises_facile_question_9_reponses">
+        <item>Unis dans la diversité</item>
+        <item>En Dieu nous croyons</item>
+        <item>Travail, Justice, Solidarité</item>
+        <item>Liberté ou la mort</item>
+    </string-array>
+
+    <string name="devises_facile_question_10">Quel est le slogan du Canada ?</string>
+    <string name="devises_facile_question_10_reponse_valid">1</string>
+    <string-array name="devises_facile_question_10_reponses">
+        <item>Unité et Foi</item>
+        <item>D’un océan à l’autre</item>
+        <item>Liberté, Justice, Honneur</item>
+        <item>Ordre et Paix</item>
+    </string-array>
+
+    <string name="devises_moyen_question_1">Quelle est la devise nationale du Belize ?</string>
+    <string name="devises_moyen_question_1_reponse_valid">2</string>
+    <string-array name="devises_moyen_question_1_reponses">
+        <item>Liberté ou la mort</item>
+        <item>En Dieu nous croyons</item>
+        <item>Sub Umbra Floreo (Je fleuris à l\'ombre)</item>
+        <item>Unité et Paix</item>
+    </string-array>
+
+    <string name="devises_moyen_question_2">Quel est le slogan du Bhoutan ?</string>
+    <string name="devises_moyen_question_2_reponse_valid">1</string>
+    <string-array name="devises_moyen_question_2_reponses">
+        <item>Paix, Travail, Progrès</item>
+        <item>Nation du Bonheur Brut</item>
+        <item>Foi et Unité</item>
+        <item>Liberté et Sagesse</item>
+    </string-array>
+
+    <string name="devises_moyen_question_3">Quelle est la devise des Comores ?</string>
+    <string name="devises_moyen_question_3_reponse_valid">0</string>
+    <string-array name="devises_moyen_question_3_reponses">
+        <item>Unité, Solidarité, Développement</item>
+        <item>Justice et Paix</item>
+        <item>Dieu, Famille, Patrie</item>
+        <item>Travail et Harmonie</item>
+    </string-array>
+
+    <string name="devises_moyen_question_4">Quelle est la devise du Timor oriental (Timor-Leste) ?</string>
+    <string name="devises_moyen_question_4_reponse_valid">2</string>
+    <string-array name="devises_moyen_question_4_reponses">
+        <item>Honneur et Patrie</item>
+        <item>Unité dans la diversité</item>
+        <item>Honneur, Patrie et Peuple</item>
+        <item>Paix et Liberté</item>
+    </string-array>
+
+    <string name="devises_moyen_question_5">Quel est le slogan du Vanuatu ?</string>
+    <string name="devises_moyen_question_5_reponse_valid">1</string>
+    <string-array name="devises_moyen_question_5_reponses">
+        <item>Paix et Justice</item>
+        <item>Long God Yumi Stanap (Nous nous tenons avec Dieu)</item>
+        <item>Unité et Force</item>
+        <item>Foi et Nation</item>
+    </string-array>
+
+    <string name="devises_moyen_question_6">Quelle est la devise du Cap-Vert ?</string>
+    <string name="devises_moyen_question_6_reponse_valid">0</string>
+    <string-array name="devises_moyen_question_6_reponses">
+        <item>Liberté, Démocratie, Justice</item>
+        <item>Unité, Foi, Progrès</item>
+        <item>Force et Honneur</item>
+        <item>Travail et Patrie</item>
+    </string-array>
+
+    <string name="devises_moyen_question_7">Quelle est la devise du Laos ?</string>
+    <string name="devises_moyen_question_7_reponse_valid">0</string>
+    <string-array name="devises_moyen_question_7_reponses">
+        <item>Paix, Indépendance, Démocratie</item>
+        <item>Liberté ou la mort</item>
+        <item>Progrès par la foi</item>
+        <item>Justice et Travai</item>
+    </string-array>
+
+    <string name="devises_moyen_question_8">Quelle est la devise du Suriname ?</string>
+    <string name="devises_moyen_question_8_reponse_valid">1</string>
+    <string-array name="devises_moyen_question_8_reponses">
+        <item>Unis dans la Justice</item>
+        <item>Justice, Piété, Fidélité</item>
+        <item>Force et Espoir</item>
+        <item>Prospérité et Liberté</item>
+    </string-array>
+
+    <string name="devises_moyen_question_9">Quel est le slogan du Liechtenstein ?</string>
+    <string name="devises_moyen_question_9_reponse_valid">0</string>
+    <string-array name="devises_moyen_question_9_reponses">
+        <item>Pour Dieu, le Prince et la Patrie</item>
+        <item>Force dans l’unité</item>
+        <item>Liberté et Paix</item>
+        <item>Courage et Loyauté</item>
+    </string-array>
+
+    <string name="devises_moyen_question_10">Quelle est la devise de Saint-Christophe-et-Niévès ?</string>
+    <string name="devises_moyen_question_10_reponse_valid">2</string>
+    <string-array name="devises_moyen_question_10_reponses">
+        <item>Foi, Travail, Progrès</item>
+        <item>Pays audessus de tout</item>
+        <item>Foi, Travail, Justice</item>
+        <item>Liberté, Union, Force</item>
+    </string-array>
+
+    <string name="devises_difficile_question_1">Quel est le slogan national de São Tomé-et-Príncipe ?</string>
+    <string name="devises_difficile_question_1_reponse_valid">0</string>
+    <string-array name="devises_difficile_question_1_reponses">
+        <item>Unity, Discipline, Work</item>
+        <item>Peace, Unity, Freedom</item>
+        <item>Justice, Peace, Work</item>
+        <item>God, Fatherland, Freedom</item>
+    </string-array>
+
+    <string name="devises_difficile_question_2">Quel slogan symbolise le Kiribati ?</string>
+    <string name="devises_difficile_question_2_reponse_valid">1</string>
+    <string-array name="devises_difficile_question_2_reponses">
+        <item>Health, Peace, Progress</item>
+        <item>Pride and Progress</item>
+        <item>Unity, Peace, Development</item>
+        <item>Peace and Prosperity</item>
+    </string-array>
+
+    <string name="devises_difficile_question_3">Quelle devise correspond au Lesotho ?</string>
+    <string name="devises_difficile_question_3_reponse_valid">2</string>
+    <string-array name="devises_difficile_question_3_reponses">
+        <item>Peace, Rain, Prosperity</item>
+        <item>Peace, Love, Justice</item>
+        <item>Peace, Rain, Prosperity</item>
+        <item>Freedom, Peace, Justice</item>
+    </string-array>
+
+    <string name="devises_difficile_question_4">Quel est le slogan national de Djibouti ?</string>
+    <string name="devises_difficile_question_4_reponse_valid">1</string>
+    <string-array name="devises_difficile_question_4_reponses">
+        <item>Unity, Work, Justice</item>
+        <item>Unity, Faith, Work</item>
+        <item>Justice, Unity, Progress</item>
+        <item>Strength, Unity, Progress</item>
+    </string-array>
+
+    <string name="devises_difficile_question_5">Lequel est le slogan des Seychelles ?</string>
+    <string name="devises_difficile_question_5_reponse_valid">0</string>
+    <string-array name="devises_difficile_question_5_reponses">
+        <item>Endurance, Unity, Justice</item>
+        <item>Unity, Freedom, Justice</item>
+        <item>Endurance, Work, Justice</item>
+        <item>Peace, Unity, Justice</item>
+    </string-array>
+
+    <string name="devises_difficile_question_6">Quel slogan appartient au Tchad ?</string>
+    <string name="devises_difficile_question_6_reponse_valid">1</string>
+    <string-array name="devises_difficile_question_6_reponses">
+        <item>Unity, Work, Progress</item>
+        <item>Unity, Discipline, Work</item>
+        <item>Peace, Justice, Work</item>
+        <item>Liberty, Peace, Progress</item>
+    </string-array>
+
+    <string name="devises_difficile_question_7">Quelle est la devise de Guinée-Bissau ?</string>
+    <string name="devises_difficile_question_7_reponse_valid">0</string>
+    <string-array name="devises_difficile_question_7_reponses">
+        <item>Unity, Struggle, Progress</item>
+        <item>Unity, Justice, Freedom</item>
+        <item>Unity, Work, Justice</item>
+        <item>Unity, Strength, Progress</item>
+    </string-array>
+
+    <string name="devises_difficile_question_8">Quel slogan représente l\'Érythrée ?</string>
+    <string name="devises_difficile_question_8_reponse_valid">0</string>
+    <string-array name="devises_difficile_question_8_reponses">
+        <item>Freedom, Justice, Equality</item>
+        <item>Unity, Freedom, Justice</item>
+        <item>Liberty, Work, Peace</item>
+        <item>Unity, Struggle, Peace</item>
+    </string-array>
+
+    <string name="devises_difficile_question_9">Quelle devise correspond à Palau ?</string>
+    <string name="devises_difficile_question_9_reponse_valid">0</string>
+    <string-array name="devises_difficile_question_9_reponses">
+        <item>Building our Nation through Love and Pride</item>
+        <item>Unity and Strength</item>
+        <item>Peace and Prosperity</item>
+        <item>Together for Progress</item>
+    </string-array>
+
+    <string name="devises_difficile_question_10">Quel est le slogan national de Nauru ?</string>
+    <string name="devises_difficile_question_10_reponse_valid">2</string>
+    <string-array name="devises_difficile_question_10_reponses">
+        <item>Faith, Unity, Progress</item>
+        <item>Peace, Justice, Prosperity</item>
+        <item>God’s Will</item>
+        <item>Unity and Progress</item>
+    </string-array>
+
+    <string name="urbain_facile_question_1">Qui chante “Calm Down” ?</string>
+    <string name="urbain_facile_question_1_reponse_valid">0</string>
+    <string-array name="urbain_facile_question_1_reponses">
+        <item>Rema</item>
+        <item>Wizkid</item>
+        <item>Burna Boy</item>
+        <item>Davido</item>
+    </string-array>
+
+    <string name="urbain_facile_question_2">Davido vient de quel pays ?</string>
+    <string name="urbain_facile_question_2_reponse_valid">0</string>
+    <string-array name="urbain_facile_question_2_reponses">
+        <item>Nigeria</item>
+        <item>Ghana</item>
+        <item>Cameroun</item>
+        <item>Afrique du Sud</item>
+    </string-array>
+
+    <string name="urbain_facile_question_3">Qui chante “Essence” ?</string>
+    <string name="urbain_facile_question_3_reponse_valid">0</string>
+    <string-array name="urbain_facile_question_3_reponses">
+        <item>Wizkid</item>
+        <item>Rema</item>
+        <item>Tiwa Savage</item>
+        <item>Burna Boy</item>
+    </string-array>
+
+    <string name="urbain_facile_question_4">Quel chanteur est surnommé “African Giant” ?</string>
+    <string name="urbain_facile_question_4_reponse_valid">0</string>
+    <string-array name="urbain_facile_question_4_reponses">
+        <item>Burna Boy</item>
+        <item>Davido</item>
+        <item>Rema</item>
+        <item>Fally Ipupa</item>
+    </string-array>
+
+    <string name="urbain_facile_question_5">Aya Nakamura est de nationalité…</string>
+    <string name="urbain_facile_question_5_reponse_valid">0</string>
+    <string-array name="urbain_facile_question_5_reponses">
+        <item>Française</item>
+        <item>Ivoirienne</item>
+        <item>Camerounaise</item>
+        <item>Sénégalaise</item>
+    </string-array>
+
+    <string name="urbain_facile_question_6">Quel artiste chante “Last Last” ?</string>
+    <string name="urbain_facile_question_6_reponse_valid">0</string>
+    <string-array name="urbain_facile_question_6_reponses">
+        <item>Burna Boy</item>
+        <item>Wizkid</item>
+        <item>Davido</item>
+        <item>Omah Lay</item>
+    </string-array>
+
+    <string name="urbain_facile_question_7">Quel est le vrai nom de Wizkid ?</string>
+    <string name="urbain_facile_question_7_reponse_valid">0</string>
+    <string-array name="urbain_facile_question_7_reponses">
+        <item>Ayodeji Balogun</item>
+        <item>Oluwatobi Savage</item>
+        <item>David Adeleke</item>
+        <item>Damini Ogulu</item>
+    </string-array>
+
+    <string name="urbain_facile_question_8">Quel artiste a chanté “Unavailable” ?</string>
+    <string name="urbain_facile_question_8_reponse_valid">0</string>
+    <string-array name="urbain_facile_question_8_reponses">
+        <item>Davido</item>
+        <item>Rema</item>
+        <item>Asake</item>
+        <item>Kizz Daniel</item>
+    </string-array>
+
+    <string name="urbain_facile_question_9">Quel chanteur nigérian a collaboré avec Selena Gomez ?</string>
+    <string name="urbain_facile_question_9_reponse_valid">0</string>
+    <string-array name="urbain_facile_question_9_reponses">
+        <item>Rema</item>
+        <item>Davido</item>
+        <item>Burna Boy</item>
+        <item>Fireboy DML</item>
+    </string-array>
+
+    <string name="urbain_facile_question_10">Tiwa Savage est connue pour quel genre musical ?</string>
+    <string name="urbain_facile_question_10_reponse_valid">0</string>
+    <string-array name="urbain_facile_question_10_reponses">
+        <item>Afrobeat</item>
+        <item>Jazz</item>
+        <item>Rock</item>
+        <item>Zouk</item>
+    </string-array>
+
+    <string name="urbain_moyen_question_1">Quel artiste congolais a sorti “Bloqué” ?</string>
+    <string name="urbain_moyen_question_1_reponse_valid">0</string>
+    <string-array name="urbain_moyen_question_1_reponses">
+        <item>Fally Ipupa</item>
+        <item>Dadju</item>
+        <item>Ferre Gola</item>
+        <item>Innoss’B</item>
+    </string-array>
+
+    <string name="urbain_moyen_question_2">Dadju est l’ancien membre de quel groupe ?</string>
+    <string name="urbain_moyen_question_2_reponse_valid">0</string>
+    <string-array name="urbain_moyen_question_2_reponses">
+        <item>Shin Sekai</item>
+        <item>Magic System</item>
+        <item>Sexion d’Assaut</item>
+        <item>4Keus</item>
+    </string-array>
+
+    <string name="urbain_moyen_question_3">Qui chante “Cough (Odo)” ?</string>
+    <string name="urbain_moyen_question_3_reponse_valid">0</string>
+    <string-array name="urbain_moyen_question_3_reponses">
+        <item>Kizz Daniel</item>
+        <item>Burna Boy</item>
+        <item>Davido</item>
+        <item>Asake</item>
+    </string-array>
+
+    <string name="urbain_moyen_question_4">Quel artiste camerounais a chanté “Love Nwatiti (Remix)” ?</string>
+    <string name="urbain_moyen_question_4_reponse_valid">0</string>
+    <string-array name="urbain_moyen_question_4_reponses">
+        <item>Aucun</item>
+        <item>Tenor</item>
+        <item>Locko</item>
+        <item>Stanley Enow</item>
+    </string-array>
+
+    <string name="urbain_moyen_question_5">Gims a commencé sa carrière dans…</string>
+    <string name="urbain_moyen_question_5_reponse_valid">0</string>
+    <string-array name="urbain_moyen_question_5_reponses">
+        <item>Sexion d’Assaut</item>
+        <item>Shin Sekai</item>
+        <item>Magic System</item>
+        <item>Naza Crew</item>
+    </string-array>
+
+    <string name="urbain_moyen_question_6">Quel chanteur a sorti “Joha” ?</string>
+    <string name="urbain_moyen_question_6_reponse_valid">0</string>
+    <string-array name="urbain_moyen_question_6_reponses">
+        <item>Asake</item>
+        <item>Davido</item>
+        <item>Wizkid</item>
+        <item>Fireboy DML</item>
+    </string-array>
+
+    <string name="urbain_moyen_question_7">Quel artiste est surnommé “King of Zanku” ?</string>
+    <string name="urbain_moyen_question_7_reponse_valid">0</string>
+    <string-array name="urbain_moyen_question_7_reponses">
+        <item>Zlatan</item>
+        <item>Rema</item>
+        <item>Asake</item>
+        <item>Burna Boy</item>
+    </string-array>
+
+    <string name="urbain_moyen_question_8">Ninho est originaire de quel pays ?</string>
+    <string name="urbain_moyen_question_8_reponse_valid">0</string>
+    <string-array name="urbain_moyen_question_8_reponses">
+        <item>France</item>
+        <item>Côte d’Ivoire</item>
+        <item>Congo</item>
+        <item>Maroc</item>
+    </string-array>
+
+    <string name="urbain_moyen_question_9">Qui a chanté “Mon cœur” avec Gazo ?</string>
+    <string name="urbain_moyen_question_9_reponse_valid">0</string>
+    <string-array name="urbain_moyen_question_9_reponses">
+        <item>Tiakola</item>
+        <item>Ninho</item>
+        <item>Dadju</item>
+        <item>Gims</item>
+    </string-array>
+
+    <string name="urbain_moyen_question_10">Quel est le style de musique principal de Naza ?</string>
+    <string name="urbain_moyen_question_10_reponse_valid">1</string>
+    <string-array name="urbain_moyen_question_10_reponses">
+        <item>Afro-urbain</item>
+        <item>Rap hardcore</item>
+        <item>Zouk</item>
+        <item>Rock</item>
+    </string-array>
+
+    <string name="urbain_difficile_question_1">Le titre “Kilometre” est de…</string>
+    <string name="urbain_difficile_question_1_reponse_valid">0</string>
+    <string-array name="urbain_difficile_question_1_reponses">
+        <item>Burna Boy</item>
+        <item>Olamide</item>
+        <item>Asake</item>
+        <item>Davido</item>
+    </string-array>
+
+    <string name="urbain_difficile_question_2">Qui a chanté “Rush” ?</string>
+    <string name="urbain_difficile_question_2_reponse_valid">0</string>
+    <string-array name="urbain_difficile_question_2_reponses">
+        <item>Ayra Starr</item>
+        <item>Tiwa Savage</item>
+        <item>Tems</item>
+        <item>Rema</item>
+    </string-array>
+
+    <string name="urbain_difficile_question_3">Quel artiste a popularisé le genre “Amapiano” ?</string>
+    <string name="urbain_difficile_question_3_reponse_valid">0</string>
+    <string-array name="urbain_difficile_question_3_reponses">
+        <item>Kabza De Small</item>
+        <item>Burna Boy</item>
+        <item>Davido</item>
+        <item>Wizkid</item>
+    </string-array>
+
+    <string name="urbain_difficile_question_4">Le titre “Terminus” est interprété par…</string>
+    <string name="urbain_difficile_question_4_reponse_valid">0</string>
+    <string-array name="urbain_difficile_question_4_reponses">
+        <item>Tenor</item>
+        <item>Locko</item>
+        <item>Magasco</item>
+        <item>Mink’s</item>
+    </string-array>
+
+    <string name="urbain_difficile_question_5">Qui a chanté “Soso” ?</string>
+    <string name="urbain_difficile_question_5_reponse_valid">0</string>
+    <string-array name="urbain_difficile_question_5_reponses">
+        <item>Omah Lay</item>
+        <item>Fireboy DML</item>
+        <item>Kizz Daniel</item>
+        <item>Rema</item>
+    </string-array>
+
+    <string name="urbain_difficile_question_6">Quel rappeur français a sorti “Destin” ?</string>
+    <string name="urbain_difficile_question_6_reponse_valid">0</string>
+    <string-array name="urbain_difficile_question_6_reponses">
+        <item>Ninho</item>
+        <item>Gims</item>
+        <item>Booba</item>
+        <item>Damso</item>
+    </string-array>
+
+    <string name="urbain_difficile_question_7">Qui chante “Free Mind” ?</string>
+    <string name="urbain_difficile_question_7_reponse_valid">0</string>
+    <string-array name="urbain_difficile_question_7_reponses">
+        <item>Tems</item>
+        <item>Ayra Starr</item>
+        <item>Tiwa Savage</item>
+        <item>Libianca</item>
+    </string-array>
+
+    <string name="urbain_difficile_question_8">Libianca est originaire de quel pays ?</string>
+    <string name="urbain_difficile_question_8_reponse_valid">0</string>
+    <string-array name="urbain_difficile_question_8_reponses">
+        <item>Cameroun</item>
+        <item>Ghana</item>
+        <item>Nigeria</item>
+        <item>Congo</item>
+    </string-array>
+
+    <string name="urbain_difficile_question_9">Le titre “God Did” est de…</string>
+    <string name="urbain_difficile_question_9_reponse_valid">0</string>
+    <string-array name="urbain_difficile_question_9_reponses">
+        <item>DJ Khaled</item>
+        <item>Drake</item>
+        <item>Rick Ross</item>
+        <item>Lil Wayne</item>
+    </string-array>
+
+    <string name="urbain_difficile_question_10">Qui a chanté “Namandjé” ?</string>
+    <string name="urbain_difficile_question_10_reponse_valid">1</string>
+    <string-array name="urbain_difficile_question_10_reponses">
+        <item>Locko</item>
+        <item>Blanche Bailly</item>
+        <item>Tenor</item>
+        <item>Magasco</item>
+    </string-array>
+
+
+    <string name="gospel_facile_question_1">Qui chante le titre “Way Maker” ?</string>
+    <string name="gospel_facile_question_1_reponse_valid">0</string>
+    <string-array name="gospel_facile_question_1_reponses">
+        <item>Sinach</item>
+        <item>CeCe Winans</item>
+        <item>Ada Ehi</item>
+        <item>Don Moen</item>
+    </string-array>
+
+    <string name="gospel_facile_question_2">Le gospel vient principalement de quel pays ?</string>
+    <string name="gospel_facile_question_2_reponse_valid">0</string>
+    <string-array name="gospel_facile_question_2_reponses">
+        <item>États-Unis</item>
+        <item>Afrique du Sud</item>
+        <item>Brésil</item>
+        <item>France</item>
+    </string-array>
+
+    <string name="gospel_facile_question_3">Quelle est la langue la plus utilisée dans le gospel traditionnel ?</string>
+    <string name="gospel_facile_question_3_reponse_valid">0</string>
+    <string-array name="gospel_facile_question_3_reponses">
+        <item>Anglais</item>
+        <item>Espagnol</item>
+        <item>Portugais</item>
+        <item>Allemand</item>
+    </string-array>
+
+    <string name="gospel_facile_question_4">Don Moen est connu pour quel type de musique ?</string>
+    <string name="gospel_facile_question_4_reponse_valid">0</string>
+    <string-array name="gospel_facile_question_4_reponses">
+        <item>Gospel</item>
+        <item>Jazz</item>
+        <item>Pop</item>
+        <item>Rap</item>
+    </string-array>
+
+    <string name="gospel_facile_question_5">Qui a chanté “You Deserve It” ?</string>
+    <string name="gospel_facile_question_5_reponse_valid">0</string>
+    <string-array name="gospel_facile_question_5_reponses">
+        <item>J.J. Hairston</item>
+        <item>Kirk Franklin</item>
+        <item>Travis Greene</item>
+        <item>Tasha Cobbs</item>
+    </string-array>
+
+    <string name="gospel_facile_question_6">Quel instrument accompagne souvent les chœurs gospel ?</string>
+    <string name="gospel_facile_question_6_reponse_valid">0</string>
+    <string-array name="gospel_facile_question_6_reponses">
+        <item>Piano</item>
+        <item>Flûte</item>
+        <item>Violon</item>
+        <item>Saxophone</item>
+    </string-array>
+
+    <string name="gospel_facile_question_7">Quelle chanteuse a interprété “Break Every Chain” ?</string>
+    <string name="gospel_facile_question_7_reponse_valid">0</string>
+    <string-array name="gospel_facile_question_7_reponses">
+        <item>Tasha Cobbs</item>
+        <item>Sinach</item>
+        <item>Whitney Houston</item>
+        <item>Beyoncé</item>
+    </string-array>
+
+    <string name="gospel_facile_question_8">Kirk Franklin est surtout connu comme…</string>
+    <string name="gospel_facile_question_8_reponse_valid">0</string>
+    <string-array name="gospel_facile_question_8_reponses">
+        <item>Chef de chœur</item>
+        <item>Guitariste</item>
+        <item>Batteur</item>
+        <item>DJ</item>
+    </string-array>
+
+    <string name="gospel_facile_question_9">Le mot “Gospel” signifie…</string>
+    <string name="gospel_facile_question_9_reponse_valid">0</string>
+    <string-array name="gospel_facile_question_9_reponses">
+        <item>Bonne nouvelle</item>
+        <item>Louange</item>
+        <item>Chant sacré</item>
+        <item>Prière</item>
+    </string-array>
+
+    <string name="gospel_facile_question_10">Qui a popularisé “Take Me to the King” ?</string>
+    <string name="gospel_facile_question_10_reponse_valid">1</string>
+    <string-array name="gospel_facile_question_10_reponses">
+        <item>Tamela Mann</item>
+        <item>Mary Mary</item>
+        <item>CeCe Winans</item>
+        <item>Yolanda Adams</item>
+    </string-array>
+
+    <string name="gospel_moyen_question_1">Quel duo est célèbre pour le titre “Shackles (Praise You)” ?</string>
+    <string name="gospel_moyen_question_1_reponse_valid">0</string>
+    <string-array name="gospel_moyen_question_1_reponses">
+        <item>Mary Mary</item>
+        <item>The Clark Sisters</item>
+        <item>Hillsong</item>
+        <item>Bethel Music</item>
+    </string-array>
+
+    <string name="gospel_moyen_question_2">Le gospel moderne incorpore souvent quel style ?</string>
+    <string name="gospel_moyen_question_2_reponse_valid">0</string>
+    <string-array name="gospel_moyen_question_2_reponses">
+        <item>R&amp;B</item>
+        <item>Techno</item>
+        <item>Reggae</item>
+        <item>Rock métal</item>
+    </string-array>
+
+    <string name="gospel_moyen_question_3">Le titre “Intentional” est chanté par…</string>
+    <string name="gospel_moyen_question_3_reponse_valid">0</string>
+    <string-array name="gospel_moyen_question_3_reponses">
+        <item>Travis Greene</item>
+        <item>Kirk Franklin</item>
+        <item>Sinach</item>
+        <item>Fred Hammond</item>
+    </string-array>
+
+    <string name="gospel_moyen_question_4">Quel est le vrai nom de Kirk Franklin ?</string>
+    <string name="gospel_moyen_question_4_reponse_valid">0</string>
+    <string-array name="gospel_moyen_question_4_reponses">
+        <item>Kirk Dewayne Franklin</item>
+        <item>Kirk Daniel Jones</item>
+        <item>Franklin Moses</item>
+        <item>Dewayne Smith</item>
+    </string-array>
+
+    <string name="gospel_moyen_question_5">Quelle église a popularisé le gospel dans les années 1930 ?</string>
+    <string name="gospel_moyen_question_5_reponse_valid">0</string>
+    <string-array name="gospel_moyen_question_5_reponses">
+        <item>Église baptiste</item>
+        <item>Église catholique</item>
+        <item>Église orthodoxe</item>
+        <item>Église adventiste</item>
+    </string-array>
+
+    <string name="gospel_moyen_question_6">Qui a chanté “I Smile” ?</string>
+    <string name="gospel_moyen_question_6_reponse_valid">0</string>
+    <string-array name="gospel_moyen_question_6_reponses">
+        <item>Kirk Franklin</item>
+        <item>Donnie McClurkin</item>
+        <item>Tasha Cobbs</item>
+        <item>Sinach</item>
+    </string-array>
+
+    <string name="gospel_moyen_question_7">Quelle artiste africaine a chanté “Overflow” ?</string>
+    <string name="gospel_moyen_question_7_reponse_valid">0</string>
+    <string-array name="gospel_moyen_question_7_reponses">
+        <item>Sinach</item>
+        <item>Ada Ehi</item>
+        <item>Mercy Chinwo</item>
+        <item>Deborah Lukalu</item>
+    </string-array>
+
+    <string name="gospel_moyen_question_8">Donnie McClurkin est connu pour quelle chanson ?</string>
+    <string name="gospel_moyen_question_8_reponse_valid">0</string>
+    <string-array name="gospel_moyen_question_8_reponses">
+        <item>“Stand”</item>
+        <item>“Intentional”</item>
+        <item>“Miracle Worker”</item>
+        <item>“Victory”</item>
+    </string-array>
+
+    <string name="gospel_moyen_question_9">Quelle artiste a remporté plusieurs Grammy Awards pour du gospel ?</string>
+    <string name="gospel_moyen_question_9_reponse_valid">0</string>
+    <string-array name="gospel_moyen_question_9_reponses">
+        <item>CeCe Winans</item>
+        <item>Aretha Franklin</item>
+        <item>Alicia Keys</item>
+        <item>Yolanda Adams</item>
+    </string-array>
+
+    <string name="gospel_moyen_question_10">Quel style de gospel est né en Afrique ?</string>
+    <string name="gospel_moyen_question_10_reponse_valid">0</string>
+    <string-array name="gospel_moyen_question_10_reponses">
+        <item>Afro-gospel</item>
+        <item>Pop-gospel</item>
+        <item>Neo-gospel</item>
+        <item>Urban gospel</item>
+    </string-array>
+
+    <string name="gospel_difficile_question_1">Quelle année marque la sortie de “Revolution” de Kirk Franklin ?</string>
+    <string name="gospel_difficile_question_1_reponse_valid">0</string>
+    <string-array name="gospel_difficile_question_1_reponses">
+        <item>1998</item>
+        <item>2001</item>
+        <item>1995</item>
+        <item>2004</item>
+    </string-array>
+
+    <string name="gospel_difficile_question_2">Quelle chorale a popularisé le “Oh Happy Day” original ?</string>
+    <string name="gospel_difficile_question_2_reponse_valid">0</string>
+    <string-array name="gospel_difficile_question_2_reponses">
+        <item>Edwin Hawkins Singers</item>
+        <item>Brooklyn Tabernacle Choir</item>
+        <item>Harlem Gospel Choir</item>
+        <item>Chicago Mass Choir</item>
+    </string-array>
+
+    <string name="gospel_difficile_question_3">Quelle chanteuse gospel a été l’une des marraines de Whitney Houston ?</string>
+    <string name="gospel_difficile_question_3_reponse_valid">0</string>
+    <string-array name="gospel_difficile_question_3_reponses">
+        <item>Aretha Franklin</item>
+        <item>CeCe Winans</item>
+        <item>Yolanda Adams</item>
+        <item>Kim Burrell</item>
+    </string-array>
+
+    <string name="gospel_difficile_question_4">Le gospel s’inspire fortement de quel autre style musical ?</string>
+    <string name="gospel_difficile_question_4_reponse_valid">0</string>
+    <string-array name="gospel_difficile_question_4_reponses">
+        <item>Blues</item>
+        <item>Rock</item>
+        <item>Jazz fusion</item>
+        <item>Rumba</item>
+    </string-array>
+
+    <string name="gospel_difficile_question_5">Quelle chanteuse congolaise est connue pour “Tendresse” ?</string>
+    <string name="gospel_difficile_question_5_reponse_valid">0</string>
+    <string-array name="gospel_difficile_question_5_reponses">
+        <item>Deborah Lukalu</item>
+        <item>Dena Mwana</item>
+        <item>Ada Ehi</item>
+        <item>Sinach</item>
+    </string-array>
+
+    <string name="gospel_difficile_question_6">Quel pays africain a le plus influencé le gospel francophone ?</string>
+    <string name="gospel_difficile_question_6_reponse_valid">0</string>
+    <string-array name="gospel_difficile_question_6_reponses">
+        <item>Congo</item>
+        <item>Cameroun</item>
+        <item>Côte d’Ivoire</item>
+        <item>Sénégal</item>
+    </string-array>
+
+    <string name="gospel_difficile_question_7">Quelle artiste a sorti “Victory Belongs to Jesus” ?</string>
+    <string name="gospel_difficile_question_7_reponse_valid">0</string>
+    <string-array name="gospel_difficile_question_7_reponses">
+        <item>Todd Dulaney</item>
+        <item>Travis Greene</item>
+        <item>Kirk Franklin</item>
+        <item>Tasha Cobbs</item>
+    </string-array>
+
+    <string name="gospel_difficile_question_8">Le terme “Negro Spirituals” désigne…</string>
+    <string name="gospel_difficile_question_8_reponse_valid">0</string>
+    <string-array name="gospel_difficile_question_8_reponses">
+        <item>Les chants religieux des esclaves noirs</item>
+        <item>Les psaumes bibliques</item>
+        <item>Les cantiques modernes</item>
+        <item>Les chants grégoriens</item>
+    </string-array>
+
+    <string name="gospel_difficile_question_9">Quelle artiste a chanté “Excess Love” ?</string>
+    <string name="gospel_difficile_question_9_reponse_valid">0</string>
+    <string-array name="gospel_difficile_question_9_reponses">
+        <item>Mercy Chinwo</item>
+        <item>Ada Ehi</item>
+        <item>Sinach</item>
+        <item>Tasha Cobbs</item>
+    </string-array>
+
+    <string name="gospel_difficile_question_10">Le festival “Gospel Explosion” se déroule souvent où ?</string>
+    <string name="gospel_difficile_question_10_reponse_valid">0</string>
+    <string-array name="gospel_difficile_question_10_reponses">
+        <item>Lagos</item>
+        <item>New York</item>
+        <item>Accra</item>
+        <item>Paris</item>
+    </string-array>
+
+    <string name="christianisme_facile_question_1">Qui est la mère de Jésus ?</string>
+    <string name="christianisme_facile_question_1_reponse_valid">1</string>
+    <string-array name="christianisme_facile_question_1_reponses">
+        <item>Marthe</item>
+        <item>Marie</item>
+        <item>Élisabeth</item>
+        <item>Sarah</item>
+    </string-array>
+
+    <string name="christianisme_facile_question_2">Quel est le livre sacré du christianisme ?</string>
+    <string name="christianisme_facile_question_2_reponse_valid">0</string>
+    <string-array name="christianisme_facile_question_2_reponses">
+        <item>La Bible</item>
+        <item>Le Coran</item>
+        <item>La Torah</item>
+        <item>Le Talmud</item>
+    </string-array>
+
+    <string name="christianisme_facile_question_3">Quel jour célèbre-t-on la naissance de Jésus ?</string>
+    <string name="christianisme_facile_question_3_reponse_valid">0</string>
+    <string-array name="christianisme_facile_question_3_reponses">
+        <item>25 décembre</item>
+        <item>1er janvier</item>
+        <item>15 août</item>
+        <item>14 février</item>
+    </string-array>
+
+    <string name="christianisme_facile_question_4">Qui a baptisé Jésus ?</string>
+    <string name="christianisme_facile_question_4_reponse_valid">1</string>
+    <string-array name="christianisme_facile_question_4_reponses">
+        <item>Pierre</item>
+        <item>JeanBaptiste</item>
+        <item>Paul</item>
+        <item>Moïse</item>
+    </string-array>
+
+    <string name="christianisme_facile_question_5">Quel est le premier livre de la Bible ?</string>
+    <string name="christianisme_facile_question_5_reponse_valid">0</string>
+    <string-array name="christianisme_facile_question_5_reponses">
+        <item>Genèse</item>
+        <item>Exode</item>
+        <item>Lévitique</item>
+        <item>Apocalypse</item>
+    </string-array>
+
+    <string name="christianisme_facile_question_6">Quel symbole représente le christianisme ?</string>
+    <string name="christianisme_facile_question_6_reponse_valid">1</string>
+    <string-array name="christianisme_facile_question_6_reponses">
+        <item>L’étoile</item>
+        <item>La croix</item>
+        <item>Le croissant</item>
+        <item>Le feu</item>
+    </string-array>
+
+    <string name="christianisme_facile_question_7">Combien y a-t-il d’évangiles dans le Nouveau Testament ?</string>
+    <string name="christianisme_facile_question_7_reponse_valid">2</string>
+    <string-array name="christianisme_facile_question_7_reponses">
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+
+    <string name="christianisme_facile_question_8">Quel jour les chrétiens vont-ils à l’église ?</string>
+    <string name="christianisme_facile_question_8_reponse_valid">1</string>
+    <string-array name="christianisme_facile_question_8_reponses">
+        <item>Vendredi</item>
+        <item>Dimanche</item>
+        <item>Samedi</item>
+        <item>Lundi</item>
+    </string-array>
+
+    <string name="christianisme_facile_question_9">Qui trahit Jésus pour 30 pièces d’argent ?</string>
+    <string name="christianisme_facile_question_9_reponse_valid">2</string>
+    <string-array name="christianisme_facile_question_9_reponses">
+        <item>Pierre</item>
+        <item>Jean</item>
+        <item>Judas Iscariote</item>
+        <item>Thomas</item>
+    </string-array>
+
+    <string name="christianisme_facile_question_10">Comment s’appellent les premiers livres de la Bible (5 premiers) ?</string>
+    <string name="christianisme_facile_question_10_reponse_valid">0</string>
+    <string-array name="christianisme_facile_question_10_reponses">
+        <item>Pentateuque</item>
+        <item>Évangiles</item>
+        <item>Proverbes</item>
+        <item>Psaumes</item>
+    </string-array>
+
+    <string name="christianisme_moyen_question_1">Quel apôtre a renié Jésus trois fois ?</string>
+    <string name="christianisme_moyen_question_1_reponse_valid">2</string>
+    <string-array name="christianisme_moyen_question_1_reponses">
+        <item>Jean</item>
+        <item>Paul</item>
+        <item>Pierre</item>
+        <item>Thomas</item>
+    </string-array>
+
+    <string name="christianisme_moyen_question_2">Que célèbre-t-on à Pâques ?</string>
+    <string name="christianisme_moyen_question_2_reponse_valid">1</string>
+    <string-array name="christianisme_moyen_question_2_reponses">
+        <item>La naissance de Jésus</item>
+        <item>La résurrection de Jésus</item>
+        <item>Le baptême de Jésus</item>
+        <item>La crucifixion de Pierre</item>
+    </string-array>
+
+    <string name="christianisme_moyen_question_3">Combien de jours Jésus a-t-il passé dans le désert ?</string>
+    <string name="christianisme_moyen_question_3_reponse_valid">2</string>
+    <string-array name="christianisme_moyen_question_3_reponses">
+        <item>20</item>
+        <item>30</item>
+        <item>40</item>
+        <item>50</item>
+    </string-array>
+
+    <string name="christianisme_moyen_question_4">Quel apôtre a persécuté les chrétiens avant de se convertir ?</string>
+    <string name="christianisme_moyen_question_4_reponse_valid">1</string>
+    <string-array name="christianisme_moyen_question_4_reponses">
+        <item>Jean</item>
+        <item>Paul (anciennement Saul)</item>
+        <item>Jacques</item>
+        <item>André</item>
+    </string-array>
+
+    <string name="christianisme_moyen_question_5">Dans quelle ville Jésus est-il né ?</string>
+    <string name="christianisme_moyen_question_5_reponse_valid">1</string>
+    <string-array name="christianisme_moyen_question_5_reponses">
+        <item>Nazareth</item>
+        <item>Bethléem</item>
+        <item>Jérusalem</item>
+        <item>Cana</item>
+    </string-array>
+
+    <string name="christianisme_moyen_question_6">Quelle prière Jésus a-t-il enseignée à ses disciples ?</string>
+    <string name="christianisme_moyen_question_6_reponse_valid">1</string>
+    <string-array name="christianisme_moyen_question_6_reponses">
+        <item>Je vous salue Marie</item>
+        <item>Notre Père</item>
+        <item>Gloire au Père</item>
+        <item>Symbole des Apôtres</item>
+    </string-array>
+
+    <string name="christianisme_moyen_question_7">Quel est le dernier livre du Nouveau Testament ?</string>
+    <string name="christianisme_moyen_question_7_reponse_valid">2</string>
+    <string-array name="christianisme_moyen_question_7_reponses">
+        <item>Jean</item>
+        <item>Actes des Apôtres</item>
+        <item>Apocalypse</item>
+        <item>Romains</item>
+    </string-array>
+
+    <string name="christianisme_moyen_question_8">Combien de commandements Dieu a-t-il donnés à Moïse ?</string>
+    <string name="christianisme_moyen_question_8_reponse_valid">1</string>
+    <string-array name="christianisme_moyen_question_8_reponses">
+        <item>7</item>
+        <item>10</item>
+        <item>12</item>
+        <item>40</item>
+    </string-array>
+
+    <string name="christianisme_moyen_question_9">Quelle fête célèbre la venue du Saint-Esprit ?</string>
+    <string name="christianisme_moyen_question_9_reponse_valid">2</string>
+    <string-array name="christianisme_moyen_question_9_reponses">
+        <item>Noël</item>
+        <item>Carême</item>
+        <item>Pentecôte</item>
+        <item>Assomption</item>
+    </string-array>
+
+    <string name="christianisme_moyen_question_10">Qui est considéré comme le premier pape de l’Église catholique ?</string>
+    <string name="christianisme_moyen_question_10_reponse_valid">1</string>
+    <string-array name="christianisme_moyen_question_10_reponses">
+        <item>Paul</item>
+        <item>Pierre</item>
+        <item>Jean</item>
+        <item>Jacques</item>
+    </string-array>
+
+    <string name="christianisme_difficile_question_1">Quel concile a défini la Trinité chrétienne ?</string>
+    <string name="christianisme_difficile_question_1_reponse_valid">1</string>
+    <string-array name="christianisme_difficile_question_1_reponses">
+        <item>Concile de Jérusalem</item>
+        <item>Concile de Nicée</item>
+        <item>Concile de Trente</item>
+        <item>Concile de Rome</item>
+    </string-array>
+
+    <string name="christianisme_difficile_question_2">Quelle langue parlait principalement Jésus ?</string>
+    <string name="christianisme_difficile_question_2_reponse_valid">1</string>
+    <string-array name="christianisme_difficile_question_2_reponses">
+        <item>Grec</item>
+        <item>Araméen</item>
+        <item>Hébreu</item>
+        <item>Latin</item>
+    </string-array>
+
+    <string name="christianisme_difficile_question_3">Qui a écrit l\'Apocalypse ?</string>
+    <string name="christianisme_difficile_question_3_reponse_valid">1</string>
+    <string-array name="christianisme_difficile_question_3_reponses">
+        <item>Paul</item>
+        <item>Jean</item>
+        <item>Pierre</item>
+        <item>Luc</item>
+    </string-array>
+
+    <string name="christianisme_difficile_question_4">Quel roi a voulu tuer Jésus à sa naissance ?</string>
+    <string name="christianisme_difficile_question_4_reponse_valid">2</string>
+    <string-array name="christianisme_difficile_question_4_reponses">
+        <item>Salomon</item>
+        <item>David</item>
+        <item>Hérode</item>
+        <item>Pilate</item>
+    </string-array>
+
+    <string name="christianisme_difficile_question_5">Quel apôtre fut surnommé "le jumeau" ?</string>
+    <string name="christianisme_difficile_question_5_reponse_valid">2</string>
+    <string-array name="christianisme_difficile_question_5_reponses">
+        <item>Paul</item>
+        <item>Jacques</item>
+        <item>Thomas</item>
+        <item>André</item>
+    </string-array>
+
+    <string name="christianisme_difficile_question_6">Combien de livres contient la Bible catholique ?</string>
+    <string name="christianisme_difficile_question_6_reponse_valid">1</string>
+    <string-array name="christianisme_difficile_question_6_reponses">
+        <item>60</item>
+        <item>73</item>
+        <item>66</item>
+        <item>70</item>
+    </string-array>
+
+    <string name="christianisme_difficile_question_7">Où Jésus a-t-il été crucifié ?</string>
+    <string name="christianisme_difficile_question_7_reponse_valid">1</string>
+    <string-array name="christianisme_difficile_question_7_reponses">
+        <item>Mont des Oliviers</item>
+        <item>Golgotha</item>
+        <item>Bethléem</item>
+        <item>Jéricho</item>
+    </string-array>
+
+    <string name="christianisme_difficile_question_8">Quel évangile n’est pas synoptique ?</string>
+    <string name="christianisme_difficile_question_8_reponse_valid">3</string>
+    <string-array name="christianisme_difficile_question_8_reponses">
+        <item>Matthieu</item>
+        <item>Marc</item>
+        <item>Luc</item>
+        <item>Jean</item>
+    </string-array>
+
+    <string name="christianisme_difficile_question_9">Qui a reconnu Jésus comme le Messie au temple lorsqu’il était bébé ?</string>
+    <string name="christianisme_difficile_question_9_reponse_valid">1</string>
+    <string-array name="christianisme_difficile_question_9_reponses">
+        <item>Joseph</item>
+        <item>Siméon</item>
+        <item>Nicodème</item>
+        <item>Lazare</item>
+    </string-array>
+
+    <string name="christianisme_difficile_question_10">Quelle femme a été la première à voir Jésus ressuscité ?</string>
+    <string name="christianisme_difficile_question_10_reponse_valid">1</string>
+    <string-array name="christianisme_difficile_question_10_reponses">
+        <item>Marie, mère de Jésus</item>
+        <item>Marie de Magdala</item>
+        <item>Marthe</item>
+        <item>Salomé</item>
+    </string-array>
+
+    <string name="islamisme_facile_question_1">Combien de prière obligatoire par jour :</string>
+    <string name="islamisme_facile_question_1_reponse_valid">1</string>
+    <string-array name="islamisme_facile_question_1_reponses">
+        <item>3</item>
+        <item>5</item>
+        <item>2</item>
+        <item>7</item>
+    </string-array>
+
+    <string name="islamisme_facile_question_2">Quel ange a transmis la révélation au Prophète Mohammed ?</string>
+    <string name="islamisme_facile_question_2_reponse_valid">1</string>
+    <string-array name="islamisme_facile_question_2_reponses">
+        <item>Mikaël</item>
+        <item>Djibril (Gabriel)</item>
+        <item>Israfil</item>
+        <item>Azraël</item>
+    </string-array>
+
+    <string name="islamisme_facile_question_3">Quelle est la deuxième ville sainte de l’islam après La Mecque ?</string>
+    <string name="islamisme_facile_question_3_reponse_valid">0</string>
+    <string-array name="islamisme_facile_question_3_reponses">
+        <item>Médine</item>
+        <item>Jérusalem</item>
+        <item>Damas</item>
+        <item>Bagdad</item>
+    </string-array>
+
+    <string name="islamisme_facile_question_4">Quel est le nom de la nuit où le Coran a commencé à être révélé ?</string>
+    <string name="islamisme_facile_question_4_reponse_valid">1</string>
+    <string-array name="islamisme_facile_question_4_reponses">
+        <item>Laylat alMiraj</item>
+        <item>Laylat alQadr</item>
+        <item>Laylat alBara’a</item>
+        <item>Laylat alIsra</item>
+    </string-array>
+
+    <string name="islamisme_facile_question_5">Que signifie "Islam" ?</string>
+    <string name="islamisme_facile_question_5_reponse_valid">1</string>
+    <string-array name="islamisme_facile_question_5_reponses">
+        <item>Paix uniquement</item>
+        <item>Soumission à Dieu</item>
+        <item>Justice</item>
+        <item>Lumière divine</item>
+    </string-array>
+
+    <string name="islamisme_facile_question_6">Quel est le nom du calife qui a succédé au Prophète ?</string>
+    <string name="islamisme_facile_question_6_reponse_valid">0</string>
+    <string-array name="islamisme_facile_question_6_reponses">
+        <item>Abou Bakr</item>
+        <item>Othman</item>
+        <item>Ali</item>
+        <item>Omar</item>
+    </string-array>
+
+    <string name="islamisme_facile_question_7">Combien de jours dure l’Aïd el-Kébir (Aïd al-Adha) ?</string>
+    <string name="islamisme_facile_question_7_reponse_valid">1</string>
+    <string-array name="islamisme_facile_question_7_reponses">
+        <item>1</item>
+        <item>3</item>
+        <item>7</item>
+        <item>10</item>
+    </string-array>
+
+    <string name="islamisme_facile_question_8">Quel est le nom de la purification rituelle avant la prière ?</string>
+    <string name="islamisme_facile_question_8_reponse_valid">0</string>
+    <string-array name="islamisme_facile_question_8_reponses">
+        <item>Woudou (ablution)</item>
+        <item>Tayammoum</item>
+        <item>Doua</item>
+        <item>Ghusl</item>
+    </string-array>
+
+    <string name="islamisme_facile_question_9">Quel animal le Prophète a-t-il monté lors de l’ascension céleste (Isra wal-Mi’raj) ?</string>
+    <string name="islamisme_facile_question_9_reponse_valid">0</string>
+    <string-array name="islamisme_facile_question_9_reponses">
+        <item>AlBouraq</item>
+        <item>AlQaswa</item>
+        <item>AlBaqarah</item>
+        <item>AlBuraimi</item>
+    </string-array>
+
+    <string name="islamisme_facile_question_10">Quelle est la direction vers laquelle prient les musulmans ?</string>
+    <string name="islamisme_facile_question_10_reponse_valid">2</string>
+    <string-array name="islamisme_facile_question_10_reponses">
+        <item>Est</item>
+        <item>Sud</item>
+        <item>Qibla (vers la Kaaba)</item>
+        <item>Nord</item>
+    </string-array>
+
+    <string name="islamisme_moyen_question_1">Combien y a-t-il de piliers de l’islam ?</string>
+    <string name="islamisme_moyen_question_1_reponse_valid">1</string>
+    <string-array name="islamisme_moyen_question_1_reponses">
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+    </string-array>
+
+    <string name="islamisme_moyen_question_2">Quel est le nom du voyage nocturne du Prophète Mohammed (PSL) ?</string>
+    <string name="islamisme_moyen_question_2_reponse_valid">1</string>
+    <string-array name="islamisme_moyen_question_2_reponses">
+        <item>Hijra</item>
+        <item>Isra et Mi’raj</item>
+        <item>Jihad</item>
+        <item>Souhour</item>
+    </string-array>
+
+    <string name="islamisme_moyen_question_3">Qui fut le premier calife après la mort du Prophète Mohammed (PSL) ?</string>
+    <string name="islamisme_moyen_question_3_reponse_valid">1</string>
+    <string-array name="islamisme_moyen_question_3_reponses">
+        <item>Omar</item>
+        <item>Abou Bakr</item>
+        <item>Ali</item>
+        <item>Othman</item>
+    </string-array>
+
+    <string name="islamisme_moyen_question_4">Quel est le nom du jeûne volontaire effectué les lundis et jeudis ?</string>
+    <string name="islamisme_moyen_question_4_reponse_valid">1</string>
+    <string-array name="islamisme_moyen_question_4_reponses">
+        <item>Ramadan</item>
+        <item>Sunnah</item>
+        <item>Fard</item>
+        <item>Nafl</item>
+    </string-array>
+
+    <string name="islamisme_moyen_question_5">Comment s’appelle la taxe obligatoire que les musulmans doivent verser aux pauvres ?</string>
+    <string name="islamisme_moyen_question_5_reponse_valid">1</string>
+    <string-array name="islamisme_moyen_question_5_reponses">
+        <item>Sadaqa</item>
+        <item>Zakat</item>
+        <item>Aumône</item>
+        <item>Don</item>
+    </string-array>
+
+    <string name="islamisme_moyen_question_6">Quel prophète est connu pour avoir construit la Kaaba avec son fils ?</string>
+    <string name="islamisme_moyen_question_6_reponse_valid">2</string>
+    <string-array name="islamisme_moyen_question_6_reponses">
+        <item>Moussa</item>
+        <item>Issa</item>
+        <item>Ibrahim (Abraham)</item>
+        <item>Nouh</item>
+    </string-array>
+
+    <string name="islamisme_moyen_question_7">Quel est le nom de la prière du matin ?</string>
+    <string name="islamisme_moyen_question_7_reponse_valid">2</string>
+    <string-array name="islamisme_moyen_question_7_reponses">
+        <item>Isha</item>
+        <item>Dhuhr</item>
+        <item>Fajr</item>
+        <item>Maghrib</item>
+    </string-array>
+
+    <string name="islamisme_moyen_question_8">Quel livre a précédé le Coran selon la croyance islamique ?</string>
+    <string name="islamisme_moyen_question_8_reponse_valid">1</string>
+    <string-array name="islamisme_moyen_question_8_reponses">
+        <item>Les Psaumes</item>
+        <item>L’Évangile (Injil)</item>
+        <item>La Sira</item>
+        <item>Les Hadiths</item>
+    </string-array>
+
+    <string name="islamisme_moyen_question_9">Combien de rakats contient la prière du Maghrib ?</string>
+    <string name="islamisme_moyen_question_9_reponse_valid">2</string>
+    <string-array name="islamisme_moyen_question_9_reponses">
+        <item>2</item>
+        <item>5</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+
+    <string name="islamisme_moyen_question_10">Quel est le jour d’Arafat dans le calendrier islamique ?</string>
+    <string name="islamisme_moyen_question_10_reponse_valid">1</string>
+    <string-array name="islamisme_moyen_question_10_reponses">
+        <item>1er jour de l’Aïd</item>
+        <item>9e jour de DhulHijja</item>
+        <item>Dernier vendredi du Ramadan</item>
+        <item>10e de Muharram</item>
+    </string-array>
+
+    <string name="islamisme_difficile_question_1">Quel est le mot arabe pour "charité obligatoire" ?</string>
+    <string name="islamisme_difficile_question_1_reponse_valid">1</string>
+    <string-array name="islamisme_difficile_question_1_reponses">
+        <item>Sadaqa</item>
+        <item>Zakat</item>
+        <item>Fitra</item>
+        <item>Halal</item>
+    </string-array>
+
+    <string name="islamisme_difficile_question_2">Combien de versets (ayat) compte le Coran ?</string>
+    <string name="islamisme_difficile_question_2_reponse_valid">1</string>
+    <string-array name="islamisme_difficile_question_2_reponses">
+        <item>6500</item>
+        <item>Environ 6236</item>
+        <item>7000</item>
+        <item>5000</item>
+    </string-array>
+
+    <string name="islamisme_difficile_question_3">Quel est le nom de la tribu du Prophète Mohammed ?</string>
+    <string name="islamisme_difficile_question_3_reponse_valid">1</string>
+    <string-array name="islamisme_difficile_question_3_reponses">
+        <item>Ansar</item>
+        <item>Quraysh</item>
+        <item>Aws</item>
+        <item>Khazraj</item>
+    </string-array>
+
+    <string name="islamisme_difficile_question_4">Quel est le nom de la première femme du Prophète ?</string>
+    <string name="islamisme_difficile_question_4_reponse_valid">1</string>
+    <string-array name="islamisme_difficile_question_4_reponses">
+        <item>Aïcha</item>
+        <item>Khadija</item>
+        <item>Hafsa</item>
+        <item>Zaynab</item>
+    </string-array>
+
+    <string name="islamisme_difficile_question_5">Combien de fois le nom "Allah" apparaît-il dans le Coran ?</string>
+    <string name="islamisme_difficile_question_5_reponse_valid">1</string>
+    <string-array name="islamisme_difficile_question_5_reponses">
+        <item>Environ 3000 fois</item>
+        <item>Plus de 2500 fois</item>
+        <item>114 fois</item>
+        <item>99 fois</item>
+    </string-array>
+
+    <string name="islamisme_difficile_question_6">Quelle sourate est la plus longue du Coran ?</string>
+    <string name="islamisme_difficile_question_6_reponse_valid">0</string>
+    <string-array name="islamisme_difficile_question_6_reponses">
+        <item>AlBaqara</item>
+        <item>AlImran</item>
+        <item>AlNisa</item>
+        <item>AlKahf</item>
+    </string-array>
+
+    <string name="islamisme_difficile_question_7">Quel compagnon a été surnommé "le scribe du Prophète" ?</string>
+    <string name="islamisme_difficile_question_7_reponse_valid">1</string>
+    <string-array name="islamisme_difficile_question_7_reponses">
+        <item>Omar</item>
+        <item>Zayd ibn Thabit</item>
+        <item>Bilal</item>
+        <item>Othman</item>
+    </string-array>
+
+    <string name="islamisme_difficile_question_8">Quelle sourate commence sans la Basmala (au nom d’Allah…) ?</string>
+    <string name="islamisme_difficile_question_8_reponse_valid">1</string>
+    <string-array name="islamisme_difficile_question_8_reponses">
+        <item>AlFatiha</item>
+        <item>Sourate 9 (AtTawba)</item>
+        <item>AlIkhlas</item>
+        <item>AlAnfal</item>
+    </string-array>
+
+    <string name="islamisme_difficile_question_9">Quel est le nom de l’arbre interdit dans le Coran ?</string>
+    <string name="islamisme_difficile_question_9_reponse_valid">2</string>
+    <string-array name="islamisme_difficile_question_9_reponses">
+        <item>Olivier</item>
+        <item>Arbre de l’enfer</item>
+        <item>Arbre de l’immortalité</item>
+        <item>Arbre du feu</item>
+    </string-array>
+
+    <string name="islamisme_difficile_question_10">Quel est le nom de la mère du Prophète Mohammed ?</string>
+    <string name="islamisme_difficile_question_10_reponse_valid">1</string>
+    <string-array name="islamisme_difficile_question_10_reponses">
+        <item>Khadija</item>
+        <item>Amina bint Wahb</item>
+        <item>Fatima</item>
+        <item>Halima</item>
+    </string-array>
+
+    <string name="animisme_facile_question_1">Dans l’animisme, qu’est-ce qui peut posséder une âme ?</string>
+    <string name="animisme_facile_question_1_reponse_valid">2</string>
+    <string-array name="animisme_facile_question_1_reponses">
+        <item>Seulement les humains</item>
+        <item>Seulement les animaux</item>
+        <item>Toute la nature (arbres, pierres, animaux, etc.)</item>
+        <item>Les objets modernes</item>
+    </string-array>
+
+    <string name="animisme_facile_question_2">Quel est souvent le rôle du féticheur ?</string>
+    <string name="animisme_facile_question_2_reponse_valid">1</string>
+    <string-array name="animisme_facile_question_2_reponses">
+        <item>Chef de village</item>
+        <item>Intermédiaire entre les esprits et les humains</item>
+        <item>Guerrier</item>
+        <item>Artisan</item>
+    </string-array>
+
+    <string name="animisme_facile_question_3">Les ancêtres sont considérés comme…</string>
+    <string name="animisme_facile_question_3_reponse_valid">2</string>
+    <string-array name="animisme_facile_question_3_reponses">
+        <item>Dangereux</item>
+        <item>Oubliés</item>
+        <item>Protecteurs et guides spirituels</item>
+        <item>Inutiles</item>
+    </string-array>
+
+    <string name="animisme_facile_question_4">Quel objet est souvent utilisé pour appeler les esprits ?</string>
+    <string name="animisme_facile_question_4_reponse_valid">0</string>
+    <string-array name="animisme_facile_question_4_reponses">
+        <item>Tambour</item>
+        <item>Épée</item>
+        <item>Livre</item>
+        <item>Tapis</item>
+    </string-array>
+
+    <string name="animisme_facile_question_5">Quel type de religion est l’animisme ?</string>
+    <string name="animisme_facile_question_5_reponse_valid">2</string>
+    <string-array name="animisme_facile_question_5_reponses">
+        <item>Monothéiste</item>
+        <item>Aucune religion</item>
+        <item>Croyance basée sur les esprits et la nature</item>
+        <item>Polythéiste au sens strict</item>
+    </string-array>
+
+    <string name="animisme_facile_question_6">Quel phénomène naturel peut être considéré comme un esprit ?</string>
+    <string name="animisme_facile_question_6_reponse_valid">1</string>
+    <string-array name="animisme_facile_question_6_reponses">
+        <item>L’électricité</item>
+        <item>Le vent</item>
+        <item>Une voiture</item>
+        <item>Un ordinateur</item>
+    </string-array>
+
+    <string name="animisme_facile_question_7">Quelle plante est souvent utilisée pour purifier un lieu ?</string>
+    <string name="animisme_facile_question_7_reponse_valid">1</string>
+    <string-array name="animisme_facile_question_7_reponses">
+        <item>Menthe</item>
+        <item>Sauge</item>
+        <item>Basilic</item>
+        <item>Citronnelle</item>
+    </string-array>
+
+    <string name="animisme_facile_question_8">Le totem est un symbole de…</string>
+    <string name="animisme_facile_question_8_reponse_valid">1</string>
+    <string-array name="animisme_facile_question_8_reponses">
+        <item>Richesse</item>
+        <item>Lien spirituel avec un animal ou esprit</item>
+        <item>Guerre</item>
+        <item>Mariage</item>
+    </string-array>
+
+    <string name="animisme_facile_question_9">Dans l’animisme, que signifie "sacrifier un animal" ?</string>
+    <string name="animisme_facile_question_9_reponse_valid">1</string>
+    <string-array name="animisme_facile_question_9_reponses">
+        <item>Manger la viande</item>
+        <item>Offrir un don aux esprits</item>
+        <item>Punir</item>
+        <item>Nourrir un dieu</item>
+    </string-array>
+
+    <string name="animisme_facile_question_10">Les traditions animistes sont souvent transmises…</string>
+    <string name="animisme_facile_question_10_reponse_valid">2</string>
+    <string-array name="animisme_facile_question_10_reponses">
+        <item>Par les réseaux sociaux</item>
+        <item>Par des livres</item>
+        <item>Oralement, de génération en génération</item>
+        <item>Par écrit</item>
+    </string-array>
+
+    <string name="animisme_moyen_question_1">Dans l’animisme, qu’est-ce qui est considéré comme porteur d’esprit ?</string>
+    <string name="animisme_moyen_question_1_reponse_valid">1</string>
+    <string-array name="animisme_moyen_question_1_reponses">
+        <item>Seuls les humains</item>
+        <item>Tous les éléments de la nature (plantes, animaux, pierres…)</item>
+        <item>Uniquement les ancêtres</item>
+        <item>Les objets fabriqués</item>
+    </string-array>
+
+    <string name="animisme_moyen_question_2">Quel rôle jouent les ancêtres dans les croyances animistes ?</string>
+    <string name="animisme_moyen_question_2_reponse_valid">1</string>
+    <string-array name="animisme_moyen_question_2_reponses">
+        <item>Aucun</item>
+        <item>Esprits protecteurs ou guides</item>
+        <item>Ennemis à craindre</item>
+        <item>Dieux à prier</item>
+    </string-array>
+
+    <string name="animisme_moyen_question_3">Comment appelle-t-on un intermédiaire entre les esprits et les humains ?</string>
+    <string name="animisme_moyen_question_3_reponse_valid">2</string>
+    <string-array name="animisme_moyen_question_3_reponses">
+        <item>Prêtre</item>
+        <item>Sorcier</item>
+        <item>Devin ou chamane</item>
+        <item>Marabout</item>
+    </string-array>
+
+    <string name="animisme_moyen_question_4">Quel objet est souvent utilisé dans les rituels animistes ?</string>
+    <string name="animisme_moyen_question_4_reponse_valid">1</string>
+    <string-array name="animisme_moyen_question_4_reponses">
+        <item>Livre sacré</item>
+        <item>Calebasse, cauris, statuettes</item>
+        <item>Croix</item>
+        <item>Encensoir en métal</item>
+    </string-array>
+
+    <string name="animisme_moyen_question_5">Quel animal est fréquemment sacré dans certaines traditions animistes ?</string>
+    <string name="animisme_moyen_question_5_reponse_valid">2</string>
+    <string-array name="animisme_moyen_question_5_reponses">
+        <item>Moustique</item>
+        <item>Chien</item>
+        <item>Serpent</item>
+        <item>Vache</item>
+    </string-array>
+
+    <string name="animisme_moyen_question_6">Quel est l’un des buts des cérémonies animistes ?</string>
+    <string name="animisme_moyen_question_6_reponse_valid">1</string>
+    <string-array name="animisme_moyen_question_6_reponses">
+        <item>Convertir</item>
+        <item>Apaiser ou invoquer les esprits</item>
+        <item>Lire les textes sacrés</item>
+        <item>Réciter des prières fixes</item>
+    </string-array>
+
+    <string name="animisme_moyen_question_7">Qu’est-ce qu’un totem dans les cultures animistes ?</string>
+    <string name="animisme_moyen_question_7_reponse_valid">2</string>
+    <string-array name="animisme_moyen_question_7_reponses">
+        <item>Une divinité céleste</item>
+        <item>Un animal ou un symbole protecteur lié à un clan</item>
+        <item>Une offrande</item>
+        <item>Une malédiction</item>
+    </string-array>
+
+    <string name="animisme_moyen_question_8">Que symbolise souvent l’arbre dans l’animisme ?</string>
+    <string name="animisme_moyen_question_8_reponse_valid">1</string>
+    <string-array name="animisme_moyen_question_8_reponses">
+        <item>Un simple élément de décor</item>
+        <item>Un lien entre les mondes (terre, ciel, esprits)</item>
+        <item>Une source de nourriture</item>
+        <item>Un obstacle sacré</item>
+    </string-array>
+
+    <string name="animisme_moyen_question_9">Quel est le rôle d’un masque rituel ?</string>
+    <string name="animisme_moyen_question_9_reponse_valid">1</string>
+    <string-array name="animisme_moyen_question_9_reponses">
+        <item>D’effrayer les gens</item>
+        <item>D’incarner un esprit ou ancêtre</item>
+        <item>De se déguiser</item>
+        <item>D’imiter des animaux</item>
+    </string-array>
+
+    <string name="animisme_moyen_question_10">Les esprits sont-ils perçus comme uniquement bons dans l’animisme ?</string>
+    <string name="animisme_moyen_question_10_reponse_valid">1</string>
+    <string-array name="animisme_moyen_question_10_reponses">
+        <item>Oui</item>
+        <item>Non, ils peuvent être bons ou mauvais</item>
+        <item>Ils sont neutres</item>
+        <item>Cela dépend de la lune</item>
+    </string-array>
+
+    <string name="animisme_difficile_question_1">Quel concept animiste considère que chaque élément naturel a une âme ?</string>
+    <string name="animisme_difficile_question_1_reponse_valid">1</string>
+    <string-array name="animisme_difficile_question_1_reponses">
+        <item>Monothéisme</item>
+        <item>Vitalisme</item>
+        <item>Totémisme</item>
+        <item>Polythéisme</item>
+    </string-array>
+
+    <string name="animisme_difficile_question_2">Quel est le rôle d’un fétiche dans certaines traditions animistes africaines ?</string>
+    <string name="animisme_difficile_question_2_reponse_valid">1</string>
+    <string-array name="animisme_difficile_question_2_reponses">
+        <item>Un simple objet décoratif</item>
+        <item>Un objet chargé de pouvoir spirituel</item>
+        <item>Une offrande temporaire</item>
+        <item>Une statue à adorer</item>
+    </string-array>
+
+    <string name="animisme_difficile_question_3">Quel peuple d’Afrique est connu pour ses traditions animistes très anciennes ?</string>
+    <string name="animisme_difficile_question_3_reponse_valid">2</string>
+    <string-array name="animisme_difficile_question_3_reponses">
+        <item>Arabes</item>
+        <item>Bambaras</item>
+        <item>Dogons</item>
+        <item>Berbères</item>
+    </string-array>
+
+    <string name="animisme_difficile_question_4">Comment les esprits des morts sont-ils souvent perçus dans les sociétés animistes ?</string>
+    <string name="animisme_difficile_question_4_reponse_valid">1</string>
+    <string-array name="animisme_difficile_question_4_reponses">
+        <item>Comme des ennemis</item>
+        <item>Comme des entités présentes et influentes dans la vie des vivants</item>
+        <item>Comme des dieux</item>
+        <item>Comme des souvenirs sans pouvoir</item>
+    </string-array>
+
+    <string name="animisme_difficile_question_5">Quel phénomène naturel est souvent interprété comme une manifestation spirituelle ?</string>
+    <string name="animisme_difficile_question_5_reponse_valid">1</string>
+    <string-array name="animisme_difficile_question_5_reponses">
+        <item>La pluie uniquement</item>
+        <item>Tonnerre, vent, éclairs, etc.</item>
+        <item>Les saisons</item>
+        <item>Le lever du soleil</item>
+    </string-array>
+
+    <string name="animisme_difficile_question_6">Dans l’animisme, que peut provoquer un esprit offensé ?</string>
+    <string name="animisme_difficile_question_6_reponse_valid">1</string>
+    <string-array name="animisme_difficile_question_6_reponses">
+        <item>Un rêve</item>
+        <item>Une maladie, un malheur ou une malédiction</item>
+        <item>Une pluie</item>
+        <item>Une prospérité</item>
+    </string-array>
+
+    <string name="animisme_difficile_question_7">Quel type de transmission est utilisé pour perpétuer les croyances animistes ?</string>
+    <string name="animisme_difficile_question_7_reponse_valid">1</string>
+    <string-array name="animisme_difficile_question_7_reponses">
+        <item>Écriture sacrée</item>
+        <item>Tradition orale et rituels</item>
+        <item>Internet</item>
+        <item>Par les écoles modernes</item>
+    </string-array>
+
+    <string name="animisme_difficile_question_8">Quel est le rôle des sacrifices dans certaines traditions animistes ?</string>
+    <string name="animisme_difficile_question_8_reponse_valid">1</string>
+    <string-array name="animisme_difficile_question_8_reponses">
+        <item>Montrer sa force</item>
+        <item>Apaiser ou remercier les esprits</item>
+        <item>Effrayer les voisins</item>
+        <item>Fêter une naissance</item>
+    </string-array>
+
+    <string name="animisme_difficile_question_9">Qu’est-ce qu’un panthéon dans certaines formes d’animisme ?</string>
+    <string name="animisme_difficile_question_9_reponse_valid">1</string>
+    <string-array name="animisme_difficile_question_9_reponses">
+        <item>Une maison</item>
+        <item>Un ensemble d’esprits ou divinités vénérés</item>
+        <item>Un lieu de guerre</item>
+        <item>Un arbre sacré</item>
+    </string-array>
+
+    <string name="animisme_difficile_question_10">Quel élément est souvent considéré comme le siège des esprits protecteurs d’un village ?</string>
+    <string name="animisme_difficile_question_10_reponse_valid">1</string>
+    <string-array name="animisme_difficile_question_10_reponses">
+        <item>Une mosquée</item>
+        <item>Un arbre sacré ou un autel familial</item>
+        <item>Une montagne lointaine</item>
+        <item>Le marché</item>
+    </string-array>
+
+    <string name="africain_facile_question_1">Qui chante le titre “Jerusalema” ?</string>
+    <string name="africain_facile_question_1_reponse_valid">0</string>
+    <string-array name="africain_facile_question_1_reponses">
+        <item>Master KG</item>
+        <item>Burna Boy</item>
+        <item>Diamond Platnumz</item>
+        <item>Fally Ipupa</item>
+    </string-array>
+
+    <string name="africain_facile_question_2">De quel pays vient l’artiste Burna Boy ?</string>
+    <string name="africain_facile_question_2_reponse_valid">0</string>
+    <string-array name="africain_facile_question_2_reponses">
+        <item>Nigeria</item>
+        <item>Ghana</item>
+        <item>Cameroun</item>
+        <item>Afrique du Sud</item>
+    </string-array>
+
+    <string name="africain_facile_question_3">Le groupe Magic System vient de quel pays ?</string>
+    <string name="africain_facile_question_3_reponse_valid">0</string>
+    <string-array name="africain_facile_question_3_reponses">
+        <item>Côte d’Ivoire</item>
+        <item>Sénégal</item>
+        <item>Mali</item>
+        <item>Congo</item>
+    </string-array>
+
+    <string name="africain_facile_question_4">Qui est la chanteuse du tube “People” ?</string>
+    <string name="africain_facile_question_4_reponse_valid">0</string>
+    <string-array name="africain_facile_question_4_reponses">
+        <item>Libianca</item>
+        <item>Ayra Starr</item>
+        <item>Tems</item>
+        <item>Tiwa Savage</item>
+    </string-array>
+
+    <string name="africain_facile_question_5">Quel artiste congolais a sorti “Eloko Oyo” ?</string>
+    <string name="africain_facile_question_5_reponse_valid">0</string>
+    <string-array name="africain_facile_question_5_reponses">
+        <item>Fally Ipupa</item>
+        <item>Ferre Gola</item>
+        <item>Dadju</item>
+        <item>Koffi Olomidé</item>
+    </string-array>
+
+    <string name="africain_facile_question_6">Quel est le genre musical d’origine ghanéenne ?</string>
+    <string name="africain_facile_question_6_reponse_valid">0</string>
+    <string-array name="africain_facile_question_6_reponses">
+        <item>Highlife</item>
+        <item>Amapiano</item>
+        <item>Coupé-décalé</item>
+        <item>Ndombolo</item>
+    </string-array>
+
+    <string name="africain_facile_question_7">Quel pays est célèbre pour le style Amapiano ?</string>
+    <string name="africain_facile_question_7_reponse_valid">0</string>
+    <string-array name="africain_facile_question_7_reponses">
+        <item>Afrique du Sud</item>
+        <item>Cameroun</item>
+        <item>Nigeria</item>
+        <item>Kenya</item>
+    </string-array>
+
+    <string name="africain_facile_question_8">L’artiste Yemi Alade est connue pour quelle chanson ?</string>
+    <string name="africain_facile_question_8_reponse_valid">0</string>
+    <string-array name="africain_facile_question_8_reponses">
+        <item>Johnny</item>
+        <item>Fall</item>
+        <item>Essence</item>
+        <item>Calm Down</item>
+    </string-array>
+
+    <string name="africain_facile_question_9">Qui chante “Zonga” ?</string>
+    <string name="africain_facile_question_9_reponse_valid">0</string>
+    <string-array name="africain_facile_question_9_reponses">
+        <item>Innoss’B</item>
+        <item>Fally Ipupa</item>
+        <item>Ferre Gola</item>
+        <item>Koffi Olomidé</item>
+    </string-array>
+
+    <string name="africain_facile_question_10">Quel artiste camerounais est connu pour “Perfect” ?</string>
+    <string name="africain_facile_question_10_reponse_valid">0</string>
+    <string-array name="africain_facile_question_10_reponses">
+        <item>Locko</item>
+        <item>Tenor</item>
+        <item>Mr Leo</item>
+        <item>Stanley Enow</item>
+    </string-array>
+
+    <string name="africain_moyen_question_1">Qui a popularisé le titre “Ye” ?</string>
+    <string name="africain_moyen_question_1_reponse_valid">0</string>
+    <string-array name="africain_moyen_question_1_reponses">
+        <item>Burna Boy</item>
+        <item>Wizkid</item>
+        <item>Omah Lay</item>
+        <item>Kizz Daniel</item>
+    </string-array>
+
+    <string name="africain_moyen_question_2">L’artiste Diamond Platnumz vient de quel pays ?</string>
+    <string name="africain_moyen_question_2_reponse_valid">0</string>
+    <string-array name="africain_moyen_question_2_reponses">
+        <item>Tanzanie</item>
+        <item>Kenya</item>
+        <item>Ouganda</item>
+        <item>Ghana</item>
+    </string-array>
+
+    <string name="africain_moyen_question_3">Le style Coupé-décalé est né dans quel pays ?</string>
+    <string name="africain_moyen_question_3_reponse_valid">0</string>
+    <string-array name="africain_moyen_question_3_reponses">
+        <item>Côte d’Ivoire</item>
+        <item>Cameroun</item>
+        <item>Nigeria</item>
+        <item>Sénégal</item>
+    </string-array>
+
+    <string name="africain_moyen_question_4">Quel artiste sénégalais est aussi connu pour ses actions humanitaires ?</string>
+    <string name="africain_moyen_question_4_reponse_valid">0</string>
+    <string-array name="africain_moyen_question_4_reponses">
+        <item>Youssou N’Dour</item>
+        <item>Baaba Maal</item>
+        <item>Pape Diouf</item>
+        <item>Akon</item>
+    </string-array>
+
+    <string name="africain_moyen_question_5">Le titre “Love Nwantiti” est chanté par…</string>
+    <string name="africain_moyen_question_5_reponse_valid">0</string>
+    <string-array name="africain_moyen_question_5_reponses">
+        <item>CKay</item>
+        <item>Rema</item>
+        <item>Davido</item>
+        <item>Fireboy DML</item>
+    </string-array>
+
+    <string name="africain_moyen_question_6">Quel artiste a chanté “Sawa Romance” ?</string>
+    <string name="africain_moyen_question_6_reponse_valid">0</string>
+    <string-array name="africain_moyen_question_6_reponses">
+        <item>Blanche Bailly</item>
+        <item>Daphné</item>
+        <item>Charlotte Dipanda</item>
+        <item>Coco Argentée</item>
+    </string-array>
+
+    <string name="africain_moyen_question_7">Qui est l’artiste congolais surnommé “Le Padre” ?</string>
+    <string name="africain_moyen_question_7_reponse_valid">0</string>
+    <string-array name="africain_moyen_question_7_reponses">
+        <item>Werrason</item>
+        <item>Ferre Gola</item>
+        <item>Koffi Olomidé</item>
+        <item>Fally Ipupa</item>
+    </string-array>
+
+    <string name="africain_moyen_question_8">L’artiste Sauti Sol vient de…</string>
+    <string name="africain_moyen_question_8_reponse_valid">0</string>
+    <string-array name="africain_moyen_question_8_reponses">
+        <item>Kenya</item>
+        <item>Tanzanie</item>
+        <item>Nigeria</item>
+        <item>Ghana</item>
+    </string-array>
+
+    <string name="africain_moyen_question_9">Qui chante “Casanova” ?</string>
+    <string name="africain_moyen_question_9_reponse_valid">0</string>
+    <string-array name="africain_moyen_question_9_reponses">
+        <item>Locko</item>
+        <item>Mr Leo</item>
+        <item>Tenor</item>
+        <item>Stanley Enow</item>
+    </string-array>
+
+    <string name="africain_moyen_question_10">Quel artiste burkinabé est connu pour la chanson “Barka” ?</string>
+    <string name="africain_moyen_question_10_reponse_valid">1</string>
+    <string-array name="africain_moyen_question_10_reponses">
+        <item>Floby</item>
+        <item>Smarty</item>
+        <item>Alif Naaba</item>
+        <item>Dez Altino</item>
+    </string-array>
+
+    <string name="africain_difficile_question_1">Quelle année marque la sortie de “Premier Gaou” de Magic System ?</string>
+    <string name="africain_difficile_question_1_reponse_valid">0</string>
+    <string-array name="africain_difficile_question_1_reponses">
+        <item>1999</item>
+        <item>2002</item>
+        <item>2005</item>
+        <item>1997</item>
+    </string-array>
+
+    <string name="africain_difficile_question_2">Le titre “Mbongo Tika Te” est de…</string>
+    <string name="africain_difficile_question_2_reponse_valid">0</string>
+    <string-array name="africain_difficile_question_2_reponses">
+        <item>Fally Ipupa</item>
+        <item>Koffi Olomidé</item>
+        <item>Innoss’B</item>
+        <item>Ferre Gola</item>
+    </string-array>
+
+    <string name="africain_difficile_question_3">L’artiste Oumou Sangaré est originaire de quel pays ?</string>
+    <string name="africain_difficile_question_3_reponse_valid">0</string>
+    <string-array name="africain_difficile_question_3_reponses">
+        <item>Mali</item>
+        <item>Guinée</item>
+        <item>Niger</item>
+        <item>Burkina Faso</item>
+    </string-array>
+
+    <string name="africain_difficile_question_4">Quel artiste nigérian a remporté un Grammy Award en 2021 ?</string>
+    <string name="africain_difficile_question_4_reponse_valid">0</string>
+    <string-array name="africain_difficile_question_4_reponses">
+        <item>Burna Boy</item>
+        <item>Wizkid</item>
+        <item>Davido</item>
+        <item>Tems</item>
+    </string-array>
+
+    <string name="africain_difficile_question_5">Le titre “Mabele” est une chanson classique de…</string>
+    <string name="africain_difficile_question_5_reponse_valid">0</string>
+    <string-array name="africain_difficile_question_5_reponses">
+        <item>Koffi Olomidé</item>
+        <item>Papa Wemba</item>
+        <item>Fally Ipupa</item>
+        <item>Werrason</item>
+    </string-array>
+
+    <string name="africain_difficile_question_6">Quel groupe camerounais est célèbre pour le titre “Touch Me” ?</string>
+    <string name="africain_difficile_question_6_reponse_valid">0</string>
+    <string-array name="africain_difficile_question_6_reponses">
+        <item>X-Maleya</item>
+        <item>Les Bantous</item>
+        <item>Macase</item>
+        <item>Les Têtes Brûlées</item>
+    </string-array>
+
+    <string name="africain_difficile_question_7">L’artiste Angelique Kidjo est originaire du…</string>
+    <string name="africain_difficile_question_7_reponse_valid">0</string>
+    <string-array name="africain_difficile_question_7_reponses">
+        <item>Bénin</item>
+        <item>Togo</item>
+        <item>Ghana</item>
+        <item>Nigeria</item>
+    </string-array>
+
+    <string name="africain_difficile_question_8">Le titre “Ndoto” est interprété par…</string>
+    <string name="africain_difficile_question_8_reponse_valid">0</string>
+    <string-array name="africain_difficile_question_8_reponses">
+        <item>Diamond Platnumz</item>
+        <item>Harmonize</item>
+        <item>Alikiba</item>
+        <item>Rayvanny</item>
+    </string-array>
+
+    <string name="africain_difficile_question_9">Quelle chanteuse congolaise est connue pour “Naboyi” ?</string>
+    <string name="africain_difficile_question_9_reponse_valid">0</string>
+    <string-array name="africain_difficile_question_9_reponses">
+        <item>Dena Mwana</item>
+        <item>Deborah Lukalu</item>
+        <item>Cindy Le Cœur</item>
+        <item>Mbilia Bel</item>
+    </string-array>
+
+    <string name="africain_difficile_question_10">Le style Makossa vient de quel pays africain ?</string>
+    <string name="africain_difficile_question_10_reponse_valid">1</string>
+    <string-array name="africain_difficile_question_10_reponses">
+        <item>Cameroun</item>
+        <item>Congo</item>
+        <item>Gabon</item>
+        <item>Guinée</item>
+    </string-array>
+
+    <string name="mammiferes_facile_question_1">Les mammifères ont en commun :</string>
+    <string name="mammiferes_facile_question_1_reponse_valid">1</string>
+    <string-array name="mammiferes_facile_question_1_reponses">
+        <item>Pondre des œufs</item>
+        <item>Allaiter leurs petits avec du lait</item>
+        <item>Respirer par les branchies</item>
+        <item>Vivre uniquement dans l’eau</item>
+    </string-array>
+
+    <string name="mammiferes_facile_question_2">Quel est le plus grand mammifère au monde ?</string>
+    <string name="mammiferes_facile_question_2_reponse_valid">2</string>
+    <string-array name="mammiferes_facile_question_2_reponses">
+        <item>Éléphant</item>
+        <item>Ours polaire</item>
+        <item>Baleine bleue</item>
+        <item>Girafe</item>
+    </string-array>
+
+    <string name="mammiferes_facile_question_3">Les mammifères sont généralement :</string>
+    <string name="mammiferes_facile_question_3_reponse_valid">1</string>
+    <string-array name="mammiferes_facile_question_3_reponses">
+        <item>À sang froid</item>
+        <item>À sang chaud</item>
+        <item>Sans colonne vertébrale</item>
+        <item>Sans poils</item>
+    </string-array>
+
+    <string name="mammiferes_facile_question_4">Quel mammifère peut voler ?</string>
+    <string name="mammiferes_facile_question_4_reponse_valid">1</string>
+    <string-array name="mammiferes_facile_question_4_reponses">
+        <item>Aigle</item>
+        <item>Chauve-souris</item>
+        <item>Autruche</item>
+        <item>Pingouin</item>
+    </string-array>
+
+    <string name="mammiferes_facile_question_5">Quel mammifère vit dans l’eau ?</string>
+    <string name="mammiferes_facile_question_5_reponse_valid">2</string>
+    <string-array name="mammiferes_facile_question_5_reponses">
+        <item>Serpent</item>
+        <item>Requin</item>
+        <item>Dauphin</item>
+        <item>Pélican</item>
+    </string-array>
+
+    <string name="mammiferes_facile_question_6">Combien de pattes ont les mammifères terrestres ?</string>
+    <string name="mammiferes_facile_question_6_reponse_valid">1</string>
+    <string-array name="mammiferes_facile_question_6_reponses">
+        <item>2</item>
+        <item>4</item>
+        <item>6</item>
+        <item>8</item>
+    </string-array>
+
+    <string name="mammiferes_facile_question_7">Lequel est un mammifère ?</string>
+    <string name="mammiferes_facile_question_7_reponse_valid">2</string>
+    <string-array name="mammiferes_facile_question_7_reponses">
+        <item>Crocodile</item>
+        <item>Moineau</item>
+        <item>Lion</item>
+        <item>Tortue</item>
+    </string-array>
+
+    <string name="mammiferes_facile_question_8">Comment s’appelle le bébé du chien ?</string>
+    <string name="mammiferes_facile_question_8_reponse_valid">1</string>
+    <string-array name="mammiferes_facile_question_8_reponses">
+        <item>Chaton</item>
+        <item>Chiot</item>
+        <item>Veau</item>
+        <item>Lionceau</item>
+    </string-array>
+
+    <string name="mammiferes_facile_question_9">Où se développent les bébés mammifères ?</string>
+    <string name="mammiferes_facile_question_9_reponse_valid">1</string>
+    <string-array name="mammiferes_facile_question_9_reponses">
+        <item>Dans un œuf</item>
+        <item>Dans le ventre de la mère</item>
+        <item>Dans l’eau</item>
+        <item>Sur les branches</item>
+    </string-array>
+
+    <string name="mammiferes_facile_question_10">Tous les mammifères ont :</string>
+    <string name="mammiferes_facile_question_10_reponse_valid">2</string>
+    <string-array name="mammiferes_facile_question_10_reponses">
+        <item>Des ailes</item>
+        <item>Des plumes</item>
+        <item>Des poils ou des cheveux</item>
+        <item>Des écailles</item>
+    </string-array>
+
+    <string name="mammiferes_moyen_question_1">Quel mammifère pond des œufs ?</string>
+    <string name="mammiferes_moyen_question_1_reponse_valid">2</string>
+    <string-array name="mammiferes_moyen_question_1_reponses">
+        <item>Chat</item>
+        <item>Souris</item>
+        <item>Ornithorynque</item>
+        <item>Singe</item>
+    </string-array>
+
+    <string name="mammiferes_moyen_question_2">Quel est le seul mammifère marin à avoir des poils visibles à la naissance ?</string>
+    <string name="mammiferes_moyen_question_2_reponse_valid">1</string>
+    <string-array name="mammiferes_moyen_question_2_reponses">
+        <item>Requin baleine</item>
+        <item>L’otarie</item>
+        <item>Calmar géant</item>
+        <item>Méduse</item>
+    </string-array>
+
+    <string name="mammiferes_moyen_question_3">Quel est le plus grand mammifère terrestre ?</string>
+    <string name="mammiferes_moyen_question_3_reponse_valid">2</string>
+    <string-array name="mammiferes_moyen_question_3_reponses">
+        <item>Rhinocéros</item>
+        <item>Girafe</item>
+        <item>Éléphant d’Afrique</item>
+        <item>Ours brun</item>
+    </string-array>
+
+    <string name="mammiferes_moyen_question_4">Quel mammifère dort en position suspendue ?</string>
+    <string name="mammiferes_moyen_question_4_reponse_valid">1</string>
+    <string-array name="mammiferes_moyen_question_4_reponses">
+        <item>Paresseux</item>
+        <item>Chauve-souris</item>
+        <item>Koala</item>
+        <item>Gorille</item>
+    </string-array>
+
+    <string name="mammiferes_moyen_question_5">Quel mammifère a un cerveau très développé, proche de celui de l’homme ?</string>
+    <string name="mammiferes_moyen_question_5_reponse_valid">1</string>
+    <string-array name="mammiferes_moyen_question_5_reponses">
+        <item>Ours</item>
+        <item>Dauphin</item>
+        <item>Zèbre</item>
+        <item>Cerf</item>
+    </string-array>
+
+    <string name="mammiferes_moyen_question_6">Chez les mammifères, que signifie "vivipare" ?</string>
+    <string name="mammiferes_moyen_question_6_reponse_valid">1</string>
+    <string-array name="mammiferes_moyen_question_6_reponses">
+        <item>Pondre des œufs</item>
+        <item>Donner naissance à des petits vivants</item>
+        <item>Se nourrir d’autres animaux</item>
+        <item>Respirer par la peau</item>
+    </string-array>
+
+    <string name="mammiferes_moyen_question_7">Quel mammifère peut vivre à la fois dans l’eau et sur la terre ?</string>
+    <string name="mammiferes_moyen_question_7_reponse_valid">2</string>
+    <string-array name="mammiferes_moyen_question_7_reponses">
+        <item>Crocodile</item>
+        <item>Requin</item>
+        <item>Castor</item>
+        <item>Aigle</item>
+    </string-array>
+
+    <string name="mammiferes_moyen_question_8">Cela signifie qu’il…</string>
+    <string name="mammiferes_moyen_question_8_reponse_valid">2</string>
+    <string-array name="mammiferes_moyen_question_8_reponses">
+        <item>Pond des œufs</item>
+        <item>Change de couleur</item>
+        <item>Porte son petit dans une poche</item>
+        <item>Vole</item>
+    </string-array>
+
+    <string name="mammiferes_moyen_question_9">Quel est le rôle principal des moustaches chez les mammifères ?</string>
+    <string name="mammiferes_moyen_question_9_reponse_valid">2</string>
+    <string-array name="mammiferes_moyen_question_9_reponses">
+        <item>Attirer un partenaire</item>
+        <item>Réchauffer le visage</item>
+        <item>Détecter les vibrations et l’environnement</item>
+        <item>Décorer</item>
+    </string-array>
+
+    <string name="mammiferes_moyen_question_10">Les mammifères ont généralement combien de cavités cardiaques ?</string>
+    <string name="mammiferes_moyen_question_10_reponse_valid">2</string>
+    <string-array name="mammiferes_moyen_question_10_reponses">
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+
+    <string name="mammiferes_difficile_question_1">Quel mammifère possède le plus grand cerveau par rapport à sa taille corporelle ?</string>
+    <string name="mammiferes_difficile_question_1_reponse_valid">1</string>
+    <string-array name="mammiferes_difficile_question_1_reponses">
+        <item>Chimpanzé</item>
+        <item>Dauphin</item>
+        <item>Éléphant</item>
+        <item>Orque</item>
+    </string-array>
+
+    <string name="mammiferes_difficile_question_2">Quelle est la durée moyenne de gestation de l’éléphant d’Afrique ?</string>
+    <string name="mammiferes_difficile_question_2_reponse_valid">2</string>
+    <string-array name="mammiferes_difficile_question_2_reponses">
+        <item>6 mois</item>
+        <item>9 mois</item>
+        <item>22 mois</item>
+        <item>12 mois</item>
+    </string-array>
+
+    <string name="mammiferes_difficile_question_3">Quel mammifère est capable de vivre en hibernation pendant plusieurs mois ?</string>
+    <string name="mammiferes_difficile_question_3_reponse_valid">2</string>
+    <string-array name="mammiferes_difficile_question_3_reponses">
+        <item>Girafe</item>
+        <item>Dauphin</item>
+        <item>Ours brun</item>
+        <item>Lion</item>
+    </string-array>
+
+    <string name="mammiferes_difficile_question_4">Quelle espèce de chauve-souris est la plus grande au monde ?</string>
+    <string name="mammiferes_difficile_question_4_reponse_valid">1</string>
+    <string-array name="mammiferes_difficile_question_4_reponses">
+        <item>Chauve-souris vampire</item>
+        <item>Renard volant</item>
+        <item>Pipistrelle</item>
+        <item>Noctule</item>
+    </string-array>
+
+    <string name="mammiferes_difficile_question_5">Quel est le seul mammifère capable de voler activement ?</string>
+    <string name="mammiferes_difficile_question_5_reponse_valid">0</string>
+    <string-array name="mammiferes_difficile_question_5_reponses">
+        <item>Chauve-souris</item>
+        <item>Écureuil volant</item>
+        <item>Colibri</item>
+        <item>Oiseau-mouche</item>
+    </string-array>
+
+    <string name="mammiferes_difficile_question_6">Quel mammifère possède la morsure la plus puissante ?</string>
+    <string name="mammiferes_difficile_question_6_reponse_valid">2</string>
+    <string-array name="mammiferes_difficile_question_6_reponses">
+        <item>Tigre</item>
+        <item>Lion</item>
+        <item>Hippopotame</item>
+        <item>Crocodile (non mammifère mais puissant)</item>
+    </string-array>
+
+    <string name="mammiferes_difficile_question_7">Quel mammifère a la plus longue durée de vie connue ?</string>
+    <string name="mammiferes_difficile_question_7_reponse_valid">1</string>
+    <string-array name="mammiferes_difficile_question_7_reponses">
+        <item>Éléphant</item>
+        <item>Narval</item>
+        <item>Tortue géante (non mammifère)</item>
+        <item>Baleine boréale</item>
+    </string-array>
+
+    <string name="mammiferes_difficile_question_8">Quel mammifère marin utilise l’écholocation pour chasser ?</string>
+    <string name="mammiferes_difficile_question_8_reponse_valid">1</string>
+    <string-array name="mammiferes_difficile_question_8_reponses">
+        <item>Phoque</item>
+        <item>Dauphin</item>
+        <item>Manchot</item>
+        <item>Requin</item>
+    </string-array>
+
+    <string name="mammiferes_difficile_question_9">Quel mammifère a un système social complexe appelé "troupeau" ou "pod" ?</string>
+    <string name="mammiferes_difficile_question_9_reponse_valid">1</string>
+    <string-array name="mammiferes_difficile_question_9_reponses">
+        <item>Lion</item>
+        <item>Orca (épaulard)</item>
+        <item>Loup</item>
+        <item>Chimpanzé</item>
+    </string-array>
+
+    <string name="mammiferes_difficile_question_10">Quel est le mammifère terrestre le plus rapide ?</string>
+    <string name="mammiferes_difficile_question_10_reponse_valid">1</string>
+    <string-array name="mammiferes_difficile_question_10_reponses">
+        <item>Lion</item>
+        <item>Guépard</item>
+        <item>Antilope</item>
+        <item>Gazelle</item>
+    </string-array>
+
+    <string name="animaux_marins_facile_question_1">Quel animal marin est connu pour sa coquille spiralée ?</string>
+    <string name="animaux_marins_facile_question_1_reponse_valid">1</string>
+    <string-array name="animaux_marins_facile_question_1_reponses">
+        <item>Dauphin</item>
+        <item>Escargot de mer</item>
+        <item>Requin</item>
+        <item>Méduse</item>
+    </string-array>
+
+    <string name="animaux_marins_facile_question_2">Quel est le plus grand animal marin ?</string>
+    <string name="animaux_marins_facile_question_2_reponse_valid">2</string>
+    <string-array name="animaux_marins_facile_question_2_reponses">
+        <item>Requin blanc</item>
+        <item>Calmar géant</item>
+        <item>Baleine bleue</item>
+        <item>Orque</item>
+    </string-array>
+
+    <string name="animaux_marins_facile_question_3">Quel animal marin est un mammifère ?</string>
+    <string name="animaux_marins_facile_question_3_reponse_valid">2</string>
+    <string-array name="animaux_marins_facile_question_3_reponses">
+        <item>Poisson-clown</item>
+        <item>Pieuvre</item>
+        <item>Dauphin</item>
+        <item>Étoile de mer</item>
+    </string-array>
+
+    <string name="animaux_marins_facile_question_4">Quelle créature marine possède huit bras ?</string>
+    <string name="animaux_marins_facile_question_4_reponse_valid">1</string>
+    <string-array name="animaux_marins_facile_question_4_reponses">
+        <item>Méduse</item>
+        <item>Poulpe (pieuvre)</item>
+        <item>Crabe</item>
+        <item>Étoile de mer</item>
+    </string-array>
+
+    <string name="animaux_marins_facile_question_5">Quel animal marin a une carapace dure ?</string>
+    <string name="animaux_marins_facile_question_5_reponse_valid">1</string>
+    <string-array name="animaux_marins_facile_question_5_reponses">
+        <item>Requin</item>
+        <item>Crabe</item>
+        <item>Méduse</item>
+        <item>Dauphin</item>
+    </string-array>
+
+    <string name="animaux_marins_facile_question_6">Quel poisson est connu pour sa capacité à changer de couleur ?</string>
+    <string name="animaux_marins_facile_question_6_reponse_valid">1</string>
+    <string-array name="animaux_marins_facile_question_6_reponses">
+        <item>Poisson-lune</item>
+        <item>Caméléon de mer (poisson-cameleon)</item>
+        <item>Requin marteau</item>
+        <item>Thon</item>
+    </string-array>
+
+    <string name="animaux_marins_facile_question_7">Quel animal marin peut projeter de l’encre pour se défendre ?</string>
+    <string name="animaux_marins_facile_question_7_reponse_valid">1</string>
+    <string-array name="animaux_marins_facile_question_7_reponses">
+        <item>Requin</item>
+        <item>Calmar</item>
+        <item>Hippocampe</item>
+        <item>Mérou</item>
+    </string-array>
+
+    <string name="animaux_marins_facile_question_8">Quel animal marin est souvent appelé le "roi des océans" ?</string>
+    <string name="animaux_marins_facile_question_8_reponse_valid">1</string>
+    <string-array name="animaux_marins_facile_question_8_reponses">
+        <item>Requin marteau</item>
+        <item>Requin blanc</item>
+        <item>Orque</item>
+        <item>Dauphin</item>
+    </string-array>
+
+    <string name="animaux_marins_facile_question_9">Quelle est la fonction principale des branchies chez les animaux marins ?</string>
+    <string name="animaux_marins_facile_question_9_reponse_valid">1</string>
+    <string-array name="animaux_marins_facile_question_9_reponses">
+        <item>Se déplacer</item>
+        <item>Respirer sous l’eau</item>
+        <item>Attraper des proies</item>
+        <item>Produire de la lumière</item>
+    </string-array>
+
+    <string name="animaux_marins_facile_question_10">Quel animal marin est célèbre pour sa danse lors de la reproduction ?</string>
+    <string name="animaux_marins_facile_question_10_reponse_valid">1</string>
+    <string-array name="animaux_marins_facile_question_10_reponses">
+        <item>Crabe</item>
+        <item>Homard</item>
+        <item>Méduse</item>
+        <item>Poisson-clown</item>
+    </string-array>
+
+    <string name="animaux_marins_moyen_question_1">Quelle est la principale différence entre un dauphin et un poisson ?</string>
+    <string name="animaux_marins_moyen_question_1_reponse_valid">1</string>
+    <string-array name="animaux_marins_moyen_question_1_reponses">
+        <item>Le dauphin a des écailles</item>
+        <item>Le dauphin est un mammifère</item>
+        <item>Le dauphin peut respirer sous l’eau</item>
+        <item>Le dauphin a des branchies</item>
+    </string-array>
+
+    <string name="animaux_marins_moyen_question_2">Quel animal marin est capable de régénérer ses bras ?</string>
+    <string name="animaux_marins_moyen_question_2_reponse_valid">1</string>
+    <string-array name="animaux_marins_moyen_question_2_reponses">
+        <item>Étoile de mer</item>
+        <item>Étoile de mer</item>
+        <item>Requin</item>
+        <item>Méduse</item>
+    </string-array>
+
+    <string name="animaux_marins_moyen_question_3">Quelle espèce de requin est la plus dangereuse pour l’homme ?</string>
+    <string name="animaux_marins_moyen_question_3_reponse_valid">2</string>
+    <string-array name="animaux_marins_moyen_question_3_reponses">
+        <item>Requin-baleine</item>
+        <item>Requin-marteau</item>
+        <item>Requin blanc</item>
+        <item>Requin-taureau</item>
+    </string-array>
+
+    <string name="animaux_marins_moyen_question_4">Quel animal marin utilise l’écholocation pour se repérer ?</string>
+    <string name="animaux_marins_moyen_question_4_reponse_valid">1</string>
+    <string-array name="animaux_marins_moyen_question_4_reponses">
+        <item>Requin</item>
+        <item>Dauphin</item>
+        <item>Méduse</item>
+        <item>Crabe</item>
+    </string-array>
+
+    <string name="animaux_marins_moyen_question_5">Quel animal marin possède une langue dentelée appelée radula ?</string>
+    <string name="animaux_marins_moyen_question_5_reponse_valid">1</string>
+    <string-array name="animaux_marins_moyen_question_5_reponses">
+        <item>Crabe</item>
+        <item>Mollusques (comme l’escargot de mer)</item>
+        <item>Requin</item>
+        <item>Poisson-lune</item>
+    </string-array>
+
+    <string name="animaux_marins_moyen_question_6">Quel est le rôle des coraux dans l’écosystème marin ?</string>
+    <string name="animaux_marins_moyen_question_6_reponse_valid">1</string>
+    <string-array name="animaux_marins_moyen_question_6_reponses">
+        <item>Ils sont des poissons</item>
+        <item>Ils forment des récifs qui abritent de nombreuses espèces</item>
+        <item>Ils sont des prédateurs marins</item>
+        <item>Ils produisent de l’oxygène</item>
+    </string-array>
+
+    <string name="animaux_marins_moyen_question_7">Quel animal marin est célèbre pour son camouflage exceptionnel ?</string>
+    <string name="animaux_marins_moyen_question_7_reponse_valid">1</string>
+    <string-array name="animaux_marins_moyen_question_7_reponses">
+        <item>Requin</item>
+        <item>Poulpe (pieuvre)</item>
+        <item>Dauphin</item>
+        <item>Crabe</item>
+    </string-array>
+
+    <string name="animaux_marins_moyen_question_8">Les méduses sont composées à combien de pourcentage d’eau ?</string>
+    <string name="animaux_marins_moyen_question_8_reponse_valid">1</string>
+    <string-array name="animaux_marins_moyen_question_8_reponses">
+        <item>10%</item>
+        <item>95%</item>
+        <item>50%</item>
+        <item>70%</item>
+    </string-array>
+
+    <string name="animaux_marins_moyen_question_9">Quel poisson est connu pour gonfler son corps pour se défendre ?</string>
+    <string name="animaux_marins_moyen_question_9_reponse_valid">1</string>
+    <string-array name="animaux_marins_moyen_question_9_reponses">
+        <item>Requin</item>
+        <item>Poisson-globe</item>
+        <item>Poisson-clown</item>
+        <item>Thon</item>
+    </string-array>
+
+    <string name="animaux_marins_moyen_question_10">Quel mammifère marin est appelé aussi "baleine à dents" ?</string>
+    <string name="animaux_marins_moyen_question_10_reponse_valid">1</string>
+    <string-array name="animaux_marins_moyen_question_10_reponses">
+        <item>Baleine bleue</item>
+        <item>Cachalot</item>
+        <item>Dauphin</item>
+        <item>Orque</item>
+    </string-array>
+
+    <string name="animaux_marins_difficile_question_1">Quel est le nom scientifique du requin blanc ?</string>
+    <string name="animaux_marins_difficile_question_1_reponse_valid">2</string>
+    <string-array name="animaux_marins_difficile_question_1_reponses">
+        <item>Carcharodon carcharias</item>
+        <item>Galeocerdo cuvier</item>
+        <item>Carcharodon carcharias</item>
+        <item>Sphyrna mokarran</item>
+    </string-array>
+
+    <string name="animaux_marins_difficile_question_2">Quel animal marin possède le plus grand cerveau proportionnellement à sa taille corporelle ?</string>
+    <string name="animaux_marins_difficile_question_2_reponse_valid">1</string>
+    <string-array name="animaux_marins_difficile_question_2_reponses">
+        <item>Dauphin</item>
+        <item>Poulpe</item>
+        <item>Requin</item>
+        <item>Baleine bleue</item>
+    </string-array>
+
+    <string name="animaux_marins_difficile_question_3">Quelle espèce de baleine est connue pour ses longs chants complexes ?</string>
+    <string name="animaux_marins_difficile_question_3_reponse_valid">1</string>
+    <string-array name="animaux_marins_difficile_question_3_reponses">
+        <item>Baleine bleue</item>
+        <item>Baleine à bosse</item>
+        <item>Cachalot</item>
+        <item>Béluga</item>
+    </string-array>
+
+    <string name="animaux_marins_difficile_question_4">Quel est le plus grand invertébré marin ?</string>
+    <string name="animaux_marins_difficile_question_4_reponse_valid">1</string>
+    <string-array name="animaux_marins_difficile_question_4_reponses">
+        <item>Pieuvre géante</item>
+        <item>Calmar géant</item>
+        <item>Méduse</item>
+        <item>Étoile de mer</item>
+    </string-array>
+
+    <string name="animaux_marins_difficile_question_5">Les hippocampes mâles ont une particularité importante :</string>
+    <string name="animaux_marins_difficile_question_5_reponse_valid">1</string>
+    <string-array name="animaux_marins_difficile_question_5_reponses">
+        <item>Ils pondent les œufs</item>
+        <item>Ils portent les œufs dans une poche ventrale</item>
+        <item>Ils chantent pour attirer la femelle</item>
+        <item>Ils construisent des nids</item>
+    </string-array>
+
+    <string name="animaux_marins_difficile_question_6">Quel est le rôle des bactéries symbiotiques dans les cheminées hydrothermales sous-marines ?</string>
+    <string name="animaux_marins_difficile_question_6_reponse_valid">1</string>
+    <string-array name="animaux_marins_difficile_question_6_reponses">
+        <item>Prédateurs</item>
+        <item>Fournir de l’énergie chimique à d’autres organismes</item>
+        <item>Producteurs d’oxygène</item>
+        <item>Parasites</item>
+    </string-array>
+
+    <string name="animaux_marins_difficile_question_7">Quel animal marin possède la plus grande vitesse de nage enregistrée ?</string>
+    <string name="animaux_marins_difficile_question_7_reponse_valid">1</string>
+    <string-array name="animaux_marins_difficile_question_7_reponses">
+        <item>Requin blanc</item>
+        <item>Voilier (poisson)</item>
+        <item>Dauphin</item>
+        <item>Marlin</item>
+    </string-array>
+
+    <string name="animaux_marins_difficile_question_8">Quel est le mécanisme principal utilisé par la méduse pour se déplacer ?</string>
+    <string name="animaux_marins_difficile_question_8_reponse_valid">1</string>
+    <string-array name="animaux_marins_difficile_question_8_reponses">
+        <item>Nager avec les bras</item>
+        <item>Pulsations du corps en forme de cloche</item>
+        <item>Utiliser les nageoires</item>
+        <item>Courants marins uniquement</item>
+    </string-array>
+
+    <string name="animaux_marins_difficile_question_9">Quel est l’animal marin le plus long jamais enregistré ?</string>
+    <string name="animaux_marins_difficile_question_9_reponse_valid">1</string>
+    <string-array name="animaux_marins_difficile_question_9_reponses">
+        <item>Requin baleine</item>
+        <item>Siphonophore géant (corde de méduse)</item>
+        <item>Calmar colossal</item>
+        <item>Baleine bleue</item>
+    </string-array>
+
+    <string name="animaux_marins_difficile_question_10">Quel est le principal mode de reproduction des coraux ?</string>
+    <string name="animaux_marins_difficile_question_10_reponse_valid">2</string>
+    <string-array name="animaux_marins_difficile_question_10_reponses">
+        <item>Parthénogenèse</item>
+        <item>Scissiparité</item>
+        <item>Fécondation externe avec émission de gamètes dans l’eau</item>
+        <item>Ovoviviparité</item>
+    </string-array>
+
+    <string name="oiseaux_facile_question_1">Les oiseaux ont-ils des plumes ?</string>
+    <string name="oiseaux_facile_question_1_reponse_valid">1</string>
+    <string-array name="oiseaux_facile_question_1_reponses">
+        <item>Non</item>
+        <item>Oui</item>
+        <item>Une seule</item>
+        <item>Peutêtre</item>
+    </string-array>
+
+    <string name="oiseaux_facile_question_2">Quel oiseau est célèbre pour son chant mélodieux ?</string>
+    <string name="oiseaux_facile_question_2_reponse_valid">1</string>
+    <string-array name="oiseaux_facile_question_2_reponses">
+        <item>Corbeau</item>
+        <item>Rossignol</item>
+        <item>Autruche</item>
+        <item>Pigeon</item>
+    </string-array>
+
+    <string name="oiseaux_facile_question_3">Quel oiseau ne peut pas voler ?</string>
+    <string name="oiseaux_facile_question_3_reponse_valid">0</string>
+    <string-array name="oiseaux_facile_question_3_reponses">
+        <item>Autruche</item>
+        <item>Faucon</item>
+        <item>Hirondelle</item>
+        <item>Aigle</item>
+    </string-array>
+
+    <string name="oiseaux_facile_question_4">Où les oiseaux construisent-ils généralement leurs nids ?</string>
+    <string name="oiseaux_facile_question_4_reponse_valid">1</string>
+    <string-array name="oiseaux_facile_question_4_reponses">
+        <item>Sous terre</item>
+        <item>Dans les arbres</item>
+        <item>Dans l’eau</item>
+        <item>Dans des grottes</item>
+    </string-array>
+
+    <string name="oiseaux_facile_question_5">Quel oiseau est un symbole de paix ?</string>
+    <string name="oiseaux_facile_question_5_reponse_valid">1</string>
+    <string-array name="oiseaux_facile_question_5_reponses">
+        <item>Faucon</item>
+        <item>Colombe</item>
+        <item>Corbeau</item>
+        <item>Hibou</item>
+    </string-array>
+
+    <string name="oiseaux_facile_question_6">Quel oiseau migre sur de longues distances ?</string>
+    <string name="oiseaux_facile_question_6_reponse_valid">1</string>
+    <string-array name="oiseaux_facile_question_6_reponses">
+        <item>Perroquet</item>
+        <item>Hirondelle</item>
+        <item>Moineau</item>
+        <item>Canard</item>
+    </string-array>
+
+    <string name="oiseaux_facile_question_7">Quel oiseau a un long cou et vit souvent près de l’eau ?</string>
+    <string name="oiseaux_facile_question_7_reponse_valid">0</string>
+    <string-array name="oiseaux_facile_question_7_reponses">
+        <item>Cigogne</item>
+        <item>Aigle</item>
+        <item>Pélican</item>
+        <item>Albatros</item>
+    </string-array>
+
+    <string name="oiseaux_facile_question_8">Quel oiseau est le plus rapide en vol ?</string>
+    <string name="oiseaux_facile_question_8_reponse_valid">1</string>
+    <string-array name="oiseaux_facile_question_8_reponses">
+        <item>Albatros</item>
+        <item>Faucon pèlerin</item>
+        <item>Moineau</item>
+        <item>Corbeau</item>
+    </string-array>
+
+    <string name="oiseaux_facile_question_9">Comment s’appelle le bébé oiseau ?</string>
+    <string name="oiseaux_facile_question_9_reponse_valid">1</string>
+    <string-array name="oiseaux_facile_question_9_reponses">
+        <item>Chaton</item>
+        <item>Poussin</item>
+        <item>Chiot</item>
+        <item>Veau</item>
+    </string-array>
+
+    <string name="oiseaux_facile_question_10">Quel oiseau est connu pour imiter des sons, y compris la voix humaine ?</string>
+    <string name="oiseaux_facile_question_10_reponse_valid">2</string>
+    <string-array name="oiseaux_facile_question_10_reponses">
+        <item>Moineau</item>
+        <item>Corbeau</item>
+        <item>Perroquet</item>
+        <item>Aigle</item>
+    </string-array>
+
+    <string name="oiseaux_moyen_question_1">Quel oiseau possède la plus grande envergure au monde ?</string>
+    <string name="oiseaux_moyen_question_1_reponse_valid">1</string>
+    <string-array name="oiseaux_moyen_question_1_reponses">
+        <item>Aigle royal</item>
+        <item>Albatros</item>
+        <item>Pélican</item>
+        <item>Cigogne</item>
+    </string-array>
+
+    <string name="oiseaux_moyen_question_2">Quel oiseau nocturne est associé à la sagesse ?</string>
+    <string name="oiseaux_moyen_question_2_reponse_valid">1</string>
+    <string-array name="oiseaux_moyen_question_2_reponses">
+        <item>Hibou</item>
+        <item>Chouette</item>
+        <item>Corbeau</item>
+        <item>Rossignol</item>
+    </string-array>
+
+    <string name="oiseaux_moyen_question_3">Quel oiseau construit parfois son nid sur l’eau ?</string>
+    <string name="oiseaux_moyen_question_3_reponse_valid">2</string>
+    <string-array name="oiseaux_moyen_question_3_reponses">
+        <item>Pigeon</item>
+        <item>Hirondelle</item>
+        <item>Canard</item>
+        <item>Autruche</item>
+    </string-array>
+
+    <string name="oiseaux_moyen_question_4">Quel oiseau est connu pour sa danse de séduction ?</string>
+    <string name="oiseaux_moyen_question_4_reponse_valid">1</string>
+    <string-array name="oiseaux_moyen_question_4_reponses">
+        <item>Autruche</item>
+        <item>Manakin</item>
+        <item>Aigrette</item>
+        <item>Pingouin</item>
+    </string-array>
+
+    <string name="oiseaux_moyen_question_5">Quel oiseau a un bec très long pour pêcher ?</string>
+    <string name="oiseaux_moyen_question_5_reponse_valid">2</string>
+    <string-array name="oiseaux_moyen_question_5_reponses">
+        <item>Mouette</item>
+        <item>Flamant rose</item>
+        <item>Pélican</item>
+        <item>Aigle</item>
+    </string-array>
+
+    <string name="oiseaux_moyen_question_6">Quel oiseau a un plumage très coloré, symbole d’Amérique centrale ?</string>
+    <string name="oiseaux_moyen_question_6_reponse_valid">1</string>
+    <string-array name="oiseaux_moyen_question_6_reponses">
+        <item>Flamant</item>
+        <item>Quetzal</item>
+        <item>Toucans</item>
+        <item>Canari</item>
+    </string-array>
+
+    <string name="oiseaux_moyen_question_7">Quel oiseau peut plonger profondément pour attraper du poisson ?</string>
+    <string name="oiseaux_moyen_question_7_reponse_valid">1</string>
+    <string-array name="oiseaux_moyen_question_7_reponses">
+        <item>Cormoran</item>
+        <item>Pingouin</item>
+        <item>Pélican</item>
+        <item>Albatros</item>
+    </string-array>
+
+    <string name="oiseaux_moyen_question_8">Quel oiseau a une vue exceptionnelle et chasse en altitude ?</string>
+    <string name="oiseaux_moyen_question_8_reponse_valid">2</string>
+    <string-array name="oiseaux_moyen_question_8_reponses">
+        <item>Chouette</item>
+        <item>Corneille</item>
+        <item>Aigle</item>
+        <item>Moineau</item>
+    </string-array>
+
+    <string name="oiseaux_moyen_question_9">Quel oiseau migrateur revient toujours au même nid chaque année ?</string>
+    <string name="oiseaux_moyen_question_9_reponse_valid">2</string>
+    <string-array name="oiseaux_moyen_question_9_reponses">
+        <item>Rossignol</item>
+        <item>Flamant</item>
+        <item>Sterne</item>
+        <item>Manchot</item>
+    </string-array>
+
+    <string name="oiseaux_moyen_question_10">Comment respirent les oiseaux ?</string>
+    <string name="oiseaux_moyen_question_10_reponse_valid">1</string>
+    <string-array name="oiseaux_moyen_question_10_reponses">
+        <item>Par la peau</item>
+        <item>Par des poumons avec sacs aériens</item>
+        <item>Par des branchies</item>
+        <item>Par le bec</item>
+    </string-array>
+
+    <string name="oiseaux_difficile_question_1">Quel oiseau peut voler en continu pendant plusieurs mois sans se poser ?</string>
+    <string name="oiseaux_difficile_question_1_reponse_valid">1</string>
+    <string-array name="oiseaux_difficile_question_1_reponses">
+        <item>Faucon</item>
+        <item>Martinet</item>
+        <item>Albatros</item>
+        <item>Pigeon</item>
+    </string-array>
+
+    <string name="oiseaux_difficile_question_2">Quel oiseau possède l’un des chants les plus complexes et longs ?</string>
+    <string name="oiseaux_difficile_question_2_reponse_valid">1</string>
+    <string-array name="oiseaux_difficile_question_2_reponses">
+        <item>Aigle</item>
+        <item>Rossignol</item>
+        <item>Canari</item>
+        <item>Pie</item>
+    </string-array>
+
+    <string name="oiseaux_difficile_question_3">Quel oiseau est capable de résoudre des problèmes complexes et utiliser des outils ?</string>
+    <string name="oiseaux_difficile_question_3_reponse_valid">1</string>
+    <string-array name="oiseaux_difficile_question_3_reponses">
+        <item>Moineau</item>
+        <item>Corbeau</item>
+        <item>Colombe</item>
+        <item>Autruche</item>
+    </string-array>
+
+    <string name="oiseaux_difficile_question_4">Quel oiseau utilise le champ magnétique terrestre pour s’orienter en migration ?</string>
+    <string name="oiseaux_difficile_question_4_reponse_valid">2</string>
+    <string-array name="oiseaux_difficile_question_4_reponses">
+        <item>Aigrette</item>
+        <item>Hirondelle</item>
+        <item>Colombe migratrice</item>
+        <item>Flamant rose</item>
+    </string-array>
+
+    <string name="oiseaux_difficile_question_5">Quel oiseau peut dormir en volant ?</string>
+    <string name="oiseaux_difficile_question_5_reponse_valid">2</string>
+    <string-array name="oiseaux_difficile_question_5_reponses">
+        <item>Pigeon</item>
+        <item>Goéland</item>
+        <item>Martinet</item>
+        <item>Cygne</item>
+    </string-array>
+
+    <string name="oiseaux_difficile_question_6">Quel oiseau est connu pour construire des nids très élaborés et décorés ?</string>
+    <string name="oiseaux_difficile_question_6_reponse_valid">1</string>
+    <string-array name="oiseaux_difficile_question_6_reponses">
+        <item>Pélican</item>
+        <item>Tisserin</item>
+        <item>Héron</item>
+        <item>Pingouin</item>
+    </string-array>
+
+    <string name="oiseaux_difficile_question_7">Quel oiseau a des plumes spéciales en forme de raquette au bout de la queue ?</string>
+    <string name="oiseaux_difficile_question_7_reponse_valid">1</string>
+    <string-array name="oiseaux_difficile_question_7_reponses">
+        <item>Flamant</item>
+        <item>Héron couronné</item>
+        <item>Quetzal</item>
+        <item>Faisan</item>
+    </string-array>
+
+    <string name="oiseaux_difficile_question_8">Quel oiseau utilise son bec pour briser des coquillages sur des rochers ?</string>
+    <string name="oiseaux_difficile_question_8_reponse_valid">2</string>
+    <string-array name="oiseaux_difficile_question_8_reponses">
+        <item>Pélican</item>
+        <item>Goéland</item>
+        <item>Macareux</item>
+        <item>Cormoran</item>
+    </string-array>
+
+    <string name="oiseaux_difficile_question_9">Quel oiseau a été domestiqué depuis plus de 5000 ans pour les messages ?</string>
+    <string name="oiseaux_difficile_question_9_reponse_valid">2</string>
+    <string-array name="oiseaux_difficile_question_9_reponses">
+        <item>Rossignol</item>
+        <item>Autruche</item>
+        <item>Pigeon</item>
+        <item>Corbeau</item>
+    </string-array>
+
+    <string name="oiseaux_difficile_question_10">Quel oiseau change la couleur de son plumage selon les saisons ?</string>
+    <string name="oiseaux_difficile_question_10_reponse_valid">2</string>
+    <string-array name="oiseaux_difficile_question_10_reponses">
+        <item>Pingouin</item>
+        <item>Canari</item>
+        <item>Lagopède</item>
+        <item>Geai</item>
+    </string-array>
+
+    <string name="anatomie_facile_question_1">Quel organe pompe le sang ?</string>
+    <string name="anatomie_facile_question_1_reponse_valid">1</string>
+    <string-array name="anatomie_facile_question_1_reponses">
+        <item>Foie</item>
+        <item>Cœur</item>
+        <item>Rein</item>
+        <item>Rate</item>
+    </string-array>
+
+    <string name="anatomie_facile_question_2">Combien avons-nous de poumons ?</string>
+    <string name="anatomie_facile_question_2_reponse_valid">1</string>
+    <string-array name="anatomie_facile_question_2_reponses">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+
+    <string name="anatomie_facile_question_3">Que protège le crâne ?</string>
+    <string name="anatomie_facile_question_3_reponse_valid">1</string>
+    <string-array name="anatomie_facile_question_3_reponses">
+        <item>Poumons</item>
+        <item>Cerveau</item>
+        <item>Cœur</item>
+        <item>Intestins</item>
+    </string-array>
+
+    <string name="anatomie_facile_question_4">Où se trouve le fémur ?</string>
+    <string name="anatomie_facile_question_4_reponse_valid">0</string>
+    <string-array name="anatomie_facile_question_4_reponses">
+        <item>Jambe</item>
+        <item>Bras</item>
+        <item>Dos</item>
+        <item>Cou</item>
+    </string-array>
+
+    <string name="anatomie_facile_question_5">Quel organe digère la nourriture ?</string>
+    <string name="anatomie_facile_question_5_reponse_valid">2</string>
+    <string-array name="anatomie_facile_question_5_reponses">
+        <item>Langue</item>
+        <item>Rein</item>
+        <item>Estomac</item>
+        <item>Nez</item>
+    </string-array>
+
+    <string name="anatomie_facile_question_6">Quel organe contrôle le corps ?</string>
+    <string name="anatomie_facile_question_6_reponse_valid">1</string>
+    <string-array name="anatomie_facile_question_6_reponses">
+        <item>Estomac</item>
+        <item>Cerveau</item>
+        <item>Pancréas</item>
+        <item>Reins</item>
+    </string-array>
+
+    <string name="anatomie_facile_question_7">Où se trouvent les alvéoles ?</string>
+    <string name="anatomie_facile_question_7_reponse_valid">1</string>
+    <string-array name="anatomie_facile_question_7_reponses">
+        <item>Reins</item>
+        <item>Poumons</item>
+        <item>Cœur</item>
+        <item>Foie</item>
+    </string-array>
+
+    <string name="anatomie_facile_question_8">Quel organe filtre le sang ?</string>
+    <string name="anatomie_facile_question_8_reponse_valid">1</string>
+    <string-array name="anatomie_facile_question_8_reponses">
+        <item>Cœur</item>
+        <item>Foie</item>
+        <item>Estomac</item>
+        <item>Peau</item>
+    </string-array>
+
+    <string name="anatomie_facile_question_9">Combien a-t-on de yeux ?</string>
+    <string name="anatomie_facile_question_9_reponse_valid">1</string>
+    <string-array name="anatomie_facile_question_9_reponses">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+
+    <string name="anatomie_facile_question_10">Quel os protège le cœur ?</string>
+    <string name="anatomie_facile_question_10_reponse_valid">1</string>
+    <string-array name="anatomie_facile_question_10_reponses">
+        <item>Pelvis</item>
+        <item>Sternum</item>
+        <item>Crâne</item>
+        <item>Clavicule</item>
+    </string-array>
+
+    <string name="anatomie_moyen_question_1">Comment s’appelle l’os du bras entre l’épaule et le coude ?</string>
+    <string name="anatomie_moyen_question_1_reponse_valid">1</string>
+    <string-array name="anatomie_moyen_question_1_reponses">
+        <item>Radius</item>
+        <item>Humérus</item>
+        <item>Fémur</item>
+        <item>Tibia</item>
+    </string-array>
+
+    <string name="anatomie_moyen_question_2">Quel muscle permet la respiration ?</string>
+    <string name="anatomie_moyen_question_2_reponse_valid">1</string>
+    <string-array name="anatomie_moyen_question_2_reponses">
+        <item>Deltoïde</item>
+        <item>Diaphragme</item>
+        <item>Triceps</item>
+        <item>Quadriceps</item>
+    </string-array>
+
+    <string name="anatomie_moyen_question_3">Quel est l’organe le plus lourd ?</string>
+    <string name="anatomie_moyen_question_3_reponse_valid">1</string>
+    <string-array name="anatomie_moyen_question_3_reponses">
+        <item>Cœur</item>
+        <item>Foie</item>
+        <item>Cerveau</item>
+        <item>Intestin</item>
+    </string-array>
+
+    <string name="anatomie_moyen_question_4">Quel type de sang transporte l’oxygène ?</string>
+    <string name="anatomie_moyen_question_4_reponse_valid">1</string>
+    <string-array name="anatomie_moyen_question_4_reponses">
+        <item>Sang pauvre</item>
+        <item>Sang riche</item>
+        <item>Plasma</item>
+        <item>Sueur</item>
+    </string-array>
+
+    <string name="anatomie_moyen_question_5">Quelle partie du cerveau gère l’équilibre ?</string>
+    <string name="anatomie_moyen_question_5_reponse_valid">0</string>
+    <string-array name="anatomie_moyen_question_5_reponses">
+        <item>Cervelet</item>
+        <item>Cortex</item>
+        <item>Hippocampe</item>
+        <item>Bulbe</item>
+    </string-array>
+
+    <string name="anatomie_moyen_question_6">Combien de vertèbres possède notre colonne ?</string>
+    <string name="anatomie_moyen_question_6_reponse_valid">1</string>
+    <string-array name="anatomie_moyen_question_6_reponses">
+        <item>12</item>
+        <item>24</item>
+        <item>48</item>
+        <item>30</item>
+    </string-array>
+
+    <string name="anatomie_moyen_question_7">Comment s’appelle l’os de la poitrine ?</string>
+    <string name="anatomie_moyen_question_7_reponse_valid">0</string>
+    <string-array name="anatomie_moyen_question_7_reponses">
+        <item>Sternum</item>
+        <item>Clavicule</item>
+        <item>Tibia</item>
+        <item>Scapula</item>
+    </string-array>
+
+    <string name="anatomie_moyen_question_8">Quel organe produit l’insuline ?</string>
+    <string name="anatomie_moyen_question_8_reponse_valid">0</string>
+    <string-array name="anatomie_moyen_question_8_reponses">
+        <item>Pancréas</item>
+        <item>Cœur</item>
+        <item>Reins</item>
+        <item>Poumons</item>
+    </string-array>
+
+    <string name="anatomie_moyen_question_9">Combien de chambres possède le cœur ?</string>
+    <string name="anatomie_moyen_question_9_reponse_valid">1</string>
+    <string-array name="anatomie_moyen_question_9_reponses">
+        <item>2</item>
+        <item>4</item>
+        <item>3</item>
+        <item>5</item>
+    </string-array>
+
+    <string name="anatomie_moyen_question_10">Quel sens dépend des papilles gustatives ?</string>
+    <string name="anatomie_moyen_question_10_reponse_valid">1</string>
+    <string-array name="anatomie_moyen_question_10_reponses">
+        <item>Vue</item>
+        <item>Goût</item>
+        <item>Odorat</item>
+        <item>Toucher</item>
+    </string-array>
+
+    <string name="anatomie_difficile_question_1">Quel est le nom scientifique du globule blanc ?</string>
+    <string name="anatomie_difficile_question_1_reponse_valid">1</string>
+    <string-array name="anatomie_difficile_question_1_reponses">
+        <item>Érythrocyte</item>
+        <item>Leucocyte</item>
+        <item>Thrombocyte</item>
+        <item>Myocyte</item>
+    </string-array>
+
+    <string name="anatomie_difficile_question_2">Où se trouve l’hippocampe ?</string>
+    <string name="anatomie_difficile_question_2_reponse_valid">1</string>
+    <string-array name="anatomie_difficile_question_2_reponses">
+        <item>Coeur</item>
+        <item>Cerveau</item>
+        <item>Poumons</item>
+        <item>Intestin</item>
+    </string-array>
+
+    <string name="anatomie_difficile_question_3">Quelle hormone régule le sommeil ?</string>
+    <string name="anatomie_difficile_question_3_reponse_valid">1</string>
+    <string-array name="anatomie_difficile_question_3_reponses">
+        <item>Insuline</item>
+        <item>Mélatonine</item>
+        <item>Adrénaline</item>
+        <item>Dopamine</item>
+    </string-array>
+
+    <string name="anatomie_difficile_question_4">Quel organe produit la bile ?</string>
+    <string name="anatomie_difficile_question_4_reponse_valid">1</string>
+    <string-array name="anatomie_difficile_question_4_reponses">
+        <item>Estomac</item>
+        <item>Foie</item>
+        <item>Pancréas</item>
+        <item>Reins</item>
+    </string-array>
+
+    <string name="anatomie_difficile_question_5">Quel est le rôle du néphron ?</string>
+    <string name="anatomie_difficile_question_5_reponse_valid">1</string>
+    <string-array name="anatomie_difficile_question_5_reponses">
+        <item>Stockage</item>
+        <item>Filtration du sang</item>
+        <item>Digestion</item>
+        <item>Respiration</item>
+    </string-array>
+
+    <string name="anatomie_difficile_question_6">Où se situe la valve mitrale ?</string>
+    <string name="anatomie_difficile_question_6_reponse_valid">1</string>
+    <string-array name="anatomie_difficile_question_6_reponses">
+        <item>Foie</item>
+        <item>Cœur</item>
+        <item>Reins</item>
+        <item>Intestin</item>
+    </string-array>
+
+    <string name="anatomie_difficile_question_7">Quelle est la partie la plus interne d’un os ?</string>
+    <string name="anatomie_difficile_question_7_reponse_valid">1</string>
+    <string-array name="anatomie_difficile_question_7_reponses">
+        <item>Périoste</item>
+        <item>Moelle osseuse</item>
+        <item>Cartilage</item>
+        <item>Compact</item>
+    </string-array>
+
+    <string name="anatomie_difficile_question_8">Quel est le nom scientifique du sang “froid” ?</string>
+    <string name="anatomie_difficile_question_8_reponse_valid">1</string>
+    <string-array name="anatomie_difficile_question_8_reponses">
+        <item>Sang lymphatique</item>
+        <item>Sang pauvre en O₂</item>
+        <item>Plasma</item>
+        <item>Urée</item>
+    </string-array>
+
+    <string name="anatomie_difficile_question_9">Combien de lobes possède le foie ?</string>
+    <string name="anatomie_difficile_question_9_reponse_valid">1</string>
+    <string-array name="anatomie_difficile_question_9_reponses">
+        <item>2</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+    </string-array>
+
+    <string name="anatomie_difficile_question_10">Quel nerf est responsable du mouvement du cœur ?</string>
+    <string name="anatomie_difficile_question_10_reponse_valid">1</string>
+    <string-array name="anatomie_difficile_question_10_reponses">
+        <item>Trijumeau</item>
+        <item>Vague (X)</item>
+        <item>Optique</item>
+        <item>Hypoglosse</item>
+    </string-array>
+
+    <string name="univers_facile_question_1">Quelle est l’étoile de la Terre ?</string>
+    <string name="univers_facile_question_1_reponse_valid">1</string>
+    <string-array name="univers_facile_question_1_reponses">
+        <item>Jupiter</item>
+        <item>Soleil</item>
+        <item>Lune</item>
+        <item>Mars</item>
+    </string-array>
+
+    <string name="univers_facile_question_2">Quelle planète est rouge ?</string>
+    <string name="univers_facile_question_2_reponse_valid">1</string>
+    <string-array name="univers_facile_question_2_reponses">
+        <item>Mercure</item>
+        <item>Mars</item>
+        <item>Saturne</item>
+        <item>Terre</item>
+    </string-array>
+
+    <string name="univers_facile_question_3">Comment s’appelle notre galaxie ?</string>
+    <string name="univers_facile_question_3_reponse_valid">1</string>
+    <string-array name="univers_facile_question_3_reponses">
+        <item>Andromède</item>
+        <item>Voie lactée</item>
+        <item>Sombrero</item>
+        <item>Centaure</item>
+    </string-array>
+
+    <string name="univers_facile_question_4">Quel astre éclaire la nuit ?</string>
+    <string name="univers_facile_question_4_reponse_valid">1</string>
+    <string-array name="univers_facile_question_4_reponses">
+        <item>Soleil</item>
+        <item>Lune</item>
+        <item>Terre</item>
+        <item>Saturne</item>
+    </string-array>
+
+    <string name="univers_facile_question_5">Quelle planète a des anneaux visibles ?</string>
+    <string name="univers_facile_question_5_reponse_valid">1</string>
+    <string-array name="univers_facile_question_5_reponses">
+        <item>Vénus</item>
+        <item>Saturne</item>
+        <item>Mercure</item>
+        <item>Mars</item>
+    </string-array>
+
+    <string name="univers_facile_question_6">Comment s’appellent les rochers qui tombent du ciel ?</string>
+    <string name="univers_facile_question_6_reponse_valid">1</string>
+    <string-array name="univers_facile_question_6_reponses">
+        <item>Comètes</item>
+        <item>Météorites</item>
+        <item>Étoiles</item>
+        <item>Fusées</item>
+    </string-array>
+
+    <string name="univers_facile_question_7">Quelle planète est la plus proche du Soleil ?</string>
+    <string name="univers_facile_question_7_reponse_valid">1</string>
+    <string-array name="univers_facile_question_7_reponses">
+        <item>Terre</item>
+        <item>Mercure</item>
+        <item>Mars</item>
+        <item>Uranus</item>
+    </string-array>
+
+    <string name="univers_facile_question_8">Quelle est la planète la plus grande ?</string>
+    <string name="univers_facile_question_8_reponse_valid">1</string>
+    <string-array name="univers_facile_question_8_reponses">
+        <item>Saturne</item>
+        <item>Jupiter</item>
+        <item>Neptune</item>
+        <item>Uranus</item>
+    </string-array>
+
+    <string name="univers_facile_question_9">Quel gaz domine l’atmosphère terrestre ?</string>
+    <string name="univers_facile_question_9_reponse_valid">1</string>
+    <string-array name="univers_facile_question_9_reponses">
+        <item>Oxygène</item>
+        <item>Azote</item>
+        <item>CO₂</item>
+        <item>Hélium</item>
+    </string-array>
+
+    <string name="univers_facile_question_10">Qu’est-ce qu’une étoile filante ?</string>
+    <string name="univers_facile_question_10_reponse_valid">1</string>
+    <string-array name="univers_facile_question_10_reponses">
+        <item>Une étoile</item>
+        <item>Une météorite</item>
+        <item>Une planète</item>
+        <item>Un nuage</item>
+    </string-array>
+
+    <string name="univers_moyen_question_1">Quel est l’âge du Soleil ?</string>
+    <string name="univers_moyen_question_1_reponse_valid">1</string>
+    <string-array name="univers_moyen_question_1_reponses">
+        <item>500 000 ans</item>
+        <item>4,5 milliards d’années</item>
+        <item>10 millions d’années</item>
+        <item>15 milliards</item>
+    </string-array>
+
+    <string name="univers_moyen_question_2">Quelle planète est la plus chaude ?</string>
+    <string name="univers_moyen_question_2_reponse_valid">1</string>
+    <string-array name="univers_moyen_question_2_reponses">
+        <item>Mercury</item>
+        <item>Vénus</item>
+        <item>Mars</item>
+        <item>Neptune</item>
+    </string-array>
+
+    <string name="univers_moyen_question_3">Quelle force nous maintient au sol ?</string>
+    <string name="univers_moyen_question_3_reponse_valid">1</string>
+    <string-array name="univers_moyen_question_3_reponses">
+        <item>Pression</item>
+        <item>Gravité</item>
+        <item>Inertie</item>
+        <item>Magnétisme</item>
+    </string-array>
+
+    <string name="univers_moyen_question_4">Quelle planète tourne sur le côté ?</string>
+    <string name="univers_moyen_question_4_reponse_valid">1</string>
+    <string-array name="univers_moyen_question_4_reponses">
+        <item>Mars</item>
+        <item>Uranus</item>
+        <item>Terre</item>
+        <item>Jupiter</item>
+    </string-array>
+
+    <string name="univers_moyen_question_5">Quel est le satellite naturel de la Terre ?</string>
+    <string name="univers_moyen_question_5_reponse_valid">1</string>
+    <string-array name="univers_moyen_question_5_reponses">
+        <item>Soleil</item>
+        <item>Lune</item>
+        <item>Mars</item>
+        <item>Vénus</item>
+    </string-array>
+
+    <string name="univers_moyen_question_6">Que devient une étoile massive en fin de vie ?</string>
+    <string name="univers_moyen_question_6_reponse_valid">1</string>
+    <string-array name="univers_moyen_question_6_reponses">
+        <item>Comète</item>
+        <item>Trou noir</item>
+        <item>Astéroïde</item>
+        <item>Planète</item>
+    </string-array>
+
+    <string name="univers_moyen_question_7">Quelle planète a la plus longue journée ?</string>
+    <string name="univers_moyen_question_7_reponse_valid">1</string>
+    <string-array name="univers_moyen_question_7_reponses">
+        <item>Mars</item>
+        <item>Vénus</item>
+        <item>Terre</item>
+        <item>Jupiter</item>
+    </string-array>
+
+    <string name="univers_moyen_question_8">Qui a développé la théorie de la relativité ?</string>
+    <string name="univers_moyen_question_8_reponse_valid">1</string>
+    <string-array name="univers_moyen_question_8_reponses">
+        <item>Newton</item>
+        <item>Einstein</item>
+        <item>Tesla</item>
+        <item>Bohr</item>
+    </string-array>
+
+    <string name="univers_moyen_question_9">Quelle planète possède la grande tache rouge ?</string>
+    <string name="univers_moyen_question_9_reponse_valid">1</string>
+    <string-array name="univers_moyen_question_9_reponses">
+        <item>Neptune</item>
+        <item>Jupiter</item>
+        <item>Terre</item>
+        <item>Mercure</item>
+    </string-array>
+
+    <string name="univers_moyen_question_10">Où se trouve la ceinture d’astéroïdes ?</string>
+    <string name="univers_moyen_question_10_reponse_valid">1</string>
+    <string-array name="univers_moyen_question_10_reponses">
+        <item>Jupiter – Saturne</item>
+        <item>Mars – Jupiter</item>
+        <item>Terre – Mars</item>
+        <item>Saturne – Uranus</item>
+    </string-array>
+
+    <string name="univers_difficile_question_1">Quelle est la vitesse de la lumière ?</string>
+    <string name="univers_difficile_question_1_reponse_valid">1</string>
+    <string-array name="univers_difficile_question_1_reponses">
+        <item>300 km/s</item>
+        <item>300 000 km/s</item>
+        <item>3 000 km/s</item>
+        <item>30 000 km/s</item>
+    </string-array>
+
+    <string name="univers_difficile_question_2">Quel est le nom du premier satellite artificiel ?</string>
+    <string name="univers_difficile_question_2_reponse_valid">1</string>
+    <string-array name="univers_difficile_question_2_reponses">
+        <item>Hubble</item>
+        <item>Spoutnik 1</item>
+        <item>Explorer</item>
+        <item>Apollo</item>
+    </string-array>
+
+    <string name="univers_difficile_question_3">De quoi sont faites les nébuleuses ?</string>
+    <string name="univers_difficile_question_3_reponse_valid">1</string>
+    <string-array name="univers_difficile_question_3_reponses">
+        <item>Eau</item>
+        <item>Gaz et poussières</item>
+        <item>Métal</item>
+        <item>Fer</item>
+    </string-array>
+
+    <string name="univers_difficile_question_4">Quel est le plus grand type d’étoile ?</string>
+    <string name="univers_difficile_question_4_reponse_valid">1</string>
+    <string-array name="univers_difficile_question_4_reponses">
+        <item>Naine rouge</item>
+        <item>Supergéante bleue</item>
+        <item>Naine blanche</item>
+        <item>Géante jaune</item>
+    </string-array>
+
+    <string name="univers_difficile_question_5">Comment s\'appelle l\'explosion d\'une étoile en fin de vie ?</string>
+    <string name="univers_difficile_question_5_reponse_valid">1</string>
+    <string-array name="univers_difficile_question_5_reponses">
+        <item>Nova</item>
+        <item>Supernova</item>
+        <item>Pulsar</item>
+        <item>Laser</item>
+    </string-array>
+
+    <string name="univers_difficile_question_6">Qui a marché le premier sur la Lune ?</string>
+    <string name="univers_difficile_question_6_reponse_valid">0</string>
+    <string-array name="univers_difficile_question_6_reponses">
+        <item>Armstrong</item>
+        <item>Aldrin</item>
+        <item>Gagarine</item>
+        <item>Collins</item>
+    </string-array>
+
+    <string name="univers_difficile_question_7">Quel est l’élément le plus abondant dans l’univers ?</string>
+    <string name="univers_difficile_question_7_reponse_valid">1</string>
+    <string-array name="univers_difficile_question_7_reponses">
+        <item>Oxygène</item>
+        <item>Hydrogène</item>
+        <item>Carbone</item>
+        <item>Hélium</item>
+    </string-array>
+
+    <string name="univers_difficile_question_8">Quel télescope observe en infrarouge ?</string>
+    <string name="univers_difficile_question_8_reponse_valid">1</string>
+    <string-array name="univers_difficile_question_8_reponses">
+        <item>Hubble</item>
+        <item>JamesWebb</item>
+        <item>Spitzer</item>
+        <item>Kepler</item>
+    </string-array>
+
+    <string name="univers_difficile_question_9">Quelle théorie décrit l’origine de l’univers ?</string>
+    <string name="univers_difficile_question_9_reponse_valid">1</string>
+    <string-array name="univers_difficile_question_9_reponses">
+        <item>Big Bounce</item>
+        <item>Big Bang</item>
+        <item>Inflation</item>
+        <item>Chaos</item>
+    </string-array>
+
+    <string name="univers_difficile_question_10">Quel phénomène dévie la lumière autour d’un objet massif ?</string>
+    <string name="univers_difficile_question_10_reponse_valid">1</string>
+    <string-array name="univers_difficile_question_10_reponses">
+        <item>Réflexion</item>
+        <item>Lentille gravitationnelle</item>
+        <item>Diffusion</item>
+        <item>Réfraction</item>
+    </string-array>
+
+    <string name="decouverte_facile_question_1">Quel est le plus grand continent ?</string>
+    <string name="decouverte_facile_question_1_reponse_valid">1</string>
+    <string-array name="decouverte_facile_question_1_reponses">
+        <item>Afrique</item>
+        <item>Asie</item>
+        <item>Europe</item>
+        <item>Océanie</item>
+    </string-array>
+
+    <string name="decouverte_facile_question_2">Quel est l’animal le plus rapide ?</string>
+    <string name="decouverte_facile_question_2_reponse_valid">1</string>
+    <string-array name="decouverte_facile_question_2_reponses">
+        <item>Tortue</item>
+        <item>Guépard</item>
+        <item>Cheval</item>
+        <item>Aigle</item>
+    </string-array>
+
+    <string name="decouverte_facile_question_3">Quelle est la boisson la plus consommée après l’eau ?</string>
+    <string name="decouverte_facile_question_3_reponse_valid">1</string>
+    <string-array name="decouverte_facile_question_3_reponses">
+        <item>Jus</item>
+        <item>Thé</item>
+        <item>Café</item>
+        <item>Lait</item>
+    </string-array>
+
+    <string name="decouverte_facile_question_4">Quelle couleur obtient-on en mélangeant bleu + jaune ?</string>
+    <string name="decouverte_facile_question_4_reponse_valid">1</string>
+    <string-array name="decouverte_facile_question_4_reponses">
+        <item>Orange</item>
+        <item>Vert</item>
+        <item>Violet</item>
+        <item>Rouge</item>
+    </string-array>
+
+    <string name="decouverte_facile_question_5">Quel océan est le plus grand ?</string>
+    <string name="decouverte_facile_question_5_reponse_valid">1</string>
+    <string-array name="decouverte_facile_question_5_reponses">
+        <item>Indien</item>
+        <item>Pacifique</item>
+        <item>Atlantique</item>
+        <item>Arctique</item>
+    </string-array>
+
+    <string name="decouverte_facile_question_6">Quel est le plus grand animal de la Terre ?</string>
+    <string name="decouverte_facile_question_6_reponse_valid">1</string>
+    <string-array name="decouverte_facile_question_6_reponses">
+        <item>Requin</item>
+        <item>Baleine bleue</item>
+        <item>Éléphant</item>
+        <item>Girafe</item>
+    </string-array>
+
+    <string name="decouverte_facile_question_7">Quels insectes produisent du miel ?</string>
+    <string name="decouverte_facile_question_7_reponse_valid">1</string>
+    <string-array name="decouverte_facile_question_7_reponses">
+        <item>Fourmis</item>
+        <item>Abeilles</item>
+        <item>Moustiques</item>
+        <item>Papillons</item>
+    </string-array>
+
+    <string name="decouverte_facile_question_8">Quelle planète est appelée “la planète bleue” ?</string>
+    <string name="decouverte_facile_question_8_reponse_valid">1</string>
+    <string-array name="decouverte_facile_question_8_reponses">
+        <item>Mars</item>
+        <item>Terre</item>
+        <item>Saturne</item>
+        <item>Jupiter</item>
+    </string-array>
+
+    <string name="decouverte_facile_question_9">Quel fruit a une couronne ?</string>
+    <string name="decouverte_facile_question_9_reponse_valid">1</string>
+    <string-array name="decouverte_facile_question_9_reponses">
+        <item>Mangue</item>
+        <item>Ananas</item>
+        <item>Orange</item>
+        <item>Pomme</item>
+    </string-array>
+
+    <string name="decouverte_facile_question_10">Quel animal miaule ?</string>
+    <string name="decouverte_facile_question_10_reponse_valid">1</string>
+    <string-array name="decouverte_facile_question_10_reponses">
+        <item>Chien</item>
+        <item>Chat</item>
+        <item>Lion</item>
+        <item>Vache</item>
+    </string-array>
+
+    <string name="decouverte_moyen_question_1">Quelle est la capitale du Japon ?</string>
+    <string name="decouverte_moyen_question_1_reponse_valid">1</string>
+    <string-array name="decouverte_moyen_question_1_reponses">
+        <item>Osaka</item>
+        <item>Tokyo</item>
+        <item>Kyoto</item>
+        <item>Nagoya</item>
+    </string-array>
+
+    <string name="decouverte_moyen_question_2">Quel est le plus long fleuve du monde ?</string>
+    <string name="decouverte_moyen_question_2_reponse_valid">0</string>
+    <string-array name="decouverte_moyen_question_2_reponses">
+        <item>Amazone</item>
+        <item>Nil</item>
+        <item>Congo</item>
+        <item>Mississippi</item>
+    </string-array>
+
+    <string name="decouverte_moyen_question_3">Quel pays produit le plus de cacao ?</string>
+    <string name="decouverte_moyen_question_3_reponse_valid">2</string>
+    <string-array name="decouverte_moyen_question_3_reponses">
+        <item>Ghana</item>
+        <item>Brésil</item>
+        <item>Côte d’Ivoire</item>
+        <item>Cameroun</item>
+    </string-array>
+
+    <string name="decouverte_moyen_question_4">Quelle est la langue la plus parlée ?</string>
+    <string name="decouverte_moyen_question_4_reponse_valid">1</string>
+    <string-array name="decouverte_moyen_question_4_reponses">
+        <item>Anglais</item>
+        <item>Mandarin</item>
+        <item>Français</item>
+        <item>Espagnol</item>
+    </string-array>
+
+    <string name="decouverte_moyen_question_5">Quel métal attire l’aimant ?</string>
+    <string name="decouverte_moyen_question_5_reponse_valid">1</string>
+    <string-array name="decouverte_moyen_question_5_reponses">
+        <item>Aluminium</item>
+        <item>Fer</item>
+        <item>Cuivre</item>
+        <item>Or</item>
+    </string-array>
+
+    <string name="decouverte_moyen_question_6">Quel animal peut dormir debout ?</string>
+    <string name="decouverte_moyen_question_6_reponse_valid">1</string>
+    <string-array name="decouverte_moyen_question_6_reponses">
+        <item>Lion</item>
+        <item>Cheval</item>
+        <item>Chien</item>
+        <item>Gorille</item>
+    </string-array>
+
+    <string name="decouverte_moyen_question_7">Où trouve-t-on la Tour Eiffel ?</string>
+    <string name="decouverte_moyen_question_7_reponse_valid">1</string>
+    <string-array name="decouverte_moyen_question_7_reponses">
+        <item>Londres</item>
+        <item>Paris</item>
+        <item>Rome</item>
+        <item>Berlin</item>
+    </string-array>
+
+    <string name="decouverte_moyen_question_8">Quel est le plus petit pays du monde ?</string>
+    <string name="decouverte_moyen_question_8_reponse_valid">1</string>
+    <string-array name="decouverte_moyen_question_8_reponses">
+        <item>Monaco</item>
+        <item>Vatican</item>
+        <item>Malte</item>
+        <item>Luxembourg</item>
+    </string-array>
+
+    <string name="decouverte_moyen_question_9">Quel est l’organe principal d’une plante ?</string>
+    <string name="decouverte_moyen_question_9_reponse_valid">1</string>
+    <string-array name="decouverte_moyen_question_9_reponses">
+        <item>Graine</item>
+        <item>Racine</item>
+        <item>Fleur</item>
+        <item>Fruit</item>
+    </string-array>
+
+    <string name="decouverte_moyen_question_10">Quel élément protège la Terre du Soleil ?</string>
+    <string name="decouverte_moyen_question_10_reponse_valid">1</string>
+    <string-array name="decouverte_moyen_question_10_reponses">
+        <item>Nuages</item>
+        <item>Atmosphère</item>
+        <item>Lune</item>
+        <item>Pluie</item>
+    </string-array>
+
+    <string name="decouverte_difficile_question_1">Quelle est la capitale de la Mongolie ?</string>
+    <string name="decouverte_difficile_question_1_reponse_valid">1</string>
+    <string-array name="decouverte_difficile_question_1_reponses">
+        <item>Pékin</item>
+        <item>OulanBator</item>
+        <item>Hanoï</item>
+        <item>Séoul</item>
+    </string-array>
+
+    <string name="decouverte_difficile_question_2">Quelle molécule compose le plus l’air ?</string>
+    <string name="decouverte_difficile_question_2_reponse_valid">1</string>
+    <string-array name="decouverte_difficile_question_2_reponses">
+        <item>O₂</item>
+        <item>N₂</item>
+        <item>CO₂</item>
+        <item>H₂</item>
+    </string-array>
+
+    <string name="decouverte_difficile_question_3">Qui a inventé l’imprimerie ?</string>
+    <string name="decouverte_difficile_question_3_reponse_valid">1</string>
+    <string-array name="decouverte_difficile_question_3_reponses">
+        <item>Edison</item>
+        <item>Gutenberg</item>
+        <item>Newton</item>
+        <item>Pascal</item>
+    </string-array>
+
+    <string name="decouverte_difficile_question_4">Quel pays compte le plus de volcans ?</string>
+    <string name="decouverte_difficile_question_4_reponse_valid">0</string>
+    <string-array name="decouverte_difficile_question_4_reponses">
+        <item>Indonésie</item>
+        <item>Italie</item>
+        <item>Japon</item>
+        <item>Islande</item>
+    </string-array>
+
+    <string name="decouverte_difficile_question_5">Quelle tribu a sculpté les statues de l’île de Pâques ?</string>
+    <string name="decouverte_difficile_question_5_reponse_valid">1</string>
+    <string-array name="decouverte_difficile_question_5_reponses">
+        <item>Maori</item>
+        <item>Rapa Nui</item>
+        <item>Inca</item>
+        <item>Maya</item>
+    </string-array>
+
+    <string name="decouverte_difficile_question_6">Quel est l’océan le plus profond ?</string>
+    <string name="decouverte_difficile_question_6_reponse_valid">1</string>
+    <string-array name="decouverte_difficile_question_6_reponses">
+        <item>Indien</item>
+        <item>Pacifique</item>
+        <item>Atlantique</item>
+        <item>Arctique</item>
+    </string-array>
+
+    <string name="decouverte_difficile_question_7">Qui a calculé la circonférence de la Terre en premier ?</string>
+    <string name="decouverte_difficile_question_7_reponse_valid">1</string>
+    <string-array name="decouverte_difficile_question_7_reponses">
+        <item>Archimède</item>
+        <item>Eratosthène</item>
+        <item>Pythagore</item>
+        <item>Euclide</item>
+    </string-array>
+
+    <string name="decouverte_difficile_question_8">Quel pays possède le plus d’îles ?</string>
+    <string name="decouverte_difficile_question_8_reponse_valid">1</string>
+    <string-array name="decouverte_difficile_question_8_reponses">
+        <item>Japon</item>
+        <item>Suède</item>
+        <item>Indonésie</item>
+        <item>Philippines</item>
+    </string-array>
+
+    <string name="decouverte_difficile_question_9">Quel explorateur a atteint le pôle Sud ?</string>
+    <string name="decouverte_difficile_question_9_reponse_valid">0</string>
+    <string-array name="decouverte_difficile_question_9_reponses">
+        <item>Amundsen</item>
+        <item>Colomb</item>
+        <item>Vasco de Gama</item>
+        <item>Marco Polo</item>
+    </string-array>
+
+    <string name="decouverte_difficile_question_10">Quelle galaxie est la plus proche de la Voie lactée ?</string>
+    <string name="decouverte_difficile_question_10_reponse_valid">0</string>
+    <string-array name="decouverte_difficile_question_10_reponses">
+        <item>Andromède</item>
+        <item>Triangle</item>
+        <item>Sombrero</item>
+        <item>Sculptor</item>
+    </string-array>
+
 </resources>

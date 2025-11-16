@@ -15,6 +15,7 @@ import com.ever.funquizz.ui.theme.FunQuizzTheme
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContent {
             FunQuizzTheme {
                 // A surface container using the 'background' color from the theme
@@ -41,6 +42,11 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 @Composable
 fun GreetingPreview() {
     FunQuizzTheme {
-        Greeting("Android")
+        Surface(
+            modifier = Modifier.fillMaxSize(),
+            color = MaterialTheme.colorScheme.background
+        ) {
+            Greeting("Android")
+        }
     }
 }
