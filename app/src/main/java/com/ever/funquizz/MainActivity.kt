@@ -1,5 +1,6 @@
 package com.ever.funquizz
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -16,9 +17,11 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.ever.funquizz.ui.CategoryActivity
 import com.ever.funquizz.ui.components.BottomRoundedButton
 import com.ever.funquizz.ui.components.LogoImage
 import com.ever.funquizz.ui.theme.FunQuizzTheme
@@ -47,6 +50,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun Home(start: String, bestScore: String, parameters:String, modifier: Modifier = Modifier) {
 
+    val context = LocalContext.current
     val spaceBetweenButtons = 25.dp
 
     Column(
@@ -59,7 +63,10 @@ fun Home(start: String, bestScore: String, parameters:String, modifier: Modifier
         Spacer(modifier = Modifier.height(35.dp))
         BottomRoundedButton(
             text = "$start",
-            onClick = { /*TODO*/ }
+            onClick = {
+                val intent = Intent(context, CategoryActivity::class.java)
+                context.startActivity(intent)
+            }
         )
         Spacer(modifier = Modifier.height(spaceBetweenButtons))
         BottomRoundedButton(

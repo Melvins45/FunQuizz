@@ -41,18 +41,11 @@ fun BottomStartRoundedButton(
     val lineHeight = MaterialTheme.typography.bodyLarge.lineHeight
     val radiusDp = with(LocalDensity.current) { lineHeight.toDp() }
 
-    val interactionSource = remember { MutableInteractionSource() }
-
     Button(
         onClick = onClick,
         modifier = modifier
             .height(heightDp)
             .width(widthDp)
-            .clickable (
-                interactionSource = interactionSource,
-                indication = rememberRipple(color = Color.Red),
-                onClick = { /* action */ }
-            )
         ,
         enabled = enabled,
         colors = colors,

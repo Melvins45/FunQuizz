@@ -27,6 +27,8 @@ import com.ever.funquizz.viewmodel.CategoryViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.ever.funquizz.R
 import com.ever.funquizz.ui.components.BottomEndRoundedButton
+import com.ever.funquizz.ui.components.ButtonEndRow
+import com.ever.funquizz.ui.components.ButtonStartRow
 import com.ever.funquizz.ui.components.LogoImage
 
 class CategoryActivity : ComponentActivity() {
@@ -62,11 +64,24 @@ fun CategoryView(name: String, modifier: Modifier = Modifier, viewModel: Categor
     ) {
         LogoImage()
         Spacer(modifier = Modifier.height(59.dp))
-        Row(
-            modifier = modifier.fillMaxWidth(),
-            horizontalArrangement = Arrangement.Start
-        ) {
-            BottomEndRoundedButton(text = categories[0].nameCategory, onClick = { /*TODO*/ })
+        /*for(category as categories) {
+            Text(text = category.name, style = MaterialTheme.typography.titleMedium)
+            category.subcategories.forEach { sub ->
+                Text(
+                    text = "• ${sub.name}",
+                    style = MaterialTheme.typography.bodyMedium,
+                    modifier = Modifier.padding(start = 16.dp)
+                )
+            }
+            Spacer(modifier = Modifier.height(16.dp))
+        }*/
+        categories.withIndex().forEach{ (id,category) ->
+            if (id%2 == 0){
+                ButtonStartRow(text = category.nameCategory, onClick = { /*TODO*/ })
+            } else {
+                ButtonEndRow(text = category.nameCategory, onClick = { /*TODO*/ })
+            }
+            Spacer(modifier = Modifier.height(40.dp))
         }
     }
 }
