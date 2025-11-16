@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Fun Quizz</string>
+    <string name="app_name">FunQuizz</string>
     <string name="ready">&gt; Prêt ?</string>
     <string name="start">Commencer</string>
     <string name="best_score">Meilleur Score</string>

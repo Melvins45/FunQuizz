@@ -5,6 +5,7 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.ever.funquizz.R
 
@@ -18,8 +19,8 @@ val Typography = Typography(
     bodyLarge = TextStyle(
         fontFamily = MyFontFamily,
         fontWeight = FontWeight.Normal,
-        fontSize = 25.sp,
-        lineHeight = 30.sp,
+        fontSize = 20.sp,
+        lineHeight = 25.sp,
         letterSpacing = 0.5.sp
     ),
     /*bodyMedium = TextStyle(

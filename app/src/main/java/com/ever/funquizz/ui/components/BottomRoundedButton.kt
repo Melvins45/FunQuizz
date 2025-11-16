@@ -13,6 +13,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
@@ -25,7 +26,7 @@ fun BottomRoundedButton(
     text: String,
     onClick: () -> Unit,
     modifier: Modifier = Modifier,
-    widthDp: Dp = 210.dp,
+    widthDp: Dp = 212.dp,
     heightDp: Dp = 55.dp,
     enabled: Boolean = true,
     icon: ImageVector? = null,
@@ -49,7 +50,7 @@ fun BottomRoundedButton(
             .width(widthDp)
             .clickable (
                 interactionSource = interactionSource,
-                indication = rememberRipple(color = Color.Black),
+                indication = rememberRipple(color = Color.Red),
                 onClick = { /* action */ }
             )
         ,
@@ -64,7 +65,12 @@ fun BottomRoundedButton(
             Icon(icon, contentDescription = null)
             Spacer(modifier = Modifier.width(8.dp))
         }
-        Text(text)
+        Text(
+            text = text,
+            style = MaterialTheme.typography.bodyLarge,
+            maxLines = 1,
+            overflow = TextOverflow.Ellipsis
+        )
     }
 }
 
