@@ -55,9 +55,9 @@ class CategoryActivity : ComponentActivity() {
 @Composable
 fun CategoryView(modifier: Modifier = Modifier, viewModel: CategoryViewModel = viewModel()) {
     val context = LocalContext.current
-    val categoriesStrings = context.resources.getStringArray(R.array.category).toList()
     val categories by viewModel.categories.collectAsState()
 
+    val categoriesStrings = context.resources.getStringArray(R.array.category).toList()
     val clickFunction : (Int) -> Unit = { index ->
         val intent = Intent(context, SubCategoryActivity::class.java)
         intent.putExtra("Category", categories[index])

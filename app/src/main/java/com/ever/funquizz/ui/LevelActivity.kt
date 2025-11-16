@@ -25,20 +25,21 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.ever.funquizz.MainActivity
 import com.ever.funquizz.R
 import com.ever.funquizz.model.Category
+import com.ever.funquizz.model.SubCategory
 import com.ever.funquizz.ui.components.ButtonEndRow
 import com.ever.funquizz.ui.components.ButtonStartRow
-import com.ever.funquizz.ui.components.LogoImage
 import com.ever.funquizz.ui.components.LogoImageClickable
 import com.ever.funquizz.ui.theme.FunQuizzTheme
-import com.ever.funquizz.viewmodel.CategoryViewModel
+import com.ever.funquizz.viewmodel.LevelViewModel
 import com.ever.funquizz.viewmodel.SubCategoryViewModel
 
-class SubCategoryActivity : ComponentActivity() {
+class LevelActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        
         val category = intent.getSerializableExtra("Category") as Category
-
+        val subCategory = intent.getSerializableExtra("SubCategory") as SubCategory
+        
         setContent {
             FunQuizzTheme {
                 // A surface container using the 'background' color from the theme
@@ -46,7 +47,7 @@ class SubCategoryActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    SubCategoryView(category)
+                    LevelView(category = category, subCategory = subCategory)
                 }
             }
         }
@@ -54,26 +55,15 @@ class SubCategoryActivity : ComponentActivity() {
 }
 
 @Composable
-fun SubCategoryView(category: Category, modifier: Modifier = Modifier, viewModel: SubCategoryViewModel = viewModel()) {
+fun LevelView(category: Category, subCategory: SubCategory, modifier: Modifier = Modifier, viewModel: LevelViewModel = viewModel()) {
 
     val context = LocalContext.current
-    val subCategories by viewModel.subCategories.collectAsState()
+    val levels by viewModel.levels.collectAsState()
 
-    val nameArray = "sub_category_" + category.nameCategory.lowercase().replace("é","e")
-    val resId = context.resources.getIdentifier(nameArray, "array", context.packageName)
-    var subCategoriesStrings : List<String> = listOf()
-    if (resId != 0) {
-        subCategoriesStrings = context.resources.getStringArray(resId).toList()
-    }
-    val clickFunction : (Int) -> Unit = { index ->
-        val intent = Intent(context, LevelActivity::class.java)
-        intent.putExtra("Category", category)
-        intent.putExtra("SubCategory", subCategories[index])
-        context.startActivity(intent)
-    }
+    val levelsStrings = context.resources.getStringArray(R.array.level).toList()
 
     LaunchedEffect(key1 = Unit, block = {
-        viewModel.loadCategories(category = category, subCategoriesStrings = subCategoriesStrings)
+        viewModel.loadLevels(levelsStrings = levelsStrings)
     })
 
     Column (
@@ -88,15 +78,15 @@ fun SubCategoryView(category: Category, modifier: Modifier = Modifier, viewModel
             }
         )
         Spacer(modifier = Modifier.height(59.dp))
-        ButtonStartRow(text = "< " + category.nameCategory, onClick = {
+        ButtonStartRow(text = "< " + context.getString(R.string.difficulty), onClick = {
             (context as Activity).finish()
         })
         Spacer(modifier = Modifier.height(40.dp))
-        subCategories.withIndex().forEach{ (id,subCategory) ->
+        levels.withIndex().forEach{ (id,level) ->
             if (id%2 == 0){
-                ButtonEndRow(text = subCategory.nameSubCategory, onClick = { clickFunction(id) })
+                ButtonEndRow(text = level.nameLevel, onClick = { /*TODO*/ })
             } else {
-                ButtonStartRow(text = subCategory.nameSubCategory, onClick = { clickFunction(id) })
+                ButtonStartRow(text = level.nameLevel, onClick = { /*TODO*/ })
             }
             Spacer(modifier = Modifier.height(40.dp))
         }
@@ -105,8 +95,8 @@ fun SubCategoryView(category: Category, modifier: Modifier = Modifier, viewModel
 
 @Preview(showBackground = true)
 @Composable
-fun SubCategoryViewPreview() {
+fun GreetingPreview3() {
     FunQuizzTheme {
-        SubCategoryView(Category(20, "Chaud"))
+        LevelView(category = Category(20, "chaud"), subCategory = SubCategory(22,20,"chau"))
     }
 }
