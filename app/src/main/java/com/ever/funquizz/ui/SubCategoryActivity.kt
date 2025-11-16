@@ -5,12 +5,9 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -24,20 +21,24 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.ever.funquizz.ui.theme.FunQuizzTheme
-import com.ever.funquizz.viewmodel.CategoryViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.ever.funquizz.MainActivity
 import com.ever.funquizz.R
-import com.ever.funquizz.ui.components.BottomEndRoundedButton
+import com.ever.funquizz.model.Category
 import com.ever.funquizz.ui.components.ButtonEndRow
 import com.ever.funquizz.ui.components.ButtonStartRow
 import com.ever.funquizz.ui.components.LogoImage
 import com.ever.funquizz.ui.components.LogoImageClickable
+import com.ever.funquizz.ui.theme.FunQuizzTheme
+import com.ever.funquizz.viewmodel.CategoryViewModel
+import com.ever.funquizz.viewmodel.SubCategoryViewModel
 
-class CategoryActivity : ComponentActivity() {
+class SubCategoryActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        val category = intent.getSerializableExtra("Category") as Category
+
         setContent {
             FunQuizzTheme {
                 // A surface container using the 'background' color from the theme
@@ -45,7 +46,7 @@ class CategoryActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    CategoryView()
+                    SubCategoryView(category)
                 }
             }
         }
@@ -53,19 +54,20 @@ class CategoryActivity : ComponentActivity() {
 }
 
 @Composable
-fun CategoryView(modifier: Modifier = Modifier, viewModel: CategoryViewModel = viewModel()) {
-    val context = LocalContext.current
-    val categoriesStrings = context.resources.getStringArray(R.array.category).toList()
-    val categories by viewModel.categories.collectAsState()
+fun SubCategoryView(category: Category, modifier: Modifier = Modifier, viewModel: SubCategoryViewModel = viewModel()) {
 
-    val clickFunction : (Int) -> Unit = { index ->
-        val intent = Intent(context, SubCategoryActivity::class.java)
-        intent.putExtra("Category", categories[index])
-        context.startActivity(intent)
+    val context = LocalContext.current
+    val subCategories by viewModel.subCategories.collectAsState()
+
+    val nameArray = "sub_category_" + category.nameCategory.lowercase().replace("é","e")
+    val resId = context.resources.getIdentifier(nameArray, "array", context.packageName)
+    var subCategoriesStrings : List<String> = listOf()
+    if (resId != 0) {
+        subCategoriesStrings = context.resources.getStringArray(resId).toList()
     }
-    
+
     LaunchedEffect(key1 = Unit, block = {
-        viewModel.loadCategories(categoriesStrings = categoriesStrings)
+        viewModel.loadCategories(category = category, subCategoriesStrings = subCategoriesStrings)
     })
 
     Column (
@@ -80,22 +82,15 @@ fun CategoryView(modifier: Modifier = Modifier, viewModel: CategoryViewModel = v
             }
         )
         Spacer(modifier = Modifier.height(59.dp))
-        /*for(category as categories) {
-            Text(text = category.name, style = MaterialTheme.typography.titleMedium)
-            category.subcategories.forEach { sub ->
-                Text(
-                    text = "• ${sub.name}",
-                    style = MaterialTheme.typography.bodyMedium,
-                    modifier = Modifier.padding(start = 16.dp)
-                )
-            }
-            Spacer(modifier = Modifier.height(16.dp))
-        }*/
-        categories.withIndex().forEach{ (id,category) ->
+        ButtonStartRow(text = "< " + category.nameCategory, onClick = {
+            (context as Activity).finish()
+        })
+        Spacer(modifier = Modifier.height(40.dp))
+        subCategories.withIndex().forEach{ (id,subCategory) ->
             if (id%2 == 0){
-                ButtonStartRow(text = category.nameCategory, onClick = { clickFunction(id) })
+                ButtonEndRow(text = subCategory.nameSubCategory, onClick = { /*TODO*/ })
             } else {
-                ButtonEndRow(text = category.nameCategory, onClick = { clickFunction(id) })
+                ButtonStartRow(text = subCategory.nameSubCategory, onClick = { /*TODO*/ })
             }
             Spacer(modifier = Modifier.height(40.dp))
         }
@@ -104,8 +99,8 @@ fun CategoryView(modifier: Modifier = Modifier, viewModel: CategoryViewModel = v
 
 @Preview(showBackground = true)
 @Composable
-fun GreetingPreview2() {
+fun SubCategoryViewPreview() {
     FunQuizzTheme {
-        CategoryView()
+        SubCategoryView(Category(20, "Chaud"))
     }
 }

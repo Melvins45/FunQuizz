@@ -4093,5 +4093,6 @@
         <item>Sculptor</item>
     </string-array>
     <string name="title_activity_category">CategoryActivity</string>
+    <string name="title_activity_sub_category">SubCategoryActivity</string>
 
 </resources>

@@ -13,6 +13,11 @@
         android:theme="@style/Theme.FunQuizz"
         tools:targetApi="31">
         <activity
+            android:name=".ui.SubCategoryActivity"
+            android:exported="false"
+            android:label="@string/title_activity_sub_category"
+            android:theme="@style/Theme.FunQuizz" />
+        <activity
             android:name=".ui.CategoryActivity"
             android:exported="false"
             android:label="@string/title_activity_category"
