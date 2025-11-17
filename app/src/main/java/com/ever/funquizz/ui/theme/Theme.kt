@@ -42,7 +42,8 @@ val ColorScheme.onSecondaryDisabled: Color
     @Composable
     get() = if (isSystemInDarkTheme()) darkOnSecondaryDisabled else lightOnSecondaryDisabled
 
-private val DarkColorScheme = darkColorScheme(primary = Color(0xFF00157C),
+private val DarkColorScheme = darkColorScheme(
+    primary = Color(0xFF00157C),
     secondary = Color(0xFF08A700),
     tertiary = Color(0xFFA10000),
     background = Color(0xFF1E1E1E),

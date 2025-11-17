@@ -79,11 +79,22 @@ fun StartView(category: Category, subCategory: SubCategory, level: Level, modifi
             (context as Activity).finish()
         })
         TextRow(text = context.getString(R.string.category_label)+" :", arrangementHorizontal = Arrangement.End)
-        ButtonEndRow(text = category.nameCategory, onClick = { /*TODO*/ })
+        ButtonEndRow(text = category.nameCategory, onClick = {
+            val intent = Intent(context, CategoryActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP)
+            context.startActivity(intent)
+        })
         TextRow(text = context.getString(R.string.sub_category_label)+" :", arrangementHorizontal = Arrangement.Start)
-        ButtonStartRow(text = subCategory.nameSubCategory, onClick = { /*TODO*/ })
+        ButtonStartRow(text = subCategory.nameSubCategory, onClick = {
+            val intent = Intent(context, SubCategoryActivity::class.java)
+            intent.putExtra("Category", category)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP)
+            context.startActivity(intent)
+        })
         TextRow(text = context.getString(R.string.difficulty)+" :", arrangementHorizontal = Arrangement.End)
-        ButtonEndRow(text = level.nameLevel, onClick = { /*TODO*/ })
+        ButtonEndRow(text = level.nameLevel, onClick = {
+            (context as Activity).finish()
+        })
         Spacer(modifier = Modifier.height(40.dp))
         ButtonStartRow(
             text = context.getString(R.string.start)+" >",
