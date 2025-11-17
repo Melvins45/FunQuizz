@@ -26,6 +26,7 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.ever.funquizz.MainActivity
 import com.ever.funquizz.R
+import com.ever.funquizz.model.BoxColors
 import com.ever.funquizz.model.Category
 import com.ever.funquizz.model.Level
 import com.ever.funquizz.model.SubCategory
@@ -99,7 +100,7 @@ fun StartView(category: Category, subCategory: SubCategory, level: Level, modifi
         ButtonStartRow(
             text = context.getString(R.string.start)+" >",
             onClick = { /*TODO*/ },
-            colors = ButtonDefaults.buttonColors(
+            colors = BoxColors(
                 containerColor = MaterialTheme.colorScheme.secondary,
                 contentColor = MaterialTheme.colorScheme.onSecondary,
                 disabledContainerColor = MaterialTheme.colorScheme.secondary.copy(alpha = 0.38f),

@@ -21,6 +21,7 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import com.ever.funquizz.model.BoxColors
 import com.ever.funquizz.ui.theme.FunQuizzTheme
 
 
@@ -33,31 +34,47 @@ fun BottomEndRoundedButton(
     widthDp: Dp = 245.dp,
     heightDp: Dp = 55.dp,
     enabled: Boolean = true,
-    isButton: Boolean = true,
     icon: ImageVector? = null,
-    colors: ButtonColors = ButtonDefaults.buttonColors(
+    colors : BoxColors = BoxColors(
+        containerColor = MaterialTheme.colorScheme.primary,
+        contentColor = MaterialTheme.colorScheme.onPrimary,
+        disabledContainerColor = MaterialTheme.colorScheme.primary.copy(alpha = 0.38f),
+        disabledContentColor = MaterialTheme.colorScheme.onPrimary.copy(alpha = 0.38f),
+        rippleColor = MaterialTheme.colorScheme.onSecondary
+    ),
+    /*colors: ButtonColors = ButtonDefaults.buttonColors(
         containerColor = MaterialTheme.colorScheme.primary,
         contentColor = MaterialTheme.colorScheme.onPrimary,
         disabledContainerColor = MaterialTheme.colorScheme.primary.copy(alpha = 0.38f),
         disabledContentColor = MaterialTheme.colorScheme.onPrimary.copy(alpha = 0.38f)
-    )
+    )*/
 ) {
 
     val lineHeight = MaterialTheme.typography.bodyLarge.lineHeight
     val radiusDp = with(LocalDensity.current) { lineHeight.toDp() }
 
-    if(isButton) {
-        Button(
-            onClick = onClick,
+    val interactionSource = remember { MutableInteractionSource() }
+
+    if(enabled) {
+        Box(
             modifier = modifier
                 .height(heightDp)
                 .width(widthDp)
-            ,
-            enabled = enabled,
-            colors = colors,
-            shape = RoundedCornerShape(
-                bottomEnd = heightDp
-            )
+                .clip(
+                    RoundedCornerShape(
+                        bottomEnd = heightDp,
+                    )
+                )
+                .clickable(
+                    interactionSource = interactionSource,
+                    indication = rememberRipple(
+                        color = colors.rippleColor,
+                        bounded = true
+                    ),
+                    onClick = onClick
+                )
+                .background(colors.containerColor),
+            contentAlignment = Alignment.Center
         ) {
             if (icon != null) {
                 Icon(icon, contentDescription = null)
@@ -65,9 +82,9 @@ fun BottomEndRoundedButton(
             }
             Text(
                 text = text,
+                textAlign = TextAlign.Center,
                 style = MaterialTheme.typography.bodyLarge,
-                maxLines = 1,
-                overflow = TextOverflow.Ellipsis,
+                color = colors.contentColor
             )
         }
     } else {
@@ -77,10 +94,10 @@ fun BottomEndRoundedButton(
                 .width(widthDp)
                 .clip(
                     RoundedCornerShape(
-                        bottomEnd = heightDp
+                        bottomEnd = heightDp,
                     )
                 )
-                .background(MaterialTheme.colorScheme.primary),
+                .background(colors.disabledContainerColor),
             contentAlignment = Alignment.Center
         ) {
             if (icon != null) {
@@ -89,14 +106,9 @@ fun BottomEndRoundedButton(
             }
             Text(
                 text = text,
-                modifier = modifier
-                    .height(heightDp)
-                    .width(widthDp),
                 textAlign = TextAlign.Center,
                 style = MaterialTheme.typography.bodyLarge,
-                maxLines = 1,
-                overflow = TextOverflow.Ellipsis,
-                color = MaterialTheme.colorScheme.onPrimary
+                color = colors.disabledContentColor
             )
         }
     }

@@ -20,6 +20,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.ever.funquizz.R
+import com.ever.funquizz.model.BoxColors
 import com.ever.funquizz.ui.theme.FunQuizzTheme
 
 
@@ -31,11 +32,12 @@ fun ButtonStartRow(
     widthDp: Dp = 286.dp,
     heightDp: Dp = 109.dp,
     modifier: Modifier = Modifier,
-    colors: ButtonColors = ButtonDefaults.buttonColors(
+    colors : BoxColors = BoxColors(
         containerColor = MaterialTheme.colorScheme.primary,
         contentColor = MaterialTheme.colorScheme.onPrimary,
         disabledContainerColor = MaterialTheme.colorScheme.primary.copy(alpha = 0.38f),
-        disabledContentColor = MaterialTheme.colorScheme.onPrimary.copy(alpha = 0.38f)
+        disabledContentColor = MaterialTheme.colorScheme.onPrimary.copy(alpha = 0.38f),
+        rippleColor = MaterialTheme.colorScheme.onSecondary
     )
 ) {
 
