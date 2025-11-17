@@ -1,7 +1,9 @@
 <resources>
     <string name="app_name">FunQuizz</string>
-    <string name="ready">&gt; Prêt ?</string>
+    <string name="ready">Prêt ?</string>
     <string name="start">Commencer</string>
+    <string name="category_label">Rubrique</string>
+    <string name="sub_category_label">Sous-Rubrique</string>
     <string name="difficulty">Difficulté</string>
     <string name="best_score">Meilleur Score</string>
     <string name="parameters">Paramètres</string>
@@ -4096,5 +4098,6 @@
     <string name="title_activity_category">CategoryActivity</string>
     <string name="title_activity_sub_category">SubCategoryActivity</string>
     <string name="title_activity_level">LevelActivity</string>
+    <string name="title_activity_start">StartActivity</string>
 
 </resources>

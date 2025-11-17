@@ -30,14 +30,20 @@ fun ButtonStartRow(
     onClick: () -> Unit,
     widthDp: Dp = 286.dp,
     heightDp: Dp = 109.dp,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    colors: ButtonColors = ButtonDefaults.buttonColors(
+        containerColor = MaterialTheme.colorScheme.primary,
+        contentColor = MaterialTheme.colorScheme.onPrimary,
+        disabledContainerColor = MaterialTheme.colorScheme.primary.copy(alpha = 0.38f),
+        disabledContentColor = MaterialTheme.colorScheme.onPrimary.copy(alpha = 0.38f)
+    )
 ) {
 
     Row(
         modifier = modifier.fillMaxWidth(),
         horizontalArrangement = Arrangement.Start
     ) {
-        BottomEndRoundedButton(text = text, onClick = onClick)
+        BottomEndRoundedButton(text = text, onClick = onClick, colors = colors)
     }
 }
 
