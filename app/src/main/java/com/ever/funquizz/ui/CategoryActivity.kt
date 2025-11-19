@@ -33,7 +33,6 @@ import com.ever.funquizz.ui.components.BottomEndRoundedButton
 import com.ever.funquizz.ui.components.ButtonEndRow
 import com.ever.funquizz.ui.components.ButtonStartRow
 import com.ever.funquizz.ui.components.LogoImage
-import com.ever.funquizz.ui.components.LogoImageClickable
 
 class CategoryActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -72,7 +71,8 @@ fun CategoryView(modifier: Modifier = Modifier, viewModel: CategoryViewModel = v
         modifier = modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        LogoImageClickable(
+        LogoImage(
+            isClickable = true,
             onClick = {
                 val intent = Intent(context, MainActivity::class.java)
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP)

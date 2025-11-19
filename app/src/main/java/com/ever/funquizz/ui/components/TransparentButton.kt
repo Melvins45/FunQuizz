@@ -4,7 +4,6 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.selection.selectable
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.ripple.rememberRipple
 import androidx.compose.material3.*
@@ -27,23 +26,22 @@ import com.ever.funquizz.model.BoxColors
 import com.ever.funquizz.ui.theme.FunQuizzTheme
 
 
-
 @Composable
-fun BottomRoundedButton(
+fun TransparentButton(
     text: String,
     onClick: () -> Unit,
     modifier: Modifier = Modifier,
-    widthDp: Dp = 212.dp,
-    heightDp: Dp = 55.dp,
+    widthDp: Dp = 45.dp,
+    heightDp: Dp = 66.dp,
     enabled: Boolean = true,
     icon: ImageVector? = null,
-    textStyle: TextStyle = MaterialTheme.typography.bodyLarge,
+    textStyle: TextStyle = MaterialTheme.typography.titleMedium,
     colors : BoxColors = BoxColors(
-        containerColor = MaterialTheme.colorScheme.primary,
-        contentColor = MaterialTheme.colorScheme.onPrimary,
+        containerColor = Color.Transparent,
+        contentColor = MaterialTheme.colorScheme.onBackground,
         disabledContainerColor = MaterialTheme.colorScheme.primary.copy(alpha = 0.38f),
         disabledContentColor = MaterialTheme.colorScheme.onPrimary.copy(alpha = 0.38f),
-        rippleColor = MaterialTheme.colorScheme.onSecondary
+        rippleColor = MaterialTheme.colorScheme.onBackground
     )
     /*colors: ButtonColors = ButtonDefaults.buttonColors(
         containerColor = MaterialTheme.colorScheme.primary,
@@ -58,7 +56,6 @@ fun BottomRoundedButton(
 
     val interactionSource = remember { MutableInteractionSource() }
 
-
     if(enabled) {
         Box(
             modifier = modifier
@@ -67,7 +64,6 @@ fun BottomRoundedButton(
                 .clip(
                     RoundedCornerShape(
                         bottomStart = heightDp,
-                        bottomEnd = heightDp,
                     )
                 )
                 .clickable(
@@ -100,7 +96,6 @@ fun BottomRoundedButton(
                 .clip(
                     RoundedCornerShape(
                         bottomStart = heightDp,
-                        bottomEnd = heightDp,
                     )
                 )
                 .background(colors.disabledContainerColor),
@@ -122,16 +117,16 @@ fun BottomRoundedButton(
 
 @Preview(name = "Bouton activé", showBackground = true)
 @Composable
-fun PreviewAppButtonEnabled() {
+fun PreviewTransparentButtonEnabled() {
     FunQuizzTheme{
-        BottomRoundedButton(text = "Valider", onClick = {}, enabled = true)
+        TransparentButton(text = "Valider", onClick = {}, enabled = true)
     }
 }
 
 @Preview(name = "Bouton désactivé", showBackground = true)
 @Composable
-fun PreviewAppButtonDisabled() {
+fun PreviewTransparentButtonDisabled() {
     FunQuizzTheme{
-        BottomRoundedButton(text = "Valider", onClick = {}, enabled = false)
+        TransparentButton(text = "Valider", onClick = {}, enabled = false)
     }
 }

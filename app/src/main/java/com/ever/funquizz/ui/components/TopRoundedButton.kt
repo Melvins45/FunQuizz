@@ -29,7 +29,7 @@ import com.ever.funquizz.ui.theme.FunQuizzTheme
 
 
 @Composable
-fun BottomRoundedButton(
+fun TopRoundedButton(
     text: String,
     onClick: () -> Unit,
     modifier: Modifier = Modifier,
@@ -66,8 +66,8 @@ fun BottomRoundedButton(
                 .width(widthDp)
                 .clip(
                     RoundedCornerShape(
-                        bottomStart = heightDp,
-                        bottomEnd = heightDp,
+                        topStart = heightDp,
+                        topEnd = heightDp,
                     )
                 )
                 .clickable(
@@ -122,16 +122,16 @@ fun BottomRoundedButton(
 
 @Preview(name = "Bouton activé", showBackground = true)
 @Composable
-fun PreviewAppButtonEnabled() {
+fun PreviewTopRoundedButtonEnabled() {
     FunQuizzTheme{
-        BottomRoundedButton(text = "Valider", onClick = {}, enabled = true)
+        TopRoundedButton(text = "Valider", onClick = {}, enabled = true)
     }
 }
 
 @Preview(name = "Bouton désactivé", showBackground = true)
 @Composable
-fun PreviewAppButtonDisabled() {
+fun PreviewTopRoundedButtonDisabled() {
     FunQuizzTheme{
-        BottomRoundedButton(text = "Valider", onClick = {}, enabled = false)
+        TopRoundedButton(text = "Valider", onClick = {}, enabled = false)
     }
 }

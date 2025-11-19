@@ -16,6 +16,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
@@ -35,6 +36,7 @@ fun BottomEndRoundedButton(
     heightDp: Dp = 55.dp,
     enabled: Boolean = true,
     icon: ImageVector? = null,
+    textStyle: TextStyle = MaterialTheme.typography.bodyLarge,
     colors : BoxColors = BoxColors(
         containerColor = MaterialTheme.colorScheme.primary,
         contentColor = MaterialTheme.colorScheme.onPrimary,
@@ -83,7 +85,7 @@ fun BottomEndRoundedButton(
             Text(
                 text = text,
                 textAlign = TextAlign.Center,
-                style = MaterialTheme.typography.bodyLarge,
+                style = textStyle,
                 color = colors.contentColor
             )
         }
@@ -107,7 +109,7 @@ fun BottomEndRoundedButton(
             Text(
                 text = text,
                 textAlign = TextAlign.Center,
-                style = MaterialTheme.typography.bodyLarge,
+                style = textStyle,
                 color = colors.disabledContentColor
             )
         }

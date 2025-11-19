@@ -28,15 +28,36 @@ import com.ever.funquizz.ui.theme.FunQuizzTheme
 fun LogoImage(
     widthDp: Dp = 286.dp,
     heightDp: Dp = 109.dp,
+    isClickable: Boolean = false,
+    painterResourceId: Int = R.drawable.funquizz_logo,
+    onClick: () -> Unit = {},
 ) {
 
-    Image(
-        painter = painterResource(id = R.drawable.funquizz_logo),
-        contentDescription = "Description de l'image",
-        modifier = Modifier
-            .height(heightDp)
-            .width(widthDp)
-    )
+    val interactionSource = remember { MutableInteractionSource() }
+
+    if (isClickable){
+        Image(
+            painter = painterResource(id = painterResourceId),
+            contentDescription = "Description de l'image",
+            modifier = Modifier
+                .height(heightDp)
+                .width(widthDp)
+                .clickable (
+                    //interactionSource = interactionSource,
+                    //indication = rememberRipple(color = Color.Red),
+                    onClick = onClick
+                )
+        )
+    } else {
+        Image(
+            painter = painterResource(id = painterResourceId),
+            contentDescription = "Description de l'image",
+            modifier = Modifier
+                .height(heightDp)
+                .width(widthDp)
+        )
+    }
+
 }
 
 @Preview(name = "Bouton activé", showBackground = true)

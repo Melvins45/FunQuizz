@@ -18,7 +18,7 @@ class SubCategoryViewModel : ViewModel() {
         loadCategories()
     }*/
 
-    fun loadCategories(category: Category, subCategoriesStrings: List<String>) {
+    fun loadSubCategories(category: Category, subCategoriesStrings: List<String>) {
         _subCategories.value = repository.getSubCategories(category, subCategoriesStrings)
     }
 }

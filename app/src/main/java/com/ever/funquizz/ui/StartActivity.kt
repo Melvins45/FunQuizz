@@ -32,7 +32,7 @@ import com.ever.funquizz.model.Level
 import com.ever.funquizz.model.SubCategory
 import com.ever.funquizz.ui.components.ButtonEndRow
 import com.ever.funquizz.ui.components.ButtonStartRow
-import com.ever.funquizz.ui.components.LogoImageClickable
+import com.ever.funquizz.ui.components.LogoImage
 import com.ever.funquizz.ui.components.TextRow
 import com.ever.funquizz.ui.theme.FunQuizzTheme
 import com.ever.funquizz.viewmodel.LevelViewModel
@@ -68,7 +68,8 @@ fun StartView(category: Category, subCategory: SubCategory, level: Level, modifi
         modifier = modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        LogoImageClickable(
+        LogoImage(
+            isClickable = true,
             onClick = {
                 val intent = Intent(context, MainActivity::class.java)
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP)
@@ -99,7 +100,13 @@ fun StartView(category: Category, subCategory: SubCategory, level: Level, modifi
         Spacer(modifier = Modifier.height(40.dp))
         ButtonStartRow(
             text = context.getString(R.string.start)+" >",
-            onClick = { /*TODO*/ },
+            onClick = {
+                val intent = Intent(context, QuestionActivity::class.java)
+                intent.putExtra("Category", category)
+                intent.putExtra("SubCategory", subCategory)
+                intent.putExtra("Level", level)
+                context.startActivity(intent)
+            },
             colors = BoxColors(
                 containerColor = MaterialTheme.colorScheme.secondary,
                 contentColor = MaterialTheme.colorScheme.onSecondary,

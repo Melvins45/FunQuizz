@@ -28,7 +28,7 @@ import com.ever.funquizz.model.Category
 import com.ever.funquizz.model.SubCategory
 import com.ever.funquizz.ui.components.ButtonEndRow
 import com.ever.funquizz.ui.components.ButtonStartRow
-import com.ever.funquizz.ui.components.LogoImageClickable
+import com.ever.funquizz.ui.components.LogoImage
 import com.ever.funquizz.ui.theme.FunQuizzTheme
 import com.ever.funquizz.viewmodel.LevelViewModel
 import com.ever.funquizz.viewmodel.SubCategoryViewModel
@@ -78,7 +78,8 @@ fun LevelView(category: Category, subCategory: SubCategory, modifier: Modifier =
         modifier = modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        LogoImageClickable(
+        LogoImage(
+            isClickable = true,
             onClick = {
                 val intent = Intent(context, MainActivity::class.java)
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP)
