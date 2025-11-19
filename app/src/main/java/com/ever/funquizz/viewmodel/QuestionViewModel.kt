@@ -22,8 +22,8 @@ class QuestionViewModel : ViewModel() {
     }*/
 
     fun loadQuestions(subCategory: SubCategory, level: Level, questionsStrings :List<String>) {
-        Log.d("Get", "${repository.getQuestions(subCategory, level, questionsStrings)}")
+        Log.d("Get", "1 : ${repository.getQuestions(subCategory, level, questionsStrings)}")
         _questions.value = repository.getQuestions(subCategory, level, questionsStrings)
-        Log.d("Get", "${questions.value}")
+        Log.d("Get", "2 : ${questions}")
     }
 }

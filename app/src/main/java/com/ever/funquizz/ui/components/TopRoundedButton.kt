@@ -1,5 +1,12 @@
 package com.ever.funquizz.ui.components
 
+import androidx.compose.animation.AnimatedContent
+import androidx.compose.animation.ExperimentalAnimationApi
+import androidx.compose.animation.animateColorAsState
+import androidx.compose.animation.core.tween
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
+import androidx.compose.animation.with
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
@@ -10,6 +17,7 @@ import androidx.compose.material.ripple.rememberRipple
 import androidx.compose.material3.*
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -28,6 +36,7 @@ import com.ever.funquizz.ui.theme.FunQuizzTheme
 
 
 
+@OptIn(ExperimentalAnimationApi::class)
 @Composable
 fun TopRoundedButton(
     text: String,
@@ -58,6 +67,15 @@ fun TopRoundedButton(
 
     val interactionSource = remember { MutableInteractionSource() }
 
+    val backgroundColor by animateColorAsState(
+        targetValue = if (enabled) colors.containerColor else colors.disabledContainerColor,
+        animationSpec = tween(durationMillis = 500)
+    )
+
+    val onBackgroundColor by animateColorAsState(
+        targetValue = if (enabled) colors.contentColor else colors.disabledContentColor,
+        animationSpec = tween(durationMillis = 500)
+    )
 
     if(enabled) {
         Box(
@@ -78,19 +96,26 @@ fun TopRoundedButton(
                     ),
                     onClick = onClick
                 )
-                .background(colors.containerColor),
+                .background(backgroundColor),
             contentAlignment = Alignment.Center
         ) {
             if (icon != null) {
                 Icon(icon, contentDescription = null)
                 Spacer(modifier = Modifier.width(8.dp))
             }
-            Text(
-                text = text,
-                textAlign = TextAlign.Center,
-                style = textStyle,
-                color = colors.contentColor
-            )
+            AnimatedContent(
+                targetState = text,
+                transitionSpec = {
+                    fadeIn(tween(500)) with fadeOut(tween(500))
+                }
+            ) { message ->
+                Text(
+                    text = message,
+                    textAlign = TextAlign.Center,
+                    style = textStyle,
+                    color = onBackgroundColor
+                )
+            }
         }
     } else {
         Box(
@@ -99,23 +124,30 @@ fun TopRoundedButton(
                 .width(widthDp)
                 .clip(
                     RoundedCornerShape(
-                        bottomStart = heightDp,
-                        bottomEnd = heightDp,
+                        topStart = heightDp,
+                        topEnd = heightDp,
                     )
                 )
-                .background(colors.disabledContainerColor),
+                .background(backgroundColor),
             contentAlignment = Alignment.Center
         ) {
             if (icon != null) {
                 Icon(icon, contentDescription = null)
                 Spacer(modifier = Modifier.width(8.dp))
             }
-            Text(
-                text = text,
-                textAlign = TextAlign.Center,
-                style = textStyle,
-                color = colors.disabledContentColor
-            )
+            AnimatedContent(
+                targetState = text,
+                transitionSpec = {
+                    fadeIn(tween(500)) with fadeOut(tween(500))
+                }
+            ) { message ->
+                Text(
+                    text = message,
+                    textAlign = TextAlign.Center,
+                    style = textStyle,
+                    color = onBackgroundColor
+                )
+            }
         }
     }
 }

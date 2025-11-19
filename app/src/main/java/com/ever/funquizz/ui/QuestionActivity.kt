@@ -29,6 +29,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.text.AnnotatedString
@@ -54,9 +55,12 @@ import com.ever.funquizz.ui.components.TextBox
 import com.ever.funquizz.ui.components.TopRoundedButton
 import com.ever.funquizz.ui.components.TransparentButton
 import com.ever.funquizz.ui.theme.FunQuizzTheme
+import com.ever.funquizz.ui.theme.onPrimaryActive
+import com.ever.funquizz.ui.theme.primaryActive
 import com.ever.funquizz.viewmodel.LevelViewModel
 import com.ever.funquizz.viewmodel.QuestionViewModel
 import com.ever.funquizz.viewmodel.ResponseViewModel
+import kotlinx.coroutines.delay
 
 class QuestionActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -88,8 +92,21 @@ fun QuestionView(category: Category, subCategory: SubCategory, level : Level, mo
     val questions by questionViewModel.questions.collectAsState()
     val responses by responseViewModel.responses.collectAsState()
     var currentQuestionId by remember { mutableStateOf(0) }
+    var indexActive by remember { mutableStateOf(-1) }
+    var score by remember { mutableStateOf(0) }
+    var isChoosing by remember { mutableStateOf(true) }
+    var hasFinished by remember { mutableStateOf(false) }
     val responsesMap = remember { mutableStateMapOf<Int, List<Response>>() }
     val textMeasurer = rememberTextMeasurer()
+
+    val colorPrimary = MaterialTheme.colorScheme.primary
+    val colorOnPrimary = MaterialTheme.colorScheme.onPrimary
+    val colorPrimaryActive = MaterialTheme.colorScheme.primaryActive
+    val colorOnPrimaryActive = MaterialTheme.colorScheme.onPrimaryActive
+    val colorSecondary = MaterialTheme.colorScheme.secondary
+    val colorOnSecondary = MaterialTheme.colorScheme.onSecondary
+    val colorTertiary = MaterialTheme.colorScheme.tertiary
+    val colorOnTertiary = MaterialTheme.colorScheme.onTertiary
 
     val startResponse = context.resources.getStringArray(R.array.start_response)
 
@@ -132,6 +149,64 @@ fun QuestionView(category: Category, subCategory: SubCategory, level : Level, mo
         context.resources.getStringArray(responsesResId(it)).toList()
     }
 
+    val responseContainerColor : (Int) -> Color = {
+        if(isChoosing)
+            if (it != indexActive)
+                colorPrimary
+            else
+                colorPrimaryActive
+        else
+            if (it != indexActive)
+                colorPrimary
+            else
+                if (responsesMap[currentQuestionId]?.get(it)?.isValid == true)
+                    colorSecondary
+                else
+                    colorTertiary
+    }
+
+    val responseContentColor : (Int) -> Color = {
+        if(isChoosing)
+            if (it != indexActive)
+                colorOnPrimary
+            else
+                colorOnPrimaryActive
+        else
+            if (it != indexActive)
+                colorOnPrimary
+            else
+                if (responsesMap[currentQuestionId]?.get(it)?.isValid == true)
+                    colorOnSecondary
+                else
+                    colorOnTertiary
+    }
+
+    val responseEnabled : (Int) -> Boolean = {
+        if(isChoosing)
+            true
+        else
+            if (it == indexActive)
+                true
+            else
+                responsesMap[currentQuestionId]?.get(it)?.isValid == true
+    }
+
+    val responseSuffix : (Int) -> String = {
+        if(isChoosing)
+            ""
+        else
+            if ((responsesMap[currentQuestionId]?.get(it)?.isValid == true) and (it != indexActive))
+                " ✅"
+            else
+                ""
+    }
+
+    val clickResponseFunction : (Int) -> Unit = { index ->
+        if(isChoosing) {
+            indexActive = index
+        }
+    }
+
     val clickFunction : (Int) -> Unit = { index ->
         val intent = Intent(context, StartActivity::class.java)
         intent.putExtra("Category", category)
@@ -152,11 +227,16 @@ fun QuestionView(category: Category, subCategory: SubCategory, level : Level, mo
         }
         Log.d("TAG", "questions strings : $questionsStrings")
         questionViewModel.loadQuestions(subCategory, level, questionsStrings.toList())
-        Log.d("TAG", "questions strings : $questions")
-        /*for (i in 1..1) {
-            responseViewModel.loadReponses(questions[i], responseIdValid(i), responsesStrings(i))
-            responsesMap[i-1] = responses
-        }*/
+        delay(70)
+        Log.d("TAG", "questions memes : $questions")
+        if (questions.isNotEmpty()) {
+            for (i in 1..10) {
+                responseViewModel.loadReponses(questions[i-1], responseIdValid(i), responsesStrings(i))
+                delay(70)
+                responsesMap[i-1] = responses
+            }
+            Log.d("TAG", "reponses : $responsesMap")
+        }
     })
 
     Log.d("TAG", "questions strings dehors : $questions")
@@ -203,15 +283,15 @@ fun QuestionView(category: Category, subCategory: SubCategory, level : Level, mo
 
         // Question Name
         TextBox(
-            text = questions[currentQuestionId].question,
-            heightDp = 170.dp,
+            text = if (questions.isEmpty()) "UI"  else questions[currentQuestionId].question,
+            heightDp = 140.dp,
             paddingValues = PaddingValues(horizontal = 20.dp),
             colors = BoxColors(
                 containerColor = MaterialTheme.colorScheme.primary,
                 contentColor = MaterialTheme.colorScheme.onPrimary
             )
         )
-/*
+
         // Column of Responses
         Column (
             modifier = modifier
@@ -220,14 +300,25 @@ fun QuestionView(category: Category, subCategory: SubCategory, level : Level, mo
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Bottom
         ) {
-            responsesMap[currentQuestionId]?.withIndex()?.forEach{ (id,response) ->
-                // Each Response is a Bottom Rounded Button
-                BottomRoundedButton(
-                    text = startResponse[id]+response.response,
-                    widthDp = if(widthText(startResponse[id]+response.response, MaterialTheme.typography.bodyLarge) > with(LocalDensity.current) { 270.dp.toPx() }) 270.dp else 295.dp,
-                    onClick = { /*TODO*/ }
-                )
-                Spacer(modifier = Modifier.height(25.dp))
+            if (responsesMap.isNotEmpty()){
+                Log.d("TAG", "reponses : $responsesMap")
+                responsesMap?.get(currentQuestionId)?.withIndex()?.forEach{ (id,response) ->
+                    // Each Response is a Bottom Rounded Button
+                    BottomRoundedButton(
+                        text = startResponse[id]+response.response + responseSuffix(id),
+                        enabled = responseEnabled(id),
+                        heightDp = if(widthText(startResponse[id]+response.response, MaterialTheme.typography.bodyLarge) > with(LocalDensity.current) { 270.dp.toPx() }) 75.dp else 55.dp,
+                        widthDp = 270.dp,
+                        onClick = { clickResponseFunction(id) },
+                        colors = BoxColors(
+                            containerColor = responseContainerColor(id),
+                            contentColor = responseContentColor(id),
+                        )
+                    )
+                    Spacer(modifier = Modifier.height(25.dp))
+                }
+            } else {
+                Text(text = "Yo")
             }
         }
         // Space before Button Valider
@@ -235,17 +326,35 @@ fun QuestionView(category: Category, subCategory: SubCategory, level : Level, mo
 
         // Valider is a Top Rounded Button
         TopRoundedButton(
-            text = context.resources.getString(R.string.valid),
+            text = if (hasFinished) context.getString(R.string.finish) else if (isChoosing) context.getString(R.string.valid) else context.getString(R.string.continuer),
             widthDp = 175.dp,
             heightDp = 45.dp,
-            enabled = false,
+            enabled = indexActive!=-1,
             colors = BoxColors(
                 containerColor = MaterialTheme.colorScheme.secondary,
                 contentColor = MaterialTheme.colorScheme.onSecondary
             ),
             textStyle = MaterialTheme.typography.bodyMedium,
-            onClick = { /*TODO*/ }
-        )*/
+            onClick = {
+                if (isChoosing) {
+                    isChoosing = false
+                    if (responsesMap[currentQuestionId]?.get(indexActive)?.isValid == true) {
+                        score ++
+                    }
+                    if (currentQuestionId == 9) {
+                        hasFinished = true
+                    }
+                } else {
+                    if (currentQuestionId == 9) {
+                        hasFinished = true
+                    } else {
+                        indexActive = -1
+                        currentQuestionId++
+                        isChoosing = true
+                    }
+                }
+            }
+        )
 
     }
 }

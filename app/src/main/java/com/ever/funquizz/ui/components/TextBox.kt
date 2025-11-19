@@ -1,5 +1,11 @@
 package com.ever.funquizz.ui.components
 
+import androidx.compose.animation.AnimatedContent
+import androidx.compose.animation.ExperimentalAnimationApi
+import androidx.compose.animation.core.tween
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
+import androidx.compose.animation.with
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -7,6 +13,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -30,6 +37,7 @@ import androidx.compose.ui.unit.dp
 import com.ever.funquizz.model.BoxColors
 import com.ever.funquizz.ui.theme.FunQuizzTheme
 
+@OptIn(ExperimentalAnimationApi::class)
 @Composable
 fun TextBox(
     text: String,
@@ -56,14 +64,21 @@ fun TextBox(
             Icon(icon, contentDescription = null)
             Spacer(modifier = Modifier.width(8.dp))
         }
-        Text(
-            text = text,
-            modifier = modifier
-                .padding(paddingValues),
-            textAlign = TextAlign.Center,
-            style = textStyle,
-            color = colors.contentColor
-        )
+        AnimatedContent(
+            targetState = text,
+            transitionSpec = {
+                fadeIn(tween(500)) with fadeOut(tween(500))
+            }
+        ) { message ->
+            Text(
+                text = message,
+                modifier = modifier
+                    .padding(paddingValues),
+                textAlign = TextAlign.Center,
+                style = textStyle,
+                color = colors.contentColor
+            )
+        }
     }
 }
 

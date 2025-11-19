@@ -25,6 +25,18 @@ val darkPrimaryDisabled = Color(0xFF4E5780)
 val darkSecondaryDisabled = Color(0xFF649761)
 val darkOnPrimaryDisabled = Color(0xFF939292)
 val darkOnSecondaryDisabled = Color(0xFFD9D9D9)
+val lightPrimaryActive = Color(0xFFFFFFFF)
+val lightOnPrimaryActive = Color(0xFF0004FF)
+val darkPrimaryActive = Color(0xFFFAD32A5)
+val darkOnPrimaryActive = Color(0xFFFFFFFF)
+
+val ColorScheme.primaryActive: Color
+    @Composable
+    get() = if (isSystemInDarkTheme()) darkPrimaryActive else lightPrimaryActive
+
+val ColorScheme.onPrimaryActive: Color
+    @Composable
+    get() = if (isSystemInDarkTheme()) darkOnPrimaryActive else lightOnPrimaryActive
 
 val ColorScheme.primaryDisabled: Color
     @Composable

@@ -3,6 +3,7 @@
     <string name="ready">Prêt ?</string>
     <string name="start">Commencer</string>
     <string name="valid">Valider</string>
+    <string name="finish">Terminer</string>
     <string name="category_label">Rubrique</string>
     <string name="sub_category_label">Sous-Rubrique</string>
     <string name="difficulty">Difficulté</string>
@@ -364,8 +365,8 @@
     <string-array name="drapeaux_facile_question_5_reponses">
         <item>Australie</item>
         <item>Brésil</item>
-        <item>ÉtatsUnis</item>
-        <item>NouvelleZélande</item>
+        <item>États-Unis</item>
+        <item>Nouvelle Zélande</item>
     </string-array>
 
     <string name="drapeaux_facile_question_6">Quel drapeau est vert, blanc, rouge avec un aigle au centre ?</string>
