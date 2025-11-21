@@ -101,10 +101,11 @@ fun StartView(category: Category, subCategory: SubCategory, level: Level, modifi
         ButtonStartRow(
             text = context.getString(R.string.start)+" >",
             onClick = {
-                val intent = Intent(context, QuestionActivity::class.java)
+                val intent = Intent(context, ScoreActivity::class.java)
                 intent.putExtra("Category", category)
                 intent.putExtra("SubCategory", subCategory)
                 intent.putExtra("Level", level)
+                intent.putExtra("Score", 10)
                 context.startActivity(intent)
             },
             colors = BoxColors(

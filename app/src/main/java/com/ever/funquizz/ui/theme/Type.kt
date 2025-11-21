@@ -37,11 +37,25 @@ val Typography = Typography(
         lineHeight = 21.sp,
         letterSpacing = 0.5.sp
     ),
+    titleLarge = TextStyle(
+        fontFamily = MyFontFamily,
+        fontWeight = FontWeight.Normal,
+        fontSize = 140.sp, // 144.sp for 180px in Figma
+        lineHeight = 145.sp,
+        letterSpacing = 0.5.sp
+    ),
     titleMedium = TextStyle(
         fontFamily = MyFontFamily,
         fontWeight = FontWeight.Normal,
         fontSize = 32.sp, // for 40px in Figma
         lineHeight = 37.sp,
+        letterSpacing = 0.5.sp
+    ),
+    titleSmall = TextStyle(
+        fontFamily = MyFontFamily,
+        fontWeight = FontWeight.Normal,
+        fontSize = 24.sp, // for 30px in Figma
+        lineHeight = 29.sp,
         letterSpacing = 0.5.sp
     ),
     /*bodyMedium = TextStyle(

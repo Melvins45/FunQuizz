@@ -41,7 +41,7 @@ import com.ever.funquizz.ui.theme.FunQuizzTheme
 @Composable
 fun TextBox(
     text: String,
-    widthDp: Dp = 250.dp,
+    //widthDp: Dp = 250.dp,
     heightDp: Dp = 40.dp,
     icon: ImageVector? = null,
     modifier: Modifier = Modifier,
@@ -56,7 +56,7 @@ fun TextBox(
     Box(
         modifier = modifier
             .height(heightDp)
-            .fillMaxWidth()
+            //.fillMaxWidth()
             .background(colors.containerColor),
         contentAlignment = Alignment.Center
     ) {
@@ -72,7 +72,7 @@ fun TextBox(
         ) { message ->
             Text(
                 text = message,
-                modifier = modifier
+                modifier = Modifier
                     .padding(paddingValues),
                 textAlign = TextAlign.Center,
                 style = textStyle,

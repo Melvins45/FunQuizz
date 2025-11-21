@@ -50,6 +50,7 @@ import com.ever.funquizz.model.SubCategory
 import com.ever.funquizz.ui.components.BottomRoundedButton
 import com.ever.funquizz.ui.components.ButtonEndRow
 import com.ever.funquizz.ui.components.ButtonStartRow
+import com.ever.funquizz.ui.components.Loader
 import com.ever.funquizz.ui.components.LogoImage
 import com.ever.funquizz.ui.components.TextBox
 import com.ever.funquizz.ui.components.TopRoundedButton
@@ -99,6 +100,7 @@ fun QuestionView(category: Category, subCategory: SubCategory, level : Level, mo
     val responsesMap = remember { mutableStateMapOf<Int, List<Response>>() }
     val textMeasurer = rememberTextMeasurer()
 
+    // Colors for functions variables
     val colorPrimary = MaterialTheme.colorScheme.primary
     val colorOnPrimary = MaterialTheme.colorScheme.onPrimary
     val colorPrimaryActive = MaterialTheme.colorScheme.primaryActive
@@ -149,6 +151,7 @@ fun QuestionView(category: Category, subCategory: SubCategory, level : Level, mo
         context.resources.getStringArray(responsesResId(it)).toList()
     }
 
+    // Choose the correct color to show depending on isChoosing or indexActive
     val responseContainerColor : (Int) -> Color = {
         if(isChoosing)
             if (it != indexActive)
@@ -165,6 +168,7 @@ fun QuestionView(category: Category, subCategory: SubCategory, level : Level, mo
                     colorTertiary
     }
 
+    // Choose the correct color to show depending on isChoosing or indexActive
     val responseContentColor : (Int) -> Color = {
         if(isChoosing)
             if (it != indexActive)
@@ -181,6 +185,7 @@ fun QuestionView(category: Category, subCategory: SubCategory, level : Level, mo
                     colorOnTertiary
     }
 
+    // Verify when enable the buttons when not choosing
     val responseEnabled : (Int) -> Boolean = {
         if(isChoosing)
             true
@@ -191,6 +196,7 @@ fun QuestionView(category: Category, subCategory: SubCategory, level : Level, mo
                 responsesMap[currentQuestionId]?.get(it)?.isValid == true
     }
 
+    // Verify if response is valid and not choosed then add suffix ✅
     val responseSuffix : (Int) -> String = {
         if(isChoosing)
             ""
@@ -284,6 +290,7 @@ fun QuestionView(category: Category, subCategory: SubCategory, level : Level, mo
         // Question Name
         TextBox(
             text = if (questions.isEmpty()) "UI"  else questions[currentQuestionId].question,
+            modifier = modifier.fillMaxWidth(),
             heightDp = 140.dp,
             paddingValues = PaddingValues(horizontal = 20.dp),
             colors = BoxColors(
@@ -318,7 +325,7 @@ fun QuestionView(category: Category, subCategory: SubCategory, level : Level, mo
                     Spacer(modifier = Modifier.height(25.dp))
                 }
             } else {
-                Text(text = "Yo")
+                Loader(color = MaterialTheme.colorScheme.primary)
             }
         }
         // Space before Button Valider

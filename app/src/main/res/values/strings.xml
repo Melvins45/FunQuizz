@@ -10,6 +10,20 @@
     <string name="best_score">Meilleur Score</string>
     <string name="parameters">Paramètres</string>
     <string name="continuer">Continuer</string>
+    <string-array name="score_titles">
+        <item>Aïe, zéro !</item>
+        <item>Juste un !</item>
+        <item>Encore faible !</item>
+        <item>Tu démarres !</item>
+        <item>Presque bien !</item>
+        <item>À mi-chemin !</item>
+        <item>Ça progresse !</item>
+        <item>Bien joué !</item>
+        <item>Super score !</item>
+        <item>Presque top !</item>
+        <item>Score parfait !</item>
+    </string-array>
+
     <string-array name="start_response">
         <item>a. </item>
         <item>b. </item>
@@ -4108,5 +4122,6 @@
     <string name="title_activity_level">LevelActivity</string>
     <string name="title_activity_start">StartActivity</string>
     <string name="title_activity_question">QuestionActivity</string>
+    <string name="title_activity_score">ScoreActivity</string>
 
 </resources>

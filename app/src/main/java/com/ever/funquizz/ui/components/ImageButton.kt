@@ -7,6 +7,7 @@ import androidx.compose.animation.core.tween
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
 import androidx.compose.animation.with
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
@@ -24,14 +25,17 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import com.ever.funquizz.R
 import com.ever.funquizz.model.BoxColors
 import com.ever.funquizz.ui.theme.FunQuizzTheme
 
@@ -39,15 +43,15 @@ import com.ever.funquizz.ui.theme.FunQuizzTheme
 
 @OptIn(ExperimentalAnimationApi::class)
 @Composable
-fun TopRoundedButton(
-    text: String,
+fun ImageButton(
+    painterResourceId: Int,
     onClick: () -> Unit,
     modifier: Modifier = Modifier,
-    widthDp: Dp = 212.dp,
-    heightDp: Dp = 55.dp,
+    widthDp: Dp = 50.dp,
+    heightDp: Dp = 50.dp,
+    widthImageDp: Dp = 30.dp,
+    heightImageDp: Dp = 30.dp,
     enabled: Boolean = true,
-    icon: ImageVector? = null,
-    textStyle: TextStyle = MaterialTheme.typography.bodyLarge,
     colors : BoxColors = BoxColors(
         containerColor = MaterialTheme.colorScheme.primary,
         contentColor = MaterialTheme.colorScheme.onPrimary,
@@ -83,12 +87,6 @@ fun TopRoundedButton(
             modifier = modifier
                 .height(heightDp)
                 .width(widthDp)
-                .clip(
-                    RoundedCornerShape(
-                        topStart = heightDp,
-                        topEnd = heightDp,
-                    )
-                )
                 .clickable(
                     interactionSource = interactionSource,
                     indication = rememberRipple(
@@ -100,62 +98,38 @@ fun TopRoundedButton(
                 .background(backgroundColor),
             contentAlignment = Alignment.Center
         ) {
-            if (icon != null) {
-                Icon(icon, contentDescription = null)
-                Spacer(modifier = Modifier.width(8.dp))
-            }
-            AnimatedContent(
-                targetState = text,
-                transitionSpec = {
-                    fadeIn(tween(500)) with fadeOut(tween(500))
-                }
-            ) { message ->
-                Text(
-                    text = message,
-                    textAlign = TextAlign.Center,
-                    style = textStyle,
-                    color = onBackgroundColor
-                )
-            }
+            Image(
+                painter = painterResource(id = painterResourceId),
+                contentDescription = "Description de l'image",
+                modifier = modifier
+                    .height(heightImageDp)
+                    .width(widthImageDp),
+                colorFilter = ColorFilter.tint(onBackgroundColor)
+            )
         }
     } else {
         Box(
             modifier = modifier
                 .height(heightDp)
                 .width(widthDp)
-                .clip(
-                    RoundedCornerShape(
-                        topStart = heightDp,
-                        topEnd = heightDp,
-                    )
-                )
                 .background(backgroundColor),
             contentAlignment = Alignment.Center
         ) {
-            if (icon != null) {
-                Icon(icon, contentDescription = null)
-                Spacer(modifier = Modifier.width(8.dp))
-            }
-            AnimatedContent(
-                targetState = text,
-                transitionSpec = {
-                    fadeIn(tween(500)) with fadeOut(tween(500))
-                }
-            ) { message ->
-                Text(
-                    text = message,
-                    textAlign = TextAlign.Center,
-                    style = textStyle,
-                    color = onBackgroundColor
-                )
-            }
+            Image(
+                painter = painterResource(id = painterResourceId),
+                contentDescription = "Description de l'image",
+                modifier = modifier
+                    .height(heightImageDp)
+                    .width(widthImageDp),
+                colorFilter = ColorFilter.tint(onBackgroundColor)
+            )
         }
     }
 }
 
 @Preview(name = "Bouton activé", showBackground = true)
 @Composable
-fun PreviewTopRoundedButtonEnabled() {
+fun PreviewImageButtonEnabled() {
     FunQuizzTheme{
         TopRoundedButton(text = "Valider", onClick = {}, enabled = true)
     }
@@ -163,7 +137,7 @@ fun PreviewTopRoundedButtonEnabled() {
 
 @Preview(name = "Bouton désactivé", showBackground = true)
 @Composable
-fun PreviewTopRoundedButtonDisabled() {
+fun PreviewImageButtonDisabled() {
     FunQuizzTheme{
         TopRoundedButton(text = "Valider", onClick = {}, enabled = false)
     }

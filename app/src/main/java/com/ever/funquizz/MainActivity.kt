@@ -21,7 +21,11 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.ever.funquizz.model.Category
+import com.ever.funquizz.model.Level
+import com.ever.funquizz.model.SubCategory
 import com.ever.funquizz.ui.CategoryActivity
+import com.ever.funquizz.ui.ScoreActivity
 import com.ever.funquizz.ui.components.BottomRoundedButton
 import com.ever.funquizz.ui.components.LogoImage
 import com.ever.funquizz.ui.theme.FunQuizzTheme
@@ -64,7 +68,10 @@ fun Home(start: String, bestScore: String, parameters:String, modifier: Modifier
         BottomRoundedButton(
             text = "$start",
             onClick = {
-                val intent = Intent(context, CategoryActivity::class.java)
+                val intent = Intent(context, ScoreActivity::class.java)
+                intent.putExtra("Category", Category(20, "Pays"))
+                intent.putExtra("SubCategory", SubCategory(22, 20, "Présidents"))
+                intent.putExtra("Level", Level(203,"Facile"))
                 context.startActivity(intent)
             }
         )
