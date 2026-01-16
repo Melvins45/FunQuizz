@@ -1,5 +1,6 @@
 package com.ever.funquizz.ui
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
@@ -16,9 +17,11 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.produceState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
@@ -31,6 +34,7 @@ import com.ever.funquizz.factory.SettingsViewModelFactory
 import com.ever.funquizz.model.BoxColors
 import com.ever.funquizz.model.Category
 import com.ever.funquizz.model.Level
+import com.ever.funquizz.model.SoundManager
 import com.ever.funquizz.model.SubCategory
 import com.ever.funquizz.repository.SettingsRepository
 import com.ever.funquizz.ui.components.ButtonEndRow
@@ -63,17 +67,27 @@ class StartActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    StartView(category = category, subCategory = subCategory, level = level)
+                    StartView(category = category, subCategory = subCategory, level = level, settingsVm =  settingsVm)
                 }
             }
         }
     }
 }
 
+@SuppressLint("ProduceStateDoesNotAssignValue")
 @Composable
-fun StartView(category: Category, subCategory: SubCategory, level: Level, modifier: Modifier = Modifier) {
+fun StartView(category: Category, subCategory: SubCategory, level: Level, modifier: Modifier = Modifier, settingsVm: SettingsViewModel? = null) {
 
     val context = LocalContext.current
+
+    val musicVol by settingsVm?.music?.collectAsState() ?: produceState(0.7f) {  }
+    val fxVol by settingsVm?.fx?.collectAsState() ?: produceState(0.7f) {  }
+
+
+    DisposableEffect(Unit) {
+        if (!SoundManager.isBackgroundPlaying) SoundManager.playBackground(context, R.raw.background, musicVol)
+        onDispose { SoundManager.stopBackground() }
+    }
 
     Column (
         modifier = modifier.fillMaxSize(),
@@ -82,6 +96,7 @@ fun StartView(category: Category, subCategory: SubCategory, level: Level, modifi
         LogoImage(
             isClickable = true,
             onClick = {
+                SoundManager.playSound(context, R.raw.click, fxVol)
                 val intent = Intent(context, MainActivity::class.java)
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP)
                 context.startActivity(intent)
@@ -89,16 +104,19 @@ fun StartView(category: Category, subCategory: SubCategory, level: Level, modifi
         )
         Spacer(modifier = Modifier.height(59.dp))
         ButtonStartRow(text = "< " + context.getString(R.string.ready), onClick = {
+            SoundManager.playSound(context, R.raw.click, fxVol)
             (context as Activity).finish()
         })
         TextRow(text = context.getString(R.string.category_label)+" :", arrangementHorizontal = Arrangement.End)
         ButtonEndRow(text = category.nameCategory, onClick = {
+            SoundManager.playSound(context, R.raw.click, fxVol)
             val intent = Intent(context, CategoryActivity::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP)
             context.startActivity(intent)
         })
         TextRow(text = context.getString(R.string.sub_category_label)+" :", arrangementHorizontal = Arrangement.Start)
         ButtonStartRow(text = subCategory.nameSubCategory, onClick = {
+            SoundManager.playSound(context, R.raw.click, fxVol)
             val intent = Intent(context, SubCategoryActivity::class.java)
             intent.putExtra("Category", category)
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP)
@@ -106,12 +124,14 @@ fun StartView(category: Category, subCategory: SubCategory, level: Level, modifi
         })
         TextRow(text = context.getString(R.string.difficulty)+" :", arrangementHorizontal = Arrangement.End)
         ButtonEndRow(text = level.nameLevel, onClick = {
+            SoundManager.playSound(context, R.raw.click, fxVol)
             (context as Activity).finish()
         })
         Spacer(modifier = Modifier.height(40.dp))
         ButtonStartRow(
             text = context.getString(R.string.start)+" >",
             onClick = {
+                SoundManager.playSound(context, R.raw.click, fxVol)
                 val intent = Intent(context, QuestionActivity::class.java)
                 intent.putExtra("Category", category)
                 intent.putExtra("SubCategory", subCategory)

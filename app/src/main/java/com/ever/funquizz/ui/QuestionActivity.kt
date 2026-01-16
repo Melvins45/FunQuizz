@@ -1,5 +1,6 @@
 package com.ever.funquizz.ui
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
@@ -21,11 +22,13 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateMapOf
 import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.produceState
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
@@ -50,6 +53,7 @@ import com.ever.funquizz.model.Level
 import com.ever.funquizz.model.Party
 import com.ever.funquizz.model.PartyRepository
 import com.ever.funquizz.model.Response
+import com.ever.funquizz.model.SoundManager
 import com.ever.funquizz.model.SubCategory
 import com.ever.funquizz.repository.SettingsRepository
 import com.ever.funquizz.ui.components.BottomRoundedButton
@@ -92,18 +96,21 @@ class QuestionActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    QuestionView(category, subCategory, level)
+                    QuestionView(category, subCategory, level, settingsVm =  settingsVm)
                 }
             }
         }
     }
 }
 
+@SuppressLint("ProduceStateDoesNotAssignValue")
 @OptIn(ExperimentalTextApi::class)
 @Composable
-fun QuestionView(category: Category, subCategory: SubCategory, level : Level, modifier: Modifier = Modifier, questionViewModel: QuestionViewModel = viewModel(), responseViewModel: ResponseViewModel = viewModel()) {
+fun QuestionView(category: Category, subCategory: SubCategory, level : Level, modifier: Modifier = Modifier, questionViewModel: QuestionViewModel = viewModel(), responseViewModel: ResponseViewModel = viewModel(), settingsVm: SettingsViewModel? = null) {
 
     val context = LocalContext.current
+    val musicVol by settingsVm?.music?.collectAsState() ?: produceState(0.7f) {  }
+    val fxVol by settingsVm?.fx?.collectAsState() ?: produceState(0.7f) {  }
     val isLoaded by questionViewModel.isLoaded.collectAsState()
     val questions by questionViewModel.questions.collectAsState()
     val responses by responseViewModel.responses.collectAsState()
@@ -223,7 +230,9 @@ fun QuestionView(category: Category, subCategory: SubCategory, level : Level, mo
     }
 
     val clickResponseFunction : (Int) -> Unit = { index ->
+
         if(isChoosing) {
+            SoundManager.playSound(context, R.raw.click, fxVol)
             indexActive = index
         }
     }
@@ -239,6 +248,7 @@ fun QuestionView(category: Category, subCategory: SubCategory, level : Level, mo
 
     LaunchedEffect(Unit) {
         // 1) récupération des textes
+        SoundManager.stopBackground()
         val list = mutableListOf<String>()
         for (i in 1..10) {
             val id = questionResId(i)
@@ -258,6 +268,11 @@ fun QuestionView(category: Category, subCategory: SubCategory, level : Level, mo
             responsesMap[index] = responseViewModel.responses.value
         }
     }
+
+    /*DisposableEffect(Unit) {
+        SoundManager.playBackground(context, R.raw.background, musicVol)
+        onDispose { SoundManager.stopBackground() }
+    }*/
 
     /*LaunchedEffect(key1 = Unit, block = {
         for (i in 1..10){
@@ -381,10 +396,14 @@ fun QuestionView(category: Category, subCategory: SubCategory, level : Level, mo
             ),
             textStyle = MaterialTheme.typography.bodyMedium,
             onClick = {
+                SoundManager.playSound(context, R.raw.click, fxVol)
                 if (isChoosing) {
                     isChoosing = false
                     if (responsesMap[currentQuestionId]?.get(indexActive)?.isValid == true) {
                         score ++
+                        SoundManager.playSound(context, R.raw.success, fxVol)
+                    } else {
+                        SoundManager.playSound(context, R.raw.fail, fxVol)
                     }
                     if (currentQuestionId == 9) {
                         hasFinished = true

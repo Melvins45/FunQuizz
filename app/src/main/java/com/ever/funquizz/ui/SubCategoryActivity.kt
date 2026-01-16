@@ -14,9 +14,11 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.produceState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
@@ -27,6 +29,7 @@ import com.ever.funquizz.MainActivity
 import com.ever.funquizz.R
 import com.ever.funquizz.factory.SettingsViewModelFactory
 import com.ever.funquizz.model.Category
+import com.ever.funquizz.model.SoundManager
 import com.ever.funquizz.repository.SettingsRepository
 import com.ever.funquizz.ui.components.ButtonEndRow
 import com.ever.funquizz.ui.components.ButtonStartRow
@@ -56,7 +59,7 @@ class SubCategoryActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    SubCategoryView(category)
+                    SubCategoryView(category, settingsVm =  settingsVm)
                 }
             }
         }
@@ -64,10 +67,13 @@ class SubCategoryActivity : ComponentActivity() {
 }
 
 @Composable
-fun SubCategoryView(category: Category, modifier: Modifier = Modifier, viewModel: SubCategoryViewModel = viewModel()) {
+fun SubCategoryView(category: Category, modifier: Modifier = Modifier, viewModel: SubCategoryViewModel = viewModel(), settingsVm: SettingsViewModel? = null) {
 
     val context = LocalContext.current
     val subCategories by viewModel.subCategories.collectAsState()
+
+    val musicVol by settingsVm?.music?.collectAsState() ?: produceState(0.7f) {  }
+    val fxVol by settingsVm?.fx?.collectAsState() ?: produceState(0.7f) {  }
 
     val nameArray = "sub_category_" + category.nameCategory.lowercase().replace("é","e")
     val resId = context.resources.getIdentifier(nameArray, "array", context.packageName)
@@ -76,6 +82,7 @@ fun SubCategoryView(category: Category, modifier: Modifier = Modifier, viewModel
         subCategoriesStrings = context.resources.getStringArray(resId).toList()
     }
     val clickFunction : (Int) -> Unit = { index ->
+        SoundManager.playSound(context, R.raw.click, fxVol)
         val intent = Intent(context, LevelActivity::class.java)
         intent.putExtra("Category", category)
         intent.putExtra("SubCategory", subCategories[index])
@@ -86,6 +93,11 @@ fun SubCategoryView(category: Category, modifier: Modifier = Modifier, viewModel
         viewModel.loadSubCategories(category = category, subCategoriesStrings = subCategoriesStrings)
     })
 
+    DisposableEffect(Unit) {
+        if (!SoundManager.isBackgroundPlaying) SoundManager.playBackground(context, R.raw.background, musicVol)
+        onDispose { SoundManager.stopBackground() }
+    }
+
     Column (
         modifier = modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally
@@ -93,6 +105,7 @@ fun SubCategoryView(category: Category, modifier: Modifier = Modifier, viewModel
         LogoImage(
             isClickable = true,
             onClick = {
+                SoundManager.playSound(context, R.raw.click, fxVol)
                 val intent = Intent(context, MainActivity::class.java)
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP)
                 context.startActivity(intent)

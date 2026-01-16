@@ -1,5 +1,6 @@
 package com.ever.funquizz.ui
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -32,6 +33,7 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.produceState
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
@@ -51,6 +53,7 @@ import com.ever.funquizz.factory.SettingsViewModelFactory
 import com.ever.funquizz.model.BoxColors
 import com.ever.funquizz.model.Category
 import com.ever.funquizz.model.Level
+import com.ever.funquizz.model.SoundManager
 import com.ever.funquizz.model.SubCategory
 import com.ever.funquizz.repository.SettingsRepository
 import com.ever.funquizz.ui.components.ButtonEndRow
@@ -89,7 +92,7 @@ class ScoreActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    ScoreView(category, subCategory, level, score)
+                    ScoreView(category, subCategory, level, score, settingsVm =  settingsVm)
                 }
             }
         }
@@ -97,11 +100,15 @@ class ScoreActivity : ComponentActivity() {
 }
 
 
+@SuppressLint("ProduceStateDoesNotAssignValue")
 @Composable
-fun ScoreView(category: Category, subCategory: SubCategory, level: Level, score: Int, modifier: Modifier = Modifier) {
+fun ScoreView(category: Category, subCategory: SubCategory, level: Level, score: Int, modifier: Modifier = Modifier, settingsVm: SettingsViewModel? = null) {
 
     val context = LocalContext.current
     var isWaiting by remember { mutableStateOf(true) }
+
+    val musicVol by settingsVm?.music?.collectAsState() ?: produceState(0.7f) {  }
+    val fxVol by settingsVm?.fx?.collectAsState() ?: produceState(0.7f) {  }
 
     val primaryColor = MaterialTheme.colorScheme.primary
     val onPrimaryColor = MaterialTheme.colorScheme.onPrimary
@@ -251,6 +258,7 @@ fun ScoreView(category: Category, subCategory: SubCategory, level: Level, score:
     }
 
     LaunchedEffect(key1 = Unit, block = {
+        SoundManager.playSound(context, R.raw.score_show, fxVol)
         //viewModel.loadCategories(categoriesStrings = categoriesStrings)
         delay(2600) // Time Before the background start to come back to norm
         backgroundStateColor = backgroundColor
@@ -727,6 +735,7 @@ fun ScoreView(category: Category, subCategory: SubCategory, level: Level, score:
                             bounded = true
                         ),
                         onClick = {
+                            SoundManager.playSound(context, R.raw.click, fxVol)
                             val intent = Intent(context, ScreenShotActivity::class.java)
                             intent.putExtra("Category", category)
                             intent.putExtra("SubCategory", subCategory)
@@ -767,6 +776,7 @@ fun ScoreView(category: Category, subCategory: SubCategory, level: Level, score:
                 ),
                 textStyle = MaterialTheme.typography.bodyMedium,
                 onClick = {
+                    SoundManager.playSound(context, R.raw.click, fxVol)
                     val intent = Intent(context, MainActivity::class.java)
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP)
                     context.startActivity(intent)
@@ -784,6 +794,7 @@ fun ScoreView(category: Category, subCategory: SubCategory, level: Level, score:
                             bounded = true
                         ),
                         onClick = {
+                            SoundManager.playSound(context, R.raw.click, fxVol)
                             val intent = Intent(context, ScreenShotActivity::class.java)
                             intent.putExtra("Category", category)
                             intent.putExtra("SubCategory", subCategory)

@@ -22,6 +22,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -39,6 +40,7 @@ import com.ever.funquizz.MainActivity
 import com.ever.funquizz.R
 import com.ever.funquizz.factory.SettingsViewModelFactory
 import com.ever.funquizz.model.BoxColors
+import com.ever.funquizz.model.SoundManager
 import com.ever.funquizz.model.Theme
 import com.ever.funquizz.repository.SettingsRepository
 import com.ever.funquizz.ui.components.ButtonStartRow
@@ -103,6 +105,13 @@ fun ParametersView(viewModel: SettingsViewModel?, modifier: Modifier = Modifier)
     LaunchedEffect(key1 = Unit, block = {
 
     })
+
+    LaunchedEffect(music) { SoundManager.setBackgroundVolume(music) }
+
+    DisposableEffect(Unit) {
+        if (!SoundManager.isBackgroundPlaying) SoundManager.playBackground(context, R.raw.background, music)
+        onDispose { /*SoundManager.stopBackground()*/ }
+    }
 
     Column (
         modifier = modifier

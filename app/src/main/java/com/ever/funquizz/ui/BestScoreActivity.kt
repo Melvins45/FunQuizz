@@ -1,5 +1,6 @@
 package com.ever.funquizz.ui
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -30,10 +31,12 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.produceState
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
@@ -56,6 +59,7 @@ import com.ever.funquizz.model.Category
 import com.ever.funquizz.model.Level
 import com.ever.funquizz.model.Party
 import com.ever.funquizz.model.PartyRepository
+import com.ever.funquizz.model.SoundManager
 import com.ever.funquizz.model.SubCategory
 import com.ever.funquizz.repository.SettingsRepository
 import com.ever.funquizz.ui.components.BottomEndRoundedButton
@@ -99,7 +103,7 @@ class BestScoreActivity : ComponentActivity() {
                     color = MaterialTheme.colorScheme.background
                 ) {
                     val parties by viewModel.parties.collectAsState()
-                    BestScoreView(parties = parties)
+                    BestScoreView(parties = parties, settingsVm =  settingsVm)
                 }
             }
         }
@@ -108,14 +112,17 @@ class BestScoreActivity : ComponentActivity() {
 
 
 
+@SuppressLint("ProduceStateDoesNotAssignValue")
 @Composable
-fun BestScoreView(parties:List<Party> = listOf(), modifier: Modifier = Modifier) {
+fun BestScoreView(parties:List<Party> = listOf(), modifier: Modifier = Modifier, settingsVm: SettingsViewModel? = null) {
 
     val context = LocalContext.current
     val formatDate = SimpleDateFormat(
         "dd/MM/yyyy - HH'h'mm",
         Locale.getDefault()
     )
+    val musicVol by settingsVm?.music?.collectAsState() ?: produceState(0.7f) {  }
+    val fxVol by settingsVm?.fx?.collectAsState() ?: produceState(0.7f) {  }
 
     val clickFunction : (Int) -> Unit = { index ->
         val intent = Intent(context, SubCategoryActivity::class.java)
@@ -126,6 +133,11 @@ fun BestScoreView(parties:List<Party> = listOf(), modifier: Modifier = Modifier)
     LaunchedEffect(key1 = Unit, block = {
 
     })
+
+    DisposableEffect(Unit) {
+        if (!SoundManager.isBackgroundPlaying) SoundManager.playBackground(context, R.raw.background, musicVol)
+        onDispose { /*SoundManager.stopBackground()*/ }
+    }
 
     Column (
         modifier = modifier
@@ -143,6 +155,7 @@ fun BestScoreView(parties:List<Party> = listOf(), modifier: Modifier = Modifier)
             painterResourceId = R.drawable.funquizz_mini_logo,
             colorFilter = MaterialTheme.colorScheme.onPrimary,
             onClick = {
+                SoundManager.playSound(context, R.raw.click, fxVol)
                 val intent = Intent(context, MainActivity::class.java)
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP)
                 context.startActivity(intent)
@@ -229,6 +242,7 @@ fun BestScoreView(parties:List<Party> = listOf(), modifier: Modifier = Modifier)
                 text = context.getString(R.string.retourner) + " >",
                 textStyle = MaterialTheme.typography.bodySmall,
                 onClick = {
+                    SoundManager.playSound(context, R.raw.click, fxVol)
                     val intent = Intent(context, MainActivity::class.java)
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP)
                     context.startActivity(intent)

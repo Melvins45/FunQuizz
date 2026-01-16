@@ -1,5 +1,6 @@
 package com.ever.funquizz
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -16,8 +17,11 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.DisposableEffect
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.produceState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
@@ -29,6 +33,7 @@ import com.ever.funquizz.model.Category
 import com.ever.funquizz.model.Level
 import com.ever.funquizz.model.Party
 import com.ever.funquizz.model.PartyRepository
+import com.ever.funquizz.model.SoundManager
 import com.ever.funquizz.model.SubCategory
 import com.ever.funquizz.repository.SettingsRepository
 import com.ever.funquizz.ui.BestScoreActivity
@@ -64,19 +69,32 @@ class MainActivity : ComponentActivity() {
                     Home(
                         start = resources.getString(R.string.start),
                         bestScore = resources.getString(R.string.best_score),
-                        parameters = resources.getString(R.string.parameters))
+                        parameters = resources.getString(R.string.parameters),
+                        settingsVm =  settingsVm)
                 }
             }
         }
     }
 }
 
+@SuppressLint("ProduceStateDoesNotAssignValue")
 @Composable
-fun Home(start: String, bestScore: String, parameters:String, modifier: Modifier = Modifier) {
+fun Home(start: String, bestScore: String, parameters:String, modifier: Modifier = Modifier, settingsVm: SettingsViewModel? = null) {
 
     val context = LocalContext.current
     val spaceBetweenButtons = 25.dp
 
+    val musicVol by settingsVm?.music?.collectAsState() ?: produceState(0.7f) {  }
+    val fxVol by settingsVm?.fx?.collectAsState() ?: produceState(0.7f) {  }
+
+    /*LaunchedEffect(Unit) {
+        if (!SoundManager.isBackgroundPlaying) SoundManager.playBackground(context, R.raw.background, musicVol)
+    }*/
+
+    DisposableEffect(Unit) {
+        if (!SoundManager.isBackgroundPlaying) SoundManager.playBackground(context, R.raw.background, musicVol)
+        onDispose { SoundManager.stopBackground() }
+    }
     Column(
         modifier = modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,
@@ -88,6 +106,7 @@ fun Home(start: String, bestScore: String, parameters:String, modifier: Modifier
         BottomRoundedButton(
             text = "$start",
             onClick = {
+                SoundManager.playSound(context, R.raw.click, fxVol)
                 val intent = Intent(context, CategoryActivity::class.java)
                 /*intent.putExtra("Category", Category(20, "Pays"))
                 intent.putExtra("SubCategory", SubCategory(22, 20, "Présidents"))
@@ -109,6 +128,7 @@ fun Home(start: String, bestScore: String, parameters:String, modifier: Modifier
                     date = Date()
                 )
                 repo.saveParty(party)*/
+                SoundManager.playSound(context, R.raw.click, fxVol)
                 val intent = Intent(context, BestScoreActivity::class.java)
                 context.startActivity(intent)
             }
@@ -117,6 +137,7 @@ fun Home(start: String, bestScore: String, parameters:String, modifier: Modifier
         BottomRoundedButton(
             text = "$parameters",
             onClick = {
+                SoundManager.playSound(context, R.raw.click, fxVol)
                 val intent = Intent(context, ParametersActivity::class.java)
                 context.startActivity(intent)
             }
