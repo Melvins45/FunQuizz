@@ -11,6 +11,11 @@
     <string name="parameters">Paramètres</string>
     <string name="continuer">Continuer</string>
     <string name="retourner">Retourner</string>
+    <string name="music">Musique</string>
+    <string name="effefts">Effets Sonores</string>
+    <string name="day">Jour</string>
+    <string name="night">Nuit</string>
+    <string name="theme_system">Thème Système</string>
     <string-array name="score_titles">
         <item>Aïe, zéro !</item>
         <item>Juste un !</item>

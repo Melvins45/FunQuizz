@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.activity.viewModels
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.Image
@@ -46,10 +47,12 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.ever.funquizz.MainActivity
 import com.ever.funquizz.R
+import com.ever.funquizz.factory.SettingsViewModelFactory
 import com.ever.funquizz.model.BoxColors
 import com.ever.funquizz.model.Category
 import com.ever.funquizz.model.Level
 import com.ever.funquizz.model.SubCategory
+import com.ever.funquizz.repository.SettingsRepository
 import com.ever.funquizz.ui.components.ButtonEndRow
 import com.ever.funquizz.ui.components.ButtonStartRow
 import com.ever.funquizz.ui.components.LetterPerLetterAnim
@@ -60,9 +63,16 @@ import com.ever.funquizz.ui.components.TextBox
 import com.ever.funquizz.ui.components.TopRoundedButton
 import com.ever.funquizz.ui.theme.FunQuizzTheme
 import com.ever.funquizz.viewmodel.CategoryViewModel
+import com.ever.funquizz.viewmodel.SettingsViewModel
 import kotlinx.coroutines.delay
 
 class ScoreActivity : ComponentActivity() {
+
+    private val settingsRepo by lazy { SettingsRepository(applicationContext) }
+
+    private val settingsVm: SettingsViewModel by viewModels {
+        SettingsViewModelFactory(settingsRepo)
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -72,7 +82,8 @@ class ScoreActivity : ComponentActivity() {
         val score = intent.getIntExtra("Score", 10)
 
         setContent {
-            FunQuizzTheme {
+            val userTheme by settingsVm.theme.collectAsState()
+            FunQuizzTheme(theme = userTheme) {
                 // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),

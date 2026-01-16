@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.activity.viewModels
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -15,31 +16,46 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.ever.funquizz.factory.SettingsViewModelFactory
 import com.ever.funquizz.model.Category
 import com.ever.funquizz.model.Level
 import com.ever.funquizz.model.Party
 import com.ever.funquizz.model.PartyRepository
 import com.ever.funquizz.model.SubCategory
+import com.ever.funquizz.repository.SettingsRepository
 import com.ever.funquizz.ui.BestScoreActivity
 import com.ever.funquizz.ui.CategoryActivity
+import com.ever.funquizz.ui.ParametersActivity
 import com.ever.funquizz.ui.ScoreActivity
 import com.ever.funquizz.ui.components.BottomRoundedButton
 import com.ever.funquizz.ui.components.LogoImage
 import com.ever.funquizz.ui.theme.FunQuizzTheme
+import com.ever.funquizz.viewmodel.SettingsViewModel
 import java.util.Date
+import kotlin.reflect.KProperty
 
 class MainActivity : ComponentActivity() {
+
+    private val settingsRepo by lazy { SettingsRepository(applicationContext) }
+
+    private val settingsVm: SettingsViewModel by viewModels {
+        SettingsViewModelFactory(settingsRepo)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         setContent {
-            FunQuizzTheme {
+            val userTheme by settingsVm.theme.collectAsState()
+            FunQuizzTheme(theme = userTheme) {
                 // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
@@ -83,7 +99,7 @@ fun Home(start: String, bestScore: String, parameters:String, modifier: Modifier
         BottomRoundedButton(
             text = "$bestScore",
             onClick = {
-                val repo = PartyRepository(context)
+                /*val repo = PartyRepository(context)
                 val party = Party(
                     idParty = repo.nextId(),
                     category = Category(20, "Pays"),
@@ -92,7 +108,7 @@ fun Home(start: String, bestScore: String, parameters:String, modifier: Modifier
                     score = (1..10).random(),
                     date = Date()
                 )
-                repo.saveParty(party)
+                repo.saveParty(party)*/
                 val intent = Intent(context, BestScoreActivity::class.java)
                 context.startActivity(intent)
             }
@@ -100,7 +116,10 @@ fun Home(start: String, bestScore: String, parameters:String, modifier: Modifier
         Spacer(modifier = Modifier.height(spaceBetweenButtons))
         BottomRoundedButton(
             text = "$parameters",
-            onClick = { /*TODO*/ }
+            onClick = {
+                val intent = Intent(context, ParametersActivity::class.java)
+                context.startActivity(intent)
+            }
         )
     }
 }

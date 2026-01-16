@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.activity.viewModels
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.Image
@@ -49,12 +50,14 @@ import androidx.lifecycle.ViewModelProvider
 import com.ever.funquizz.MainActivity
 import com.ever.funquizz.R
 import com.ever.funquizz.factory.PartyViewModelFactory
+import com.ever.funquizz.factory.SettingsViewModelFactory
 import com.ever.funquizz.model.BoxColors
 import com.ever.funquizz.model.Category
 import com.ever.funquizz.model.Level
 import com.ever.funquizz.model.Party
 import com.ever.funquizz.model.PartyRepository
 import com.ever.funquizz.model.SubCategory
+import com.ever.funquizz.repository.SettingsRepository
 import com.ever.funquizz.ui.components.BottomEndRoundedButton
 import com.ever.funquizz.ui.components.ButtonEndRow
 import com.ever.funquizz.ui.components.ButtonStartRow
@@ -64,13 +67,21 @@ import com.ever.funquizz.ui.components.RoundedColumn
 import com.ever.funquizz.ui.components.RoundedRow
 import com.ever.funquizz.ui.components.TextBox
 import com.ever.funquizz.ui.components.TopRoundedButton
+import com.ever.funquizz.ui.components.TopStartRoundedButton
 import com.ever.funquizz.ui.theme.FunQuizzTheme
 import com.ever.funquizz.viewmodel.PartyViewModel
+import com.ever.funquizz.viewmodel.SettingsViewModel
 import kotlinx.coroutines.delay
 import java.text.SimpleDateFormat
 import java.util.Locale
 
 class BestScoreActivity : ComponentActivity() {
+
+    private val settingsRepo by lazy { SettingsRepository(applicationContext) }
+
+    private val settingsVm: SettingsViewModel by viewModels {
+        SettingsViewModelFactory(settingsRepo)
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -80,7 +91,8 @@ class BestScoreActivity : ComponentActivity() {
         )[PartyViewModel::class.java]
 
         setContent {
-            FunQuizzTheme {
+            val userTheme by settingsVm.theme.collectAsState()
+            FunQuizzTheme(theme = userTheme) {
                 // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
@@ -211,10 +223,11 @@ fun BestScoreView(parties:List<Party> = listOf(), modifier: Modifier = Modifier)
             modifier = modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.End
         ) {
-            BottomEndRoundedButton(
+            TopStartRoundedButton(
                 widthDp = 175.dp,
                 heightDp = 45.dp,
                 text = context.getString(R.string.retourner) + " >",
+                textStyle = MaterialTheme.typography.bodySmall,
                 onClick = {
                     val intent = Intent(context, MainActivity::class.java)
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP)

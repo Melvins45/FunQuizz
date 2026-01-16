@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.activity.viewModels
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -29,16 +30,26 @@ import com.ever.funquizz.viewmodel.CategoryViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.ever.funquizz.MainActivity
 import com.ever.funquizz.R
+import com.ever.funquizz.factory.SettingsViewModelFactory
+import com.ever.funquizz.repository.SettingsRepository
 import com.ever.funquizz.ui.components.BottomEndRoundedButton
 import com.ever.funquizz.ui.components.ButtonEndRow
 import com.ever.funquizz.ui.components.ButtonStartRow
 import com.ever.funquizz.ui.components.LogoImage
+import com.ever.funquizz.viewmodel.SettingsViewModel
 
 class CategoryActivity : ComponentActivity() {
+
+    private val settingsRepo by lazy { SettingsRepository(applicationContext) }
+
+    private val settingsVm: SettingsViewModel by viewModels {
+        SettingsViewModelFactory(settingsRepo)
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            FunQuizzTheme {
+            val userTheme by settingsVm.theme.collectAsState()
+            FunQuizzTheme(theme = userTheme) {
                 // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),

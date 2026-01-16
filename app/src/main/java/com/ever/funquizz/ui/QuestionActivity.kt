@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.activity.viewModels
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -42,6 +43,7 @@ import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.ever.funquizz.MainActivity
 import com.ever.funquizz.R
+import com.ever.funquizz.factory.SettingsViewModelFactory
 import com.ever.funquizz.model.BoxColors
 import com.ever.funquizz.model.Category
 import com.ever.funquizz.model.Level
@@ -49,6 +51,7 @@ import com.ever.funquizz.model.Party
 import com.ever.funquizz.model.PartyRepository
 import com.ever.funquizz.model.Response
 import com.ever.funquizz.model.SubCategory
+import com.ever.funquizz.repository.SettingsRepository
 import com.ever.funquizz.ui.components.BottomRoundedButton
 import com.ever.funquizz.ui.components.ButtonEndRow
 import com.ever.funquizz.ui.components.ButtonStartRow
@@ -63,10 +66,17 @@ import com.ever.funquizz.ui.theme.primaryActive
 import com.ever.funquizz.viewmodel.LevelViewModel
 import com.ever.funquizz.viewmodel.QuestionViewModel
 import com.ever.funquizz.viewmodel.ResponseViewModel
+import com.ever.funquizz.viewmodel.SettingsViewModel
 import kotlinx.coroutines.delay
 import java.util.Date
 
 class QuestionActivity : ComponentActivity() {
+
+    private val settingsRepo by lazy { SettingsRepository(applicationContext) }
+
+    private val settingsVm: SettingsViewModel by viewModels {
+        SettingsViewModelFactory(settingsRepo)
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -75,7 +85,8 @@ class QuestionActivity : ComponentActivity() {
         val level = intent.getSerializableExtra("Level") as Level
 
         setContent {
-            FunQuizzTheme {
+            val userTheme by settingsVm.theme.collectAsState()
+            FunQuizzTheme(theme = userTheme) {
                 // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),

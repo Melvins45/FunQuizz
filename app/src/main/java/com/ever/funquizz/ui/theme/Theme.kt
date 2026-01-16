@@ -16,6 +16,8 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
 import androidx.core.view.WindowCompat
 import androidx.compose.ui.graphics.Color
+import com.ever.funquizz.model.Theme
+import com.ever.funquizz.utils.resolveDarkTheme
 
 val lightPrimaryDisabled = Color(0xFF7577FE)
 val lightSecondaryDisabled = Color(0xFF9BFF96)
@@ -82,11 +84,14 @@ private val LightColorScheme = lightColorScheme(
 
 @Composable
 fun FunQuizzTheme(
-    darkTheme: Boolean = isSystemInDarkTheme(),
+    theme: Theme = Theme.SYSTEM,          // nouveau paramètre
+    //darkTheme: Boolean = isSystemInDarkTheme(),
     // Dynamic color is available on Android 12+
     dynamicColor: Boolean = false,
     content: @Composable () -> Unit
 ) {
+    val darkTheme = resolveDarkTheme(theme)
+
     val colorScheme = when {
         dynamicColor && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {
             val context = LocalContext.current

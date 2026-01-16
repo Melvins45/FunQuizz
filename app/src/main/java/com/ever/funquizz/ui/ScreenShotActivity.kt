@@ -15,6 +15,7 @@ import android.util.Log
 import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.activity.viewModels
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
@@ -34,6 +35,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -51,22 +53,31 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.ever.funquizz.MainActivity
 import com.ever.funquizz.R
+import com.ever.funquizz.factory.SettingsViewModelFactory
 import com.ever.funquizz.model.BoxColors
 import com.ever.funquizz.model.Category
 import com.ever.funquizz.model.Level
 import com.ever.funquizz.model.SubCategory
+import com.ever.funquizz.repository.SettingsRepository
 import com.ever.funquizz.ui.components.LetterPerLetterAnim
 import com.ever.funquizz.ui.components.LogoImage
 import com.ever.funquizz.ui.components.RoundedColumn
 import com.ever.funquizz.ui.components.RoundedRow
 import com.ever.funquizz.ui.components.TextBox
 import com.ever.funquizz.ui.theme.FunQuizzTheme
+import com.ever.funquizz.viewmodel.SettingsViewModel
 import com.smarttoolfactory.screenshot.ScreenshotBox
 import com.smarttoolfactory.screenshot.ScreenshotState
 import com.smarttoolfactory.screenshot.rememberScreenshotState
 import kotlinx.coroutines.android.awaitFrame
 
 class ScreenShotActivity : ComponentActivity() {
+
+    private val settingsRepo by lazy { SettingsRepository(applicationContext) }
+
+    private val settingsVm: SettingsViewModel by viewModels {
+        SettingsViewModelFactory(settingsRepo)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -78,7 +89,8 @@ class ScreenShotActivity : ComponentActivity() {
         val isSharing = intent.getBooleanExtra("isSharing", false)
 
         setContent {
-            FunQuizzTheme {
+            val userTheme by settingsVm.theme.collectAsState()
+            FunQuizzTheme(theme = userTheme) {
                 val screenshotState = rememberScreenshotState()
                 var ready by remember { mutableStateOf(false) }
                 // A surface container using the 'background' color from the theme

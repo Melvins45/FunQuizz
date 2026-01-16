@@ -87,5 +87,7 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-runtime-compose:2.6.2"
     implementation 'com.google.code.gson:gson:2.10.1'
     implementation 'com.github.SmartToolFactory:Compose-Screenshot:1.0.3'
+    implementation "androidx.compose.material:material-icons-extended"
+    implementation 'androidx.datastore:datastore-preferences:1.0.0'
 
 }
