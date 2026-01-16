@@ -65,8 +65,6 @@ class ParametersActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        lifecycle.addObserver(SoundManager)
-
         setContent {
             val userTheme by settingsVm.theme.collectAsState()
             FunQuizzTheme(theme = userTheme) {
@@ -261,6 +259,7 @@ fun ParametersView(viewModel: SettingsViewModel?, modifier: Modifier = Modifier)
                 text = context.getString(R.string.retourner) + " >",
                 textStyle = MaterialTheme.typography.bodySmall,
                 onClick = {
+                    SoundManager.playSound(context, R.raw.click, fx)
                     val intent = Intent(context, MainActivity::class.java)
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP)
                     context.startActivity(intent)

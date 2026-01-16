@@ -89,5 +89,6 @@ dependencies {
     implementation 'com.github.SmartToolFactory:Compose-Screenshot:1.0.3'
     implementation "androidx.compose.material:material-icons-extended"
     implementation 'androidx.datastore:datastore-preferences:1.0.0'
+    implementation "androidx.lifecycle:lifecycle-process:2.6.2"
 
 }

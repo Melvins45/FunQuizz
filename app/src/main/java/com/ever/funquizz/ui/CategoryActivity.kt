@@ -52,8 +52,6 @@ class CategoryActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        lifecycle.addObserver(SoundManager)
-
         setContent {
             val userTheme by settingsVm.theme.collectAsState()
             FunQuizzTheme(theme = userTheme) {
@@ -92,7 +90,7 @@ fun CategoryView(modifier: Modifier = Modifier, viewModel: CategoryViewModel = v
 
     DisposableEffect(Unit) {
         if (!SoundManager.isBackgroundPlaying) SoundManager.playBackground(context, R.raw.background, musicVol)
-        onDispose { SoundManager.stopBackground() }
+        onDispose { /*SoundManager.stopBackground()*/ }
     }
 
     Column (

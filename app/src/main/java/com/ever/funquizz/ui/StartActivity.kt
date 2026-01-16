@@ -55,8 +55,6 @@ class StartActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        lifecycle.addObserver(SoundManager)
-
         val category = intent.getSerializableExtra("Category") as Category
         val subCategory = intent.getSerializableExtra("SubCategory") as SubCategory
         val level = intent.getSerializableExtra("Level") as Level
@@ -88,7 +86,7 @@ fun StartView(category: Category, subCategory: SubCategory, level: Level, modifi
 
     DisposableEffect(Unit) {
         if (!SoundManager.isBackgroundPlaying) SoundManager.playBackground(context, R.raw.background, musicVol)
-        onDispose { SoundManager.stopBackground() }
+        onDispose { /*SoundManager.stopBackground()*/ }
     }
 
     Column (

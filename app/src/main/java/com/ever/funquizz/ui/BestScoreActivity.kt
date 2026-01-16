@@ -89,8 +89,6 @@ class BestScoreActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        lifecycle.addObserver(SoundManager)
-
         val viewModel = ViewModelProvider(
             this,
             PartyViewModelFactory(PartyRepository(this))

@@ -49,8 +49,6 @@ class SubCategoryActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        lifecycle.addObserver(SoundManager)
-
         val category = intent.getSerializableExtra("Category") as Category
 
         setContent {
@@ -97,7 +95,7 @@ fun SubCategoryView(category: Category, modifier: Modifier = Modifier, viewModel
 
     DisposableEffect(Unit) {
         if (!SoundManager.isBackgroundPlaying) SoundManager.playBackground(context, R.raw.background, musicVol)
-        onDispose { SoundManager.stopBackground() }
+        onDispose { /*SoundManager.stopBackground()*/ }
     }
 
     Column (
