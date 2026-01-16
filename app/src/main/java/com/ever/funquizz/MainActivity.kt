@@ -23,12 +23,16 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.ever.funquizz.model.Category
 import com.ever.funquizz.model.Level
+import com.ever.funquizz.model.Party
+import com.ever.funquizz.model.PartyRepository
 import com.ever.funquizz.model.SubCategory
+import com.ever.funquizz.ui.BestScoreActivity
 import com.ever.funquizz.ui.CategoryActivity
 import com.ever.funquizz.ui.ScoreActivity
 import com.ever.funquizz.ui.components.BottomRoundedButton
 import com.ever.funquizz.ui.components.LogoImage
 import com.ever.funquizz.ui.theme.FunQuizzTheme
+import java.util.Date
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -68,17 +72,30 @@ fun Home(start: String, bestScore: String, parameters:String, modifier: Modifier
         BottomRoundedButton(
             text = "$start",
             onClick = {
-                val intent = Intent(context, ScoreActivity::class.java)
-                intent.putExtra("Category", Category(20, "Pays"))
+                val intent = Intent(context, CategoryActivity::class.java)
+                /*intent.putExtra("Category", Category(20, "Pays"))
                 intent.putExtra("SubCategory", SubCategory(22, 20, "Présidents"))
-                intent.putExtra("Level", Level(203,"Facile"))
+                intent.putExtra("Level", Level(203,"Facile"))*/
                 context.startActivity(intent)
             }
         )
         Spacer(modifier = Modifier.height(spaceBetweenButtons))
         BottomRoundedButton(
             text = "$bestScore",
-            onClick = { /*TODO*/ }
+            onClick = {
+                val repo = PartyRepository(context)
+                val party = Party(
+                    idParty = repo.nextId(),
+                    category = Category(20, "Pays"),
+                    subCategory = SubCategory(22, 20, "Présidents"),
+                    level = Level(203,listOf("Facile", "Moyen", "Difficile").random()),
+                    score = (1..10).random(),
+                    date = Date()
+                )
+                repo.saveParty(party)
+                val intent = Intent(context, BestScoreActivity::class.java)
+                context.startActivity(intent)
+            }
         )
         Spacer(modifier = Modifier.height(spaceBetweenButtons))
         BottomRoundedButton(

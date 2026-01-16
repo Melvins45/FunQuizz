@@ -34,24 +34,27 @@ fun LetterPerLetterAnim(
     timeBeforeNextAnimationMillis: Int = 1000,
 ) {
     val lettres = message.toList()
-    val visibleStates = remember { lettres.map { mutableStateOf(false) } }
+    val visibleStates = remember { lettres.map { mutableStateOf(timeToAppearMillis == 0) } }
 
     LaunchedEffect(Unit) {
-        delay(timeBeforeAppearanceMillis.toLong()) // Temps avant de débuter son animation
-        while (true) {
-            // Réinitialiser
-            visibleStates.forEach { it.value = false }
+        if (timeToAppearMillis != 0 ) {
+            delay(timeBeforeAppearanceMillis.toLong()) // Temps avant de débuter son animation
 
-            // Animation lettre par lettre
-            for (i in lettres.indices) {
-                visibleStates[i].value = true
-                delay(timeToAppearMillis.toLong()) // Durée d'apparition
-                visibleStates[i].value = false
-                delay(timeToAppearMillis.toLong())
-                //delay(50)  // Petit délai entre lettres
+            while (true) {
+                // Réinitialiser
+                visibleStates.forEach { it.value = false }
+
+                // Animation lettre par lettre
+                for (i in lettres.indices) {
+                    visibleStates[i].value = true
+                    delay(timeToAppearMillis.toLong()) // Durée d'apparition
+                    visibleStates[i].value = false
+                    delay(timeToAppearMillis.toLong())
+                    //delay(50)  // Petit délai entre lettres
+                }
+
+                delay((timeBeforeNextAnimationMillis-timeToAppearMillis*2).toLong()) // Délai avant de recommencer
             }
-
-            delay((timeBeforeNextAnimationMillis-timeToAppearMillis*2).toLong()) // Délai avant de recommencer
         }
     }
 

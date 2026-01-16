@@ -22,6 +22,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalDensity
@@ -38,13 +39,12 @@ import com.ever.funquizz.ui.theme.FunQuizzTheme
 
 @OptIn(ExperimentalAnimationApi::class)
 @Composable
-fun BottomRoundedButton(
+fun RoundedButton(
     text: String,
     onClick: () -> Unit,
     modifier: Modifier = Modifier,
     widthDp: Dp = 212.dp,
     heightDp: Dp = 55.dp,
-    clickable: Boolean = true,
     enabled: Boolean = true,
     icon: ImageVector? = null,
     textStyle: TextStyle = MaterialTheme.typography.bodyLarge,
@@ -85,16 +85,17 @@ fun BottomRoundedButton(
                 .width(widthDp)
                 .clip(
                     RoundedCornerShape(
-                        bottomStart = heightDp,
-                        bottomEnd = heightDp,
+                        topStart = heightDp,
+                        topEnd = heightDp,
                     )
                 )
-                .then(
-                    if (clickable) modifier.clickable(
-                        interactionSource = interactionSource,
-                        indication = rememberRipple(color = colors.rippleColor, bounded = true),
-                        onClick = onClick
-                    ) else modifier
+                .clickable(
+                    interactionSource = interactionSource,
+                    indication = rememberRipple(
+                        color = colors.rippleColor,
+                        bounded = true
+                    ),
+                    onClick = onClick
                 )
                 .background(backgroundColor),
             contentAlignment = Alignment.Center
@@ -124,11 +125,11 @@ fun BottomRoundedButton(
                 .width(widthDp)
                 .clip(
                     RoundedCornerShape(
-                        bottomStart = heightDp,
-                        bottomEnd = heightDp,
+                        topStart = heightDp,
+                        topEnd = heightDp,
                     )
                 )
-                .background(colors.disabledContainerColor),
+                .background(backgroundColor),
             contentAlignment = Alignment.Center
         ) {
             if (icon != null) {
@@ -154,16 +155,16 @@ fun BottomRoundedButton(
 
 @Preview(name = "Bouton activé", showBackground = true)
 @Composable
-fun PreviewAppButtonEnabled() {
+fun PreviewRoundedButtonEnabled() {
     FunQuizzTheme{
-        BottomRoundedButton(text = "Valider", onClick = {}, enabled = true)
+        RoundedButton(text = "Valider", onClick = {}, enabled = true)
     }
 }
 
 @Preview(name = "Bouton désactivé", showBackground = true)
 @Composable
-fun PreviewAppButtonDisabled() {
+fun PreviewRoundedButtonDisabled() {
     FunQuizzTheme{
-        BottomRoundedButton(text = "Valider", onClick = {}, enabled = false)
+        RoundedButton(text = "Valider", onClick = {}, enabled = false)
     }
 }

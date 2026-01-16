@@ -18,8 +18,9 @@ import com.ever.funquizz.ui.theme.FunQuizzTheme
 fun ButtonEndRow(
     text: String,
     onClick: () -> Unit,
-    widthDp: Dp = 286.dp,
-    heightDp: Dp = 109.dp,
+    widthDp: Dp = 245.dp,
+    heightDp: Dp = 55.dp,
+    clickable: Boolean = true,
     modifier: Modifier = Modifier,
     colors : BoxColors = BoxColors(
         containerColor = MaterialTheme.colorScheme.primary,
@@ -34,7 +35,10 @@ fun ButtonEndRow(
         modifier = modifier.fillMaxWidth(),
         horizontalArrangement = Arrangement.End
     ) {
-        BottomStartRoundedButton(text = text, onClick = onClick, colors = colors)
+        BottomStartRoundedButton(
+            widthDp = widthDp,
+            heightDp = heightDp,
+            text = text, onClick = onClick, clickable = clickable, colors = colors)
     }
 }
 

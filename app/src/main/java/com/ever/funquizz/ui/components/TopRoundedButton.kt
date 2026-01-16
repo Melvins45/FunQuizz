@@ -45,6 +45,7 @@ fun TopRoundedButton(
     modifier: Modifier = Modifier,
     widthDp: Dp = 212.dp,
     heightDp: Dp = 55.dp,
+    clickable: Boolean = true,
     enabled: Boolean = true,
     icon: ImageVector? = null,
     textStyle: TextStyle = MaterialTheme.typography.bodyLarge,
@@ -89,13 +90,12 @@ fun TopRoundedButton(
                         topEnd = heightDp,
                     )
                 )
-                .clickable(
-                    interactionSource = interactionSource,
-                    indication = rememberRipple(
-                        color = colors.rippleColor,
-                        bounded = true
-                    ),
-                    onClick = onClick
+                .then(
+                    if (clickable) modifier.clickable(
+                        interactionSource = interactionSource,
+                        indication = rememberRipple(color = colors.rippleColor, bounded = true),
+                        onClick = onClick
+                    ) else modifier
                 )
                 .background(backgroundColor),
             contentAlignment = Alignment.Center

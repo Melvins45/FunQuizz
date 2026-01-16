@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <!-- dossier cache de l’app -->
+    <cache-path name="cache" path="." />
+    <!-- dossier Pictures externe -->
+    <external-path name="pictures" path="Pictures" />
+</paths>

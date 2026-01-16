@@ -10,6 +10,7 @@
     <string name="best_score">Meilleur Score</string>
     <string name="parameters">Paramètres</string>
     <string name="continuer">Continuer</string>
+    <string name="retourner">Retourner</string>
     <string-array name="score_titles">
         <item>Aïe, zéro !</item>
         <item>Juste un !</item>
@@ -123,7 +124,7 @@
     </string-array>
 
     <string name="presidents_facile_question_7">Qui est le président actuel des États-Unis ?</string>
-    <string name="presidents_facile_question_7_reponse_valide">2</string>
+    <string name="presidents_facile_question_7_reponse_valide">0</string>
     <string-array name="presidents_facile_question_7_reponses">
         <item>Donald Trump</item>
         <item>Barack Obama</item>
@@ -4123,5 +4124,8 @@
     <string name="title_activity_start">StartActivity</string>
     <string name="title_activity_question">QuestionActivity</string>
     <string name="title_activity_score">ScoreActivity</string>
+    <string name="title_activity_screen_shot">ScreenShotActivity</string>
+    <string name="title_activity_parameters">ParametersActivity</string>
+    <string name="title_activity_best_score">BestScoreActivity</string>
 
 </resources>

@@ -45,6 +45,8 @@ import com.ever.funquizz.R
 import com.ever.funquizz.model.BoxColors
 import com.ever.funquizz.model.Category
 import com.ever.funquizz.model.Level
+import com.ever.funquizz.model.Party
+import com.ever.funquizz.model.PartyRepository
 import com.ever.funquizz.model.Response
 import com.ever.funquizz.model.SubCategory
 import com.ever.funquizz.ui.components.BottomRoundedButton
@@ -62,6 +64,7 @@ import com.ever.funquizz.viewmodel.LevelViewModel
 import com.ever.funquizz.viewmodel.QuestionViewModel
 import com.ever.funquizz.viewmodel.ResponseViewModel
 import kotlinx.coroutines.delay
+import java.util.Date
 
 class QuestionActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -90,6 +93,7 @@ class QuestionActivity : ComponentActivity() {
 fun QuestionView(category: Category, subCategory: SubCategory, level : Level, modifier: Modifier = Modifier, questionViewModel: QuestionViewModel = viewModel(), responseViewModel: ResponseViewModel = viewModel()) {
 
     val context = LocalContext.current
+    val isLoaded by questionViewModel.isLoaded.collectAsState()
     val questions by questionViewModel.questions.collectAsState()
     val responses by responseViewModel.responses.collectAsState()
     var currentQuestionId by remember { mutableStateOf(0) }
@@ -222,7 +226,29 @@ fun QuestionView(category: Category, subCategory: SubCategory, level : Level, mo
     }
 
 
-    LaunchedEffect(key1 = Unit, block = {
+    LaunchedEffect(Unit) {
+        // 1) récupération des textes
+        val list = mutableListOf<String>()
+        for (i in 1..10) {
+            val id = questionResId(i)
+            if (id != 0) list += context.getString(id)
+        }
+        questionViewModel.loadQuestions(subCategory, level, list)
+    }
+
+    LaunchedEffect(isLoaded) {
+        if (!isLoaded) return@LaunchedEffect
+        questions.forEachIndexed { index, q ->
+            responseViewModel.loadReponses(
+                q,
+                responseIdValid(index + 1),
+                responsesStrings(index + 1)
+            )
+            responsesMap[index] = responseViewModel.responses.value
+        }
+    }
+
+    /*LaunchedEffect(key1 = Unit, block = {
         for (i in 1..10){
             if (questionResId(i) != 0) {
                 questionsStrings.add(context.getString(questionResId(i)))
@@ -243,7 +269,7 @@ fun QuestionView(category: Category, subCategory: SubCategory, level : Level, mo
             }
             Log.d("TAG", "reponses : $responsesMap")
         }
-    })
+    })*/
 
     Log.d("TAG", "questions strings dehors : $questions")
     // Container for all elements
@@ -307,7 +333,8 @@ fun QuestionView(category: Category, subCategory: SubCategory, level : Level, mo
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Bottom
         ) {
-            if (responsesMap.isNotEmpty()){
+            if (questions.isNotEmpty() && responsesMap.size == questions.size){
+                //if (responsesMap.isNotEmpty()){
                 Log.d("TAG", "reponses : $responsesMap")
                 responsesMap?.get(currentQuestionId)?.withIndex()?.forEach{ (id,response) ->
                     // Each Response is a Bottom Rounded Button
@@ -353,7 +380,24 @@ fun QuestionView(category: Category, subCategory: SubCategory, level : Level, mo
                     }
                 } else {
                     if (currentQuestionId == 9) {
+                        val repo = PartyRepository(context)
+                        val party = Party(
+                            idParty = repo.nextId(),
+                            category = category,
+                            subCategory = subCategory,
+                            level = level,
+                            score = score,
+                            date = Date()
+                        )
+                        repo.saveParty(party)
+
                         hasFinished = true
+                        val intent = Intent(context, ScoreActivity::class.java)
+                        intent.putExtra("Category", category)
+                        intent.putExtra("SubCategory", subCategory)
+                        intent.putExtra("Level", level)
+                        intent.putExtra("Score", score)
+                        context.startActivity(intent)
                     } else {
                         indexActive = -1
                         currentQuestionId++

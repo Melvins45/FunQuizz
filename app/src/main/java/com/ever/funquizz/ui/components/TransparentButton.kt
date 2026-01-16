@@ -33,6 +33,7 @@ fun TransparentButton(
     modifier: Modifier = Modifier,
     widthDp: Dp = 45.dp,
     heightDp: Dp = 66.dp,
+    clickable: Boolean = true,
     enabled: Boolean = true,
     icon: ImageVector? = null,
     textStyle: TextStyle = MaterialTheme.typography.titleMedium,
@@ -66,13 +67,12 @@ fun TransparentButton(
                         bottomStart = heightDp,
                     )
                 )
-                .clickable(
-                    interactionSource = interactionSource,
-                    indication = rememberRipple(
-                        color = colors.rippleColor,
-                        bounded = true
-                    ),
-                    onClick = onClick
+                .then(
+                    if (clickable) modifier.clickable(
+                        interactionSource = interactionSource,
+                        indication = rememberRipple(color = colors.rippleColor, bounded = true),
+                        onClick = onClick
+                    ) else modifier
                 )
                 .background(colors.containerColor),
             contentAlignment = Alignment.Center

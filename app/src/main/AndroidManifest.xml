@@ -12,6 +12,30 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FunQuizz"
         tools:targetApi="31">
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+        <activity
+            android:name=".ui.BestScoreActivity"
+            android:exported="false"
+            android:label="@string/title_activity_best_score"
+            android:theme="@style/Theme.FunQuizz" />
+        <activity
+            android:name=".ui.ParametersActivity"
+            android:exported="false"
+            android:label="@string/title_activity_parameters"
+            android:theme="@style/Theme.FunQuizz" />
+        <activity
+            android:name=".ui.ScreenShotActivity"
+            android:exported="false"
+            android:label="@string/title_activity_screen_shot"
+            android:theme="@style/Theme.FunQuizz" />
         <activity
             android:name=".ui.ScoreActivity"
             android:exported="false"
@@ -55,4 +79,6 @@
         </activity>
     </application>
 
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28"/>
 </manifest>

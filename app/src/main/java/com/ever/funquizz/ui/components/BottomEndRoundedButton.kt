@@ -37,6 +37,7 @@ fun BottomEndRoundedButton(
     modifier: Modifier = Modifier,
     widthDp: Dp = 245.dp,
     heightDp: Dp = 55.dp,
+    clickable: Boolean = true,
     enabled: Boolean = true,
     icon: ImageVector? = null,
     textStyle: TextStyle = MaterialTheme.typography.bodyLarge,
@@ -80,13 +81,12 @@ fun BottomEndRoundedButton(
                         bottomEnd = heightDp,
                     )
                 )
-                .clickable(
-                    interactionSource = interactionSource,
-                    indication = rememberRipple(
-                        color = colors.rippleColor,
-                        bounded = true
-                    ),
-                    onClick = onClick
+                .then(
+                    if (clickable) modifier.clickable(
+                        interactionSource = interactionSource,
+                        indication = rememberRipple(color = colors.rippleColor, bounded = true),
+                        onClick = onClick
+                    ) else modifier
                 )
                 .background(backgroundColor),
             contentAlignment = Alignment.Center

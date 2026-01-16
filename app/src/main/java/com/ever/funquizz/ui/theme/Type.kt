@@ -19,43 +19,50 @@ val Typography = Typography(
     bodyLarge = TextStyle(
         fontFamily = MyFontFamily,
         fontWeight = FontWeight.Normal,
-        fontSize = 20.sp,
-        lineHeight = 25.sp,
+        fontSize = 24.sp,
+        lineHeight = 30.sp,
         letterSpacing = 0.5.sp
     ),
     bodyMedium = TextStyle(
         fontFamily = MyFontFamily,
         fontWeight = FontWeight.Normal,
-        fontSize = 17.6.sp,
-        lineHeight = 22.6.sp,
+        fontSize = 22.sp, // 17.6sp for 22 px in Figma
+        lineHeight = 27.sp,
         letterSpacing = 0.5.sp
     ),
     bodySmall = TextStyle(
         fontFamily = MyFontFamily,
         fontWeight = FontWeight.Normal,
-        fontSize = 16.sp,
-        lineHeight = 21.sp,
+        fontSize = 20.sp, // 16.sp for 20px in Figma
+        lineHeight = 25.sp,
         letterSpacing = 0.5.sp
     ),
     titleLarge = TextStyle(
         fontFamily = MyFontFamily,
         fontWeight = FontWeight.Normal,
-        fontSize = 140.sp, // 144.sp for 180px in Figma
-        lineHeight = 145.sp,
+        fontSize = 180.sp, // 144.sp for 180px in Figma
+        lineHeight = 185.sp,
         letterSpacing = 0.5.sp
     ),
     titleMedium = TextStyle(
         fontFamily = MyFontFamily,
         fontWeight = FontWeight.Normal,
-        fontSize = 32.sp, // for 40px in Figma
-        lineHeight = 37.sp,
+        fontSize = 40.sp, // 32.sp for 40px in Figma
+        lineHeight = 45.sp,
         letterSpacing = 0.5.sp
     ),
     titleSmall = TextStyle(
         fontFamily = MyFontFamily,
         fontWeight = FontWeight.Normal,
-        fontSize = 24.sp, // for 30px in Figma
-        lineHeight = 29.sp,
+        fontSize = 30.sp, // 24.sp for 30px in Figma
+        lineHeight = 35.sp,
+        letterSpacing = 0.5.sp
+    ),
+    labelLarge = TextStyle(
+        fontFamily = MyFontFamily,
+        fontWeight = FontWeight.Normal,
+        fontSize = 35.sp,
+        lineHeight = 40.sp,
         letterSpacing = 0.5.sp
     ),
     /*bodyMedium = TextStyle(

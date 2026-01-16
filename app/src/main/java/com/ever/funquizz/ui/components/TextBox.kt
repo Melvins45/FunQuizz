@@ -58,7 +58,7 @@ fun TextBox(
             .height(heightDp)
             //.fillMaxWidth()
             .background(colors.containerColor),
-        contentAlignment = Alignment.Center
+        contentAlignment = Alignment.Center,
     ) {
         if (icon != null) {
             Icon(icon, contentDescription = null)
